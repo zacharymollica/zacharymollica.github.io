@@ -1,0 +1,41 @@
+---
+layout: default
+title: Projects
+---
+
+
+
+            <div class="row">
+         <div id ="projects">
+		   
+		   
+		   {% assign sorted_pages = site.projects | sort:"order" %}
+		   
+   		   {% for project in sorted_pages %}
+		   	          
+					  		
+							
+							
+           <div class="span4">
+                   <a href="{{ project.url }}">
+					   <img src="assets/{{ project.name }}/thumb.jpg">
+			   </a>
+                  
+				   <div class="project-date">
+                       {{ project.year }}
+                   </div>
+				   
+                   <div class="project-title">
+                       {{ project.title }}
+                   </div>
+				   
+                   <div class="project-caption">
+                       <span>{{ project.text }}</span>
+                   </div>
+               </div>
+		   
+		   
+	       {% endfor %}
+		   
+	   </div
+   </div>
