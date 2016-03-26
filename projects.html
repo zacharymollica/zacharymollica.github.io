@@ -16,7 +16,7 @@ title: Projects
 					  		
 							
 							
-           <div class="span4">
+           <div class="span4 project-grid">
                    <a href="{{ project.url }}">
 					   <img src="assets/{{ project.name }}/thumb.jpg">
 			   </a>
@@ -30,8 +30,13 @@ title: Projects
                    </div>
 				   
                    <div class="project-caption">
-                       <span>{{ project.text }}</span>
+                       <span>{{ project.content | strip_html | truncate: 150 }}</span>
                    </div>
+                   <div class="project-readmore">
+                   <a href="{{ project.url }}">Read more</a>
+                   </div>
+
+
                </div>
 		   
 		   

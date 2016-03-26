@@ -387,6 +387,10 @@ nav ul li.sel {
     margin-bottom: 20px;
 }
 
+.project-grid {
+    margin-bottom: 30px;
+}
+
 #projects {
 
 }
@@ -413,6 +417,16 @@ nav ul li.sel {
     font-family: 'webregular', helvetica,arial,sans-serif;
 	margin-bottom: 15px;
 	
+}
+
+.project-readmore {
+        color: #000;
+        font-size:.8rem
+
+}
+.project-readmore a {
+    text-decoration: underline;
+    color: #000;
 }
 
 .project p {
