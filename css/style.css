@@ -392,8 +392,11 @@ nav ul li.sel {
 }
 
 #projects {
+        padding: 0 60px;
+        margin:0 auto;
+        max-width:1400px;
+    }
 
-}
 #projects img {
     margin-bottom: 10px;
 }
@@ -484,7 +487,7 @@ SVG Icons - svgicons.sparkk.fr
     }
 
     #projects {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 
     header {
