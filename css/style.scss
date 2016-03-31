@@ -1,0 +1,691 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+/* sass */
+
+$bodycolor: #363636;
+$themecolor: #c00;
+$seriffontstack: 'Source Serif Pro', serif;
+$sansseriffontstack: 'webregular', arial, helvetica,;
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+blockquote,q {
+    quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Webfonts Served */
+@font-face {
+    font-family: 'webregular';
+    src: url(/fonts/webfont.eot);
+    src: url(/fonts/webfont.eot?#iefix) format("embedded-opentype"),url(/fonts/webfont.woff2) format("woff2"),url(/fonts/webfont.woff) format("woff"),url(/fonts/webfont.ttf) format("truetype"),url(/fonts/webfont.svg#webregular) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'webmono';
+    src: url(/fonts/mono-webfont.eot);
+    src: url(/fonts/mono-webfont.eot?#iefix) format("embedded-opentype"),url(/fonts/mono-webfont.woff2) format("woff2"),url(/fonts/mono-webfont.woff) format("woff"),url(/fonts/mono-webfont.ttf) format("truetype"),url(/fonts/mono-webfont.svg#webmono) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'webbold';
+    src: url(/fonts/bold-webfont.eot);
+    src: url(/fonts/bold-webfont.eot?#iefix) format("embedded-opentype"),url(/fonts/bold-webfont.woff2) format("woff2"),url(/fonts/bold-webfont.woff) format("woff"),url(/fonts/bold-webfont.ttf) format("truetype"),url(/fonts/bold-webfont.svg#webbold) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Zachary Mollica CSS */
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: $sansseriffontstack;
+}
+
+body {
+    color: #222;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,:after,:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img,embed,object,video {
+    max-width: 100%;
+    border: 0;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px dotted #474746;
+    margin: 3em 0;
+    padding: 0;
+}
+
+.container p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+b,strong {
+    font-weight: 700;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'webbold',helvetica,arial,sans-serif;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.tc {text-align: center;}
+.tl {text-align: left;}
+.tr {text-align: right;}
+
+img {
+    margin-bottom: 40px;
+}
+
+
+ul {
+
+}
+li {
+}
+
+
+
+.container {
+    margin: 100px auto 0;
+    padding: 0;
+    width: 100%;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.row:before,.row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.row {
+    margin: 0 -12px;
+}
+
+.row:after {
+    clear: both;
+}
+
+[class*='span'] {
+    display: block;
+    float: left;
+    padding: 0 12px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+[class*='span'] img {
+    margin: 0;
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.span1 {width: 8.3333%;}
+.span2 {width: 16.666667%;}
+.span3 {width: 25%;}
+.span4 {width: 33.333%;}
+.span5 {width: 41.6667%;}
+.span6 {width: 50%;}
+.span7 {width: 58.3333%;}
+.span8 {width: 66.6667%;}
+.span9 {width: 75%;}
+.span10 {width: 83.3333%;}
+.span11 {width: 91.6667%;}
+.span12 {width: 100%;}
+
+.offset1 {margin-left: 8.3333%;}
+.offset2 {margin-left: 16.666667%;}
+.offset3 {margin-left: 25%;}
+.offset4 {margin-left: 33.333%;}
+.offset5 {margin-left: 41.6667%;}
+.offset6 {margin-left: 50%;}
+.offset7 {margin-left: 58.3333%;}
+.offset8 {margin-left: 66.6667%;}
+.offset9 {margin-left: 75%;}
+.offset10 {margin-left: 83.3333%;}
+.offset11 {margin-left: 91.6667%;}
+.offset12 {margin-left: 100%;}
+
+/**
+ * INDEX * - */
+p {
+    text-indent: 0;
+}
+
+/** Header **/
+header {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    padding: 20px 60px;
+    z-index: 9999;
+    font-size: 1rem;
+}
+
+.title-small {
+    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-size: 1.5em;
+    display: block;
+    float: left;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    z-index: 999;
+}
+
+nav {
+    display: block;
+    color: #000;
+    font-family: 'webmono';
+    font-size: 1em;
+    z-index: 9999;
+	float: right;
+}
+
+nav a {
+    color: #000;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 0px 0 20px;
+}
+
+nav ul li.sel {
+    border-bottom: 1px solid #000;
+}
+
+/** FOOTER **/
+
+footer {
+    
+}
+
+
+
+
+
+
+/** TEMP FULL SCREEN PROJECT **/
+
+
+.background {
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin:0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.title {
+    position: absolute;
+    display: block;
+    font-size: 5rem;
+    font-family: 'webbold',helvetica,arial,sans-serif;
+    line-height: 5rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 0 20px;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+}
+
+
+
+/** Projects Page **/
+
+#projects {
+        padding: 0 60px;
+        margin:0 auto;
+        max-width:1400px;
+        font-size:1rem;
+        font-family: $sansseriffontstack;
+
+    }
+
+
+
+
+.project-grid {
+    margin-bottom: 30px;
+}
+
+#projects img {
+    margin-bottom: 10px;
+    -webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+}
+
+#projects img:hover{
+    margin-bottom: 10px;
+    -webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+}
+
+.project-date {
+    font-size: .8em;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.project-title {
+    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-size: 1em;
+	margin-bottom: 15px;
+}
+
+.project-caption {
+	
+    font-size: 1em;
+	line-height: 1.2em;
+	margin-bottom: 15px;
+	
+}
+
+.project-readmore {
+        color: #000;
+        font-size:.8em
+
+}
+.project-readmore a {
+    text-decoration: underline;
+    color: #000;
+}
+
+
+#project {
+    font-size: 1rem;
+
+
+}
+#project h1 {
+    text-align:center;
+    font-size: 4em;
+}
+
+#project img {
+    margin-bottom: 20px;
+}
+
+#project p {
+}
+
+#project a, #page a {
+    color: #4649ff;
+}
+
+
+#page {font-size: 1rem;}
+
+#page img {
+    margin-bottom: 20px;
+}
+
+#page ul {
+margin-left: 30px;
+}
+#page li {
+margin-bottom:10px;
+}
+
+
+#page h1 {
+    font-size:5em;
+}
+
+
+
+
+
+
+
+/** MEDIA QUERIES **/
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+    
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .row {
+        margin: 0;
+        padding: 0;
+    }
+
+    [class*='span'] {
+        width: 100%;
+    }
+
+    #projects {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+    
+}
+
+
+
+
+
+
+
+
+   .instagram {
+	line-height:0;
+	width: 33.3%;
+    padding: 0 12px;
+	float:left;
+	display:block;
+
+	
+}
+      
+      
+      .instagram-caption {
+	      font-size: 1rem;
+	
+	    
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 99; 
+}
+
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 1;
+	-webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 24s linear infinite 0s;
+    -moz-animation: imageAnimation 24s linear infinite 0s;
+    -o-animation: imageAnimation 24s linear infinite 0s;
+    -ms-animation: imageAnimation 24s linear infinite 0s;
+    animation: imageAnimation 24s linear infinite 0s; 
+}
+
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(/assets/wcb/wcb_above.jpg) 
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(/assets/wcb/wcb_assembly.jpg);
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    -ms-animation-delay: 4s;
+    animation-delay: 4s; 
+}
+
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(/assets/tetrahedron/tetrahedronnight.jpg);
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+    -o-animation-delay: 8s;
+    -ms-animation-delay: 8s;
+    animation-delay: 8s; 
+}
+
+
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(/assets/bridge/operablebridge_side.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+    background-image: url(/assets/wcb/wcb_robotcell.JPG);
+    -webkit-animation-delay: 16s;
+    -moz-animation-delay: 16s;
+    -o-animation-delay: 16s;
+    -ms-animation-delay: 16s;
+    animation-delay: 16s; 
+}
+
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url(/assets/measured/measured_desk.jpg);
+    -webkit-animation-delay: 20s;
+    -moz-animation-delay: 20s;
+    -o-animation-delay: 20s;
+    -ms-animation-delay: 20s;
+    animation-delay: 20s; 
+}
+/* Animation for the slideshow images */
+
+
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -moz-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -moz-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@-o-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -o-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -o-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -ms-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -ms-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+/* Show at least something when animations not supported */
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}
+
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 80px }
+}
+
+
+
+
+
+
+
+#projects .span4:nth-child(3n+1){
+clear:both;
+}
