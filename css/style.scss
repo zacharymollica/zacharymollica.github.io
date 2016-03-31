@@ -491,6 +491,14 @@ margin-bottom:10px;
     }
 }
 
+
+@media only screen and (max-width: 480px) {
+    /* phones */
+    #projects h1 {
+        font-size: 2em;
+    }
+}
+
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     /* portrait phones */
     
