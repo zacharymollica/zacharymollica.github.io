@@ -7,6 +7,10 @@ title: Projects
 
             <div class="row">
 		   
+
+       
+
+
 		   
 		   {% assign sorted_pages = site.projects | sort:"order" %}
 		   
@@ -20,7 +24,7 @@ title: Projects
 					   <img src="assets/{{ project.name }}/thumb.jpg">
 			   </a>
                   
-				   <div class="project-date">
+				   <div class="project-date" style="display:none;">
                        {{ project.year }}
                    </div>
 				   
@@ -28,7 +32,7 @@ title: Projects
                         <a href="{{ project.url }}">{{ project.title }}</a>
                    </div>
 				   
-                   <div class="project-caption">
+                   <div class="project-caption" style="display:none;">
                        <span>{{ project.content | strip_html | truncate: 150 }}</span>
                    </div>
                 

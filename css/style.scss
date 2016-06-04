@@ -7,7 +7,8 @@
 $bodycolor: #363636;
 $themecolor: #c00;
 $seriffontstack: 'Source Serif Pro', serif;
-$sansseriffontstack: 'webregular', arial, helvetica,;
+$sansseriffontstack:  'webregular', 'Open Sans', arial, helvetica;
+$sansseriffontstackbold: 'webbold', 'Open Sans', arial, helvetica;
 
 
 
@@ -132,7 +133,7 @@ a {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-family: $sansseriffontstackbold;
 }
 
 h1 {
@@ -144,6 +145,8 @@ h1 {
 h2 {
     font-size: 2em;
     font-weight: 700;
+    margin-bottom: 20px;
+
 }
 
 h3 {
@@ -154,6 +157,8 @@ h3 {
 h4 {
     font-size: 1.2em;
     font-weight: 700;
+    margin-bottom: 10px;
+
 }
 
 h5 {
@@ -268,7 +273,7 @@ header {
 }
 
 .title-small {
-    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-family: $sansseriffontstackbold;
     font-size: 1.5em;
     display: block;
     float: left;
@@ -343,7 +348,7 @@ footer {
     position: absolute;
     display: block;
     font-size: 5rem;
-    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-family: $sansseriffontstackbold;
     line-height: 5rem;
     font-weight: 700;
     text-decoration: none;
@@ -369,8 +374,13 @@ footer {
         font-size:1rem;
         font-family: $sansseriffontstack;
 
-    }
+}
 
+
+
+#projects .span4 {
+    position:relative;
+}
 
 .project-grid {
     margin-bottom: 30px;
@@ -394,10 +404,16 @@ filter: grayscale(0%);
     margin-top: 0px;
 }
 
+
 .project-title {
-    font-family: 'webbold',helvetica,arial,sans-serif;
+    font-family: $sansseriffontstack;
     font-size: 1em;
-	margin-bottom: 15px;
+    position:relative;
+    color: #4649ff;
+}
+
+.project-title a {
+    color: #4649ff;
 }
 
 .project-caption {
@@ -450,7 +466,10 @@ margin-bottom:10px;
 
 
 
-
+.projectdate {
+    text-align:center;
+    margin-bottom:20px;
+}
 
 
 
@@ -490,21 +509,43 @@ margin-bottom:10px;
     header {
         padding: 20px;
     }
+
+
+    [class*='offset'] {
+    margin-left:0px;
+}
+
 }
 
 
 @media only screen and (max-width: 480px) {
+    
     .title {
-        font-size: 2em;
+    font-size: 2em;
+    display:none;
+
     }
     header {
-        background: #fff;
+    background: #fff;
     }
-.title {
-    display:none;
-}
+  #project h1 {
+        font-size:2em;
+        text-align:left;
+    }
     
+
+    .projectdate {
+        text-align:left;
+
 }
+
+
+}
+
+
+
+
+
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     /* portrait phones */
@@ -514,35 +555,41 @@ margin-bottom:10px;
 }
 
 
+.instagram {
+line-height:0;
+width: 33.3%;
+padding: 0 12px;
+float:left;
+display:block;
 
 
-
-
-
-
-
-
-
-
-
-
-   .instagram {
-	line-height:0;
-	width: 33.3%;
-    padding: 0 12px;
-	float:left;
-	display:block;
-
-	
 }
-      
-      
-      .instagram-caption {
-	      font-size: 1rem;
-	
-	    
 
-      }
+
+.instagram-caption {
+font-size: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -681,6 +728,7 @@ margin-bottom:10px;
 #projects .span4:nth-child(3n+1){
 clear:both;
 }
+
 #projects .span3:nth-child(4n+1){
 clear:both;
 }
