@@ -3,73 +3,97 @@ layout: page
 title: Resume
 ---
 
-
 <h2>Education</h2>
 
-<h4>Architectural Association School of Architecture</h4>
-London, UK
-MArch Design & Make Programme completed with Distinction, 2014-16
 
-<h4>Dalhousie University</h4>
-Halifax, NS
+	{% for school in site.data.resume.schools %}
 
-Bachelor of Environmental Design Studies (B.Eds), 2010–12
-Physics and Environmental Science courses, 2009–10
+		<div>
+		<h4>{{ school.name }}</h4>
+		<span>{{ school.date }}, {{ school.location }}</span>
+		<p>{{ school.description }}</p>
 
-<h4>University of King’s College</h4>
-Halifax, NS
-Foundation Year Programme, 2008–09
+		</div>
+
+	{% endfor %}
 
 
 <h2>Work</h2>
 
-<h4>Novita Interpares</h4>
 
-Toronto 2012 - ongoing
-Designer. Responsible for project design work, the production of cultural consulting reports, as well as a redesign of the firm’s print and web materials.
+	{% for job in site.data.resume.jobs %}
 
-</ul>
+		<div>
+		<h4>{{ job.name }}</h4>
+		<span>{{ job.date }}, {{ job.location }}</span>
+		<p>{{ job.description }}</p>
 
-<h4>NL Architects</h4>
-Amsterdam, 2012
-Architectural Intern working on the preparation of competition proposals as well as development on active projects.
+		</div>
 
-<h4>Plant Architects</h4>
-Toronto, 2012
-Collaboration with Plant on the design of two architectural installations including one for the 2012 Venice Biennale.
+	{% endfor %}
 
-<h4>Measured Architecture Inc.</h4>
-Vancouver, 2011
-Architectural Intern responsible for constructing scale models and full size mockups as well as helping to establish the firm’s model shop.
+
 
 
 <h2>Writing</h2>
 
 <ul>
 
-<li>2016 Advances in Architectural Geometry conference paper</li>
-<li>2016 Design + Make MArch thesis</li>
+
+
+	{% for paper in site.data.resume.papers %}
+
+		<li>
+		<span>{{ paper.year }}</span>
+		<a href=""><span>{{ paper.name }}</span></a>
+		<p>{{ paper.context }}</p>
+		</li>
+
+	{% endfor %}
+
 
 </ul>
-
 
 
 <h2>Press</h2>
 
 <ul>
 
-<li>2016 <a href="http://www.cnn.com/videos/architecture/2016/02/22/woodland-architecture-style.cnn">CNN Style</a> profile of ongoing work at Hooke Park</li>
-<li>2016 BBC Countryfile episode focused on Wood Chip Barn project</li>
-<li>2014 <a href="http://www.dezeen.com/2015/02/07/floating-pyramid-and-wooden-tunnel-built-in-the-woods-by-architectural-association-students/">Dezeen</a> web article for Inhabitable Tetrahedron</li>
+
+	{% for piece in site.data.resume.press %}
+
+		<li>
+		<span>{{ piece.year }}</span>
+		<span>{{ piece.description }}</span>
+
+		</li>
+
+	{% endfor %}
 
 </ul>
 
 
 <h2>Awards</h2>
 
+
+
+
+
+
+
 <ul>
-<li>2016 AA Design & Make MArch awarded with distinction</li>
-<li>2010-2012 Dalhousie University Dean’s List</li>
-<li>2010 Dalhousie University Physics and Atmospheric Science Award</li>
-<li>2009 University of King’s College, in course scholarship</li>
+
+
+	{% for award in site.data.resume.awards %}
+
+	<li>
+	<span>{{ award.year }}</span>
+	<span>{{ award.description }}</span>
+
+	</li>
+
+	{% endfor %}
+
+
+
 </ul>
