@@ -74,15 +74,16 @@ papers:
 
 press: 
 
-  - name: 
+  - name: CNN Style
     year: 2016
     description: CNN Style profile of ongoing work at Hooke Park
     link: "http://www.cnn.com/videos/architecture/2016/02/22/woodland-architecture-style.cnn"
-  - name: 
+    image:
+  - name: BBC Countryfile
     year: 2016
     description: BBC Countryfile episode focused on Wood Chip Barn project
     link: 
-  - name: 
+  - name: Dezeen
     year: 2014
     description: Dezeen web article for Inhabitable Tetrahedron
     link: "http://www.dezeen.com/2015/02/07/floating-pyramid-and-wooden-tunnel-built-in-the-woods-by-architectural-association-students/"
@@ -98,6 +99,8 @@ press:
 awards:
 
   - year: 2016
+    text: Wood Chip Barn project shortlisted for the IStructE awards
+  - year: 2016
     description: AA Design & Make MArch awarded with distinction
   - year: 2010-2012
     description: Dalhousie University Dean’s List
@@ -108,7 +111,12 @@ awards:
 
 
 
-
+clients:
+  - name: Musique Royale
+  - name: Ironworks Distillery
+  - name: Centre for City Ecology
+  - name: Tides Canada
+  - name: Class Afloat
 
 
 
