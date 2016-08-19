@@ -3,7 +3,7 @@ layout: project
 title: Sketchbook
 name: sketchbook
 year: Ongoing
-order: 12
+order: 8
 ---
 
 
@@ -14,7 +14,7 @@ order: 12
 
     {% for image in site.static_files %}
         {% if image.path contains 'sketchbook' %}
-            {% unless image.path contains 'cover' or image.path contains 'thumb' | reverse %}
+            {% unless image.path contains 'cover' or image.path contains 'thumb' %}
 
                 <div class="span6">
                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" ">
