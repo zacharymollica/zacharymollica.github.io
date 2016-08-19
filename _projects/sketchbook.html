@@ -7,6 +7,30 @@ order: 12
 ---
 
 
+    <link rel="stylesheet" href="css/flickity.css">
+
+<div class="carousel js-flickity" data-flickity-options='{ "autoPlay": 1500 }'>
+
+
+{% for image in site.static_files %}
+
+    {% if image.path contains 'sketchbook' %}
+
+        {% unless image.path contains 'cover' or image.path contains 'thumb' %}
+
+  <div class="carousel-cell"><img src="{{ site.baseurl }}{{ image.path }}" alt="image" "></div>
+
+        {% endunless %}
+    {% endif %}
+
+{% endfor %}
+
+
+
+
+</div>
+
+
 <div class="row">
 
 
@@ -48,6 +72,10 @@ order: 12
 </div>
 
 </div>
+
+
+<script src="/js/flickity.pkgd.js"></script>
+
 
 
 

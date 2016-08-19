@@ -5,7 +5,7 @@
 schools:
   - name: Architectural Association School of Architecture
     location: London, UK
-    description:  Programme completed with Distinction
+    description: Programme completed with Distinction
     date: 2014-16
     programme: MArch Design + Make
   - name: Dalhousie University
@@ -26,6 +26,11 @@ schools:
 
 jobs:
 
+  - name: Architectural Association
+    location: London / Hooke Park
+    date: "2016–"
+    role: Course Tutor
+    description: "Tutor for the Design + Make programme."
   - name: Novita Interpares
     location: Toronto / Lunenburg
     date: 2012-15
@@ -57,7 +62,7 @@ papers:
     year: 2016
     context: Paper published as part of 2016 Advances in Architectural Geometry conference
     link:
-  - name: "Tree Fork Truss:"
+  - name: "Tree Fork Truss: An Architecture of Inherent Forms"
     year: 2016
     context: Design + Make MArch thesis
     link:
@@ -76,16 +81,16 @@ press:
 
   - name: CNN Style
     year: 2016
-    description: CNN Style profile of ongoing work at Hooke Park
+    description: profile of ongoing work at Hooke Park
     link: "http://www.cnn.com/videos/architecture/2016/02/22/woodland-architecture-style.cnn"
     image:
   - name: BBC Countryfile
     year: 2016
-    description: BBC Countryfile episode focused on Wood Chip Barn project
-    link: 
+    description: episode focused on Wood Chip Barn project
+    link: "http://www.bbc.co.uk/programmes/b06qz9fk"
   - name: Dezeen
     year: 2014
-    description: Dezeen web article for Inhabitable Tetrahedron
+    description: article for the Inhabitable Tetrahedron
     link: "http://www.dezeen.com/2015/02/07/floating-pyramid-and-wooden-tunnel-built-in-the-woods-by-architectural-association-students/"
 
 
@@ -99,15 +104,20 @@ press:
 awards:
 
   - year: 2016
-    text: Wood Chip Barn project shortlisted for the IStructE awards
+    description: Wood Chip Barn project shortlisted for the IStructE awards
+    link:
   - year: 2016
     description: AA Design & Make MArch awarded with distinction
+    link:
   - year: 2010-2012
     description: Dalhousie University Dean’s List
+    link:
   - year: 2010
     description: Dalhousie University Physics and Atmospheric Science Award
+    link:
   - year: 2009
     description: University of King’s College, in course scholarship
+    link:
 
 
 
