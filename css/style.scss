@@ -545,16 +545,6 @@ margin-bottom:10px;
 
 
 
-
-
-@media only screen and (max-width: 767px) and (orientation: portrait) {
-    /* portrait phones */
-    
-
-
-}
-
-
 .instagram {
 line-height:0;
 width: 33.3%;
@@ -574,7 +564,21 @@ font-size: 1rem;
 }
 
 
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
 
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
 
 
 
