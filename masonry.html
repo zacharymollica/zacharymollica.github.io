@@ -1,0 +1,58 @@
+---
+layout: default
+title: Projects
+---
+
+
+
+
+<link rel="stylesheet" href="/js/masonry.pkgd.min.js">
+<link rel="stylesheet" href="/css/tests.css">
+
+
+
+<style>
+
+.grid {
+	width: 100%;
+
+}
+
+.grid-item {
+  float: left;
+  width: 20%;
+  	margin:0px;
+	padding:0;
+}
+
+.grid-item img {
+	margin:10px;
+	padding:0;
+}
+
+</style>
+		   
+
+       
+<div class="grid" style="width:100%;" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 400 }'>
+
+
+		   {% assign sorted_pages = site.projects | sort:"order" %}
+		   
+   		   {% for project in sorted_pages %}
+		   	          
+			
+
+  <div class="grid-item">
+  <img src="assets/{{ project.name }}/thumb.jpg">
+  </div>
+
+
+
+	       {% endfor %}
+
+</div>
+
+		   
+				
+		   
