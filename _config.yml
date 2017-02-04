@@ -2,3 +2,5 @@ collections:
   projects:
     output: true
     permalink: /project/:path/
+
+    

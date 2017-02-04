@@ -1,51 +1,44 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" media="all">
-  </head>
-  <body>
-	  
-	  {% include header.html %}
-    
-	
-	
-	<div class="container">
-	
-<div id="project">
+{% include head.html %}
 
-    <div class="content">
-		
- <h1>{{ page.title }}</h1>
- 
-    <div class="projectdate">{{ page.year }}</div>
-
-
-
-
-
-	{{ content }}
-	
-	
-
-
-	
-
-
-
-
+<body>
+    {% include header.html %}
+    <div class="container">
+        <div id="project">
+            <div class="content">
+            <div class="row">
+                <div class="span8">
+                    <div class="projectdate">{{ page.year }}</div>
+                
+                    {% if page.name %}
+                    <h1 class="tl">{{ page.name }}</h1>
+                    {% else %}
+                    <h1 class="tl">{{ page.title }}</h1>
+                    {% endif %}
+                </div>
+                <div class="span8" style="font-family: 'webmono';">
+                    {{ page.comment }}
+                </div>
+                <div class="span4">
+                    {% if page.people %} {% assign people = page.people | split: "," %}
+                    <div style="font-size:.8em;text-align: left">
+                        With: {% assign peoplejoin = people | join: "," %} {% for person in people %}
+                        <div style="">
+                            {{ person }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div style="clear:both;"></div>
+                <div class="span12">
+                <hr>
+                </div>
+                {{ content }}
+            </div>
+        </div>
+        </div>
     </div>
-	
-</div>
-	
-</div>
+    {% include footer.html %}
+</body>
 
-  {% include footer.html %}
-	
-	
-    
-  </body>
 </html>

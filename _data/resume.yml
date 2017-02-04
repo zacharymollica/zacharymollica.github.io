@@ -3,9 +3,9 @@
 
 
 schools:
-  - name: Architectural Association School of Architecture
+  - name: Architectural Association
     location: London, UK
-    description: Programme completed with Distinction
+    description: MArch Design + Make programme completed with Distinction at the Architectural Association School of Architecture.
     date: 2014-16
     programme: MArch Design + Make
   - name: Dalhousie University
@@ -26,11 +26,6 @@ schools:
 
 jobs:
 
-  - name: Architectural Association
-    location: London / Hooke Park
-    date: "2016–"
-    role: Course Tutor
-    description: "Tutor for the Design + Make programme."
   - name: Novita Interpares
     location: Toronto / Lunenburg
     date: 2012-15
@@ -56,20 +51,42 @@ jobs:
 # ------------------
 
 
+
+academic:
+
+  - name: Architectural Association
+    location: London / Hooke Park
+    date: "2016–"
+    role: Course Tutor
+    description: "Tutor for the Design + Make programme."
+  - name: Robotic Fabrications Visiting School
+    location: Hooke Park
+    date: "2016–"
+    role: Tutor
+    description: "Tutor for the AA's Robotic Fabrications Visiting School along with Director Emmanuel Vercruysse"
+  - name: Makelab Visiting School
+    location: Hooke Park
+    date: "2016–"
+    role: Tutor
+    description: "Tutor for the AA's Makelab Visiting School along with Director Jeroen"
+
+# ------------------
+
+
 papers:
 
   - name: "Tree Fork Truss: Geometric Strategies for Exploiting Inherent Form"
     year: 2016
     context: Paper published as part of 2016 Advances in Architectural Geometry conference
-    link:
+    file: "/assets/download/Mollica-Self-AAG-Tree-Fork-Truss.pdf"
   - name: "Tree Fork Truss: An Architecture of Inherent Forms"
     year: 2016
     context: Design + Make MArch thesis
-    link:
+    file: "/assets/download/Mollica-DMThesis-Tree-Fork-Truss-an-Architecture-of-Inherent-Forms.pdf"
   - name: 
     year: 
     context:
-    link:
+    file:
 
 
 
@@ -79,6 +96,13 @@ papers:
 
 press: 
 
+
+
+  - name: The Temple Radio Show
+    year: 2016
+    description: Discussing robots and architecture in the forest
+    link: "http://www.thetempleshow.com/Episode-8-Zachary-Mollica"
+    image:
   - name: CNN Style
     year: 2016
     description: profile of ongoing work at Hooke Park
@@ -88,6 +112,10 @@ press:
     year: 2016
     description: episode focused on Wood Chip Barn project
     link: "http://www.bbc.co.uk/programmes/b06qz9fk"
+  - name: Dezeen
+    year: 2016
+    description: article for the Wood Chip Barn project
+    link: "http://www.dezeen.com/2016/02/23/architectural-association-students-london-robotically-fabricated-barn-dorset-woodland/"
   - name: Dezeen
     year: 2014
     description: article for the Inhabitable Tetrahedron
@@ -107,10 +135,7 @@ awards:
     description: Wood Chip Barn project shortlisted for the IStructE awards
     link:
   - year: 2016
-    description: AA Design & Make MArch awarded with distinction
-    link:
-  - year: 2010-2012
-    description: Dalhousie University Dean’s List
+    description: AA Design + Make MArch awarded with distinction
     link:
   - year: 2010
     description: Dalhousie University Physics and Atmospheric Science Award

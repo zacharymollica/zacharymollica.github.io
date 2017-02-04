@@ -4,77 +4,72 @@ title: Resume
 ---
 
 
-<h1>Zachary Mollica</h1>
-<div style="color:red;"">Canadian</div>
-{{ site.time | date: '%Y' | minus: 1990 }} years old
+<div class="row" style="font-family: 'webmono';">
+<div class="span8">
+
+    <h2>Bio</h2>
+
+
+    <p>Zachary Mollica is a 26 year old Canadian architect and maker currently working full time as a Studio Tutor for the Architectural Association's Design + Make masters programme. Zac completed his MArch at the AA and his BEDS at Dalhousie School of Architecture.</p>
+
+    <p><a href="mailto:zacharymollica@gmail.com">zacharymollica@gmail.com</a></p>
+
+    <hr>
+
+
+    <h2>Teaching</h2> {% for job in site.data.resume.academic %}
+    <div>
+        <span style="font-size:1.5em;font-weight:bold;margin-right:15px;">{{ job.name }}</span><span>{{ job.date }}</span>
+        <div style="clear:both;">
+            <span style="margin-right:15px;">{{ job.role }}</span><span>[{{ job.location }}]</span>
+            <p>{{ job.description }}</p>
+        </div>
+    </div>
+        {% endfor %}
+    
+
+
+    <hr>
+    <h2>Practice</h2> {% for job in site.data.resume.jobs %}
+    <div>
+        <span style="font-size:1.5em;font-weight:bold;margin-right:15px;">{{ job.name }}</span><span>{{ job.date }}</span>
+        <div style="clear:both;">
+            <span style="margin-right:15px;">{{ job.role }}</span><span>[{{ job.location }}]</span>
+            <p>{{ job.description }}</p>
+        </div>
+    </div>
+        {% endfor %}
+        <hr>
 
 
 
-
-
-<h2>Education</h2>
-
-
-	{% for school in site.data.resume.schools %}
-
-		<div>
-		<h4>{{ school.name }}</h4>
-		<span>{{ school.date }}, {{ school.location }}</span>
-		<p>{{ school.description }}</p>
-
-		</div>
-
-	{% endfor %}
-
-
-<h2>Work</h2>
-
-
-	{% for job in site.data.resume.jobs %}
-
-		<div>
-		<h4>{{ job.name }}</h4>
-		<span>{{ job.date }}, {{ job.location }}</span>
-		<p>{{ job.description }}</p>
-
-		</div>
-
-	{% endfor %}
-
-
-
-
-<h2>Writing</h2>
-
-<ul>
-
-
-
-	{% for paper in site.data.resume.papers %}
-
-		<li>
-		<span>{{ paper.year }}</span>
-		<a href=""><span>{{ paper.name }}</span></a>
-		<p>{{ paper.context }}</p>
-		</li>
-
-	{% endfor %}
-
-
-</ul>
-
-
-<h2>Press</h2>
-
-<ul>
-
-
-	{% for piece in site.data.resume.press %}
-
-		<li>
-			<span>{{ piece.year }}</span>
-			
-			<span>
+        <h2>Schooling</h2> {% for school in site.data.resume.schools %}
+        <div>
+            <span style="font-size:1.5em;font-weight:bold;margin-right:15px;">{{ school.name }}</span><span>{{ school.date }}</span>
+            <div style="clear:both;">
+                <span>{{ school.location }}</span>
+                <p>{{ school.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
+        <h2>Writing</h2>
+        <ul>
+            {% for paper in site.data.resume.papers %}
+            <li>
+                <span>{{ paper.year }}</span>
+                <a href="{{ paper.file }}"><span>{{ paper.name }}</span></a>
+                <p>{{ paper.context }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h2>Press</h2>
+        <ul>
+            {% for piece in site.data.resume.press %}
+            <li>
+                <span>{{ piece.year }}</span>
+                <span>
 			{% if piece.link %}
 				<a href="{{ piece.link }}">{{ piece.name }}</a>
 			{% else %}
@@ -83,35 +78,20 @@ title: Resume
 			{{ piece.description }}
 
 			</span>
-
-		</li>
-
-	{% endfor %}
-
-</ul>
-
-
-<h2>Awards</h2>
-
-
-
-
-
-
-
-<ul>
+            </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h2>Awards</h2>
+        <ul>
+            {% for award in site.data.resume.awards %}
+            <li>
+                <span>{{ award.year }}</span>
+                <span>{{ award.description }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
 
-	{% for award in site.data.resume.awards %}
-
-	<li>
-	<span>{{ award.year }}</span>
-	<span>{{ award.description }}</span>
-
-	</li>
-
-	{% endfor %}
-
-
-
-</ul>

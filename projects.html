@@ -1,46 +1,66 @@
 ---
-layout: grid
+layout: page
 title: Projects
 ---
+<div class="row">
+
+    {% assign sorted_pages = site.projects | sort:"order" %}
+
+
+{% for project in sorted_pages %}
+<a href="{{ project.url }}">
+<div class="span3 project" style="position:relative;">
+        <div class="project-date">{{ project.year }}</div>
+
+<div class="project-title">
+
+{% if project.name %}
+<h2>{{ project.name }}</h2>
+{% else %}
+<h2>{{ project.title }}</h2>
+{% endif %}
+
+
+</div>
 
 
 
-            <div class="row">
-		   
-
-       
+<div class="square-person" style="background-image: url(assets/{{ project.title | slugify }}/thumb.gif);">
 
 
-		   
-		   {% assign sorted_pages = site.projects | sort:"order" %}
-		   
-   		   {% for project in sorted_pages %}
-		   	          
-					  		
-							
-							
-           <div class="span4 project-grid">
-                   <a href="{{ project.url }}">
-					   <img src="assets/{{ project.name }}/thumb.jpg">
-			   </a>
-                  
-				   <div class="project-date" style="display:none;">
-                       {{ project.year }}
-                   </div>
-				   
-                   <div class="project-title">
-                        <a href="{{ project.url }}">{{ project.title }}</a>
-                   </div>
-				   
-                   <div class="project-caption" style="display:none;">
-                       <span>{{ project.content | strip_html | truncate: 150 }}</span>
-                   </div>
-                
 
 
-               </div>
-		   
-		   
-	       {% endfor %}
-		   
-   </div>
+
+
+
+
+</div>
+
+
+
+
+</div>
+</a>
+
+
+{% endfor %}
+
+
+<a href="http://www.instagram.com/zacharymollica">
+    <div class="span3 project" style="position:relative;">
+        <div class="project-date">Instagram</div>
+        <div class="project-title">
+            <h2>@zacharymollica</h2>
+        </div>
+
+
+
+
+        <div class="square-person" style="background-image: url(assets/instagram.jpg);"></div>
+
+
+
+
+    </div>
+</a>
+</div>
