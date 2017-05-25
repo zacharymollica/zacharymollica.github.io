@@ -3,7 +3,7 @@
 
 
 schools:
-  - name: Architectural Association
+  - name: Architectural Association School of Architecture
     location: London, UK
     description: MArch Design + Make programme completed with Distinction at the Architectural Association School of Architecture.
     date: 2014-16
@@ -27,7 +27,7 @@ schools:
 jobs:
 
   - name: Novita Interpares
-    location: Toronto / Lunenburg
+    location: Toronto + Lunenburg
     date: 2012-15
     role: Designer
     description: Responsible for project design work, the production of cultural consulting reports, as well as a redesign of the firm’s print and web materials.
@@ -54,8 +54,8 @@ jobs:
 
 academic:
 
-  - name: Architectural Association
-    location: London / Hooke Park
+  - name: Architectural Association School of Architecture
+    location: London + Hooke Park
     date: "2016–"
     role: Course Tutor
     description: "Tutor for the Design + Make programme."
@@ -75,9 +75,13 @@ academic:
 
 papers:
 
+  - name: "Infinite Variation; Radical ..."
+    year: 2017
+    context: Paper published as part of 2017 Fabricate conference in Stuttgart with Emmanuel Vercruysse and Martin Self.
+    file: ""
   - name: "Tree Fork Truss: Geometric Strategies for Exploiting Inherent Form"
     year: 2016
-    context: Paper published as part of 2016 Advances in Architectural Geometry conference
+    context: Paper published as part of 2016 Advances in Architectural Geometry conference.
     file: "/assets/download/Mollica-Self-AAG-Tree-Fork-Truss.pdf"
   - name: "Tree Fork Truss: An Architecture of Inherent Forms"
     year: 2016
@@ -92,12 +96,36 @@ papers:
 
 # ------------------
 
+events:
+
+  - name: "Fabricate"
+    year: 2017
+    description:
+    location: Stuttgart, Germany
+  - name: "Advances in Architectural Geometry"
+    year: 2016
+    description:
+    location: Zurich, Switzerland
+  - name: "New Languages of Wood"
+    year: 2016
+    description:
+    location: Fayetteville, Arkansas
+  - name: "Ideas in Things (Ghost 13)"
+    year: 2011
+    description: Lunenburg, Nova Scotia
+    location: 
+# ------------------
+
 
 
 press: 
 
 
-
+  - name: Architecture Graduates to Watch - Something Curated
+    year: 2016
+    description: 
+    link: "http://somethingcurated.com/2016/07/06/architecture-graduates-watch-aa-bartlett/"
+    image:
   - name: The Temple Radio Show
     year: 2016
     description: Discussing robots and architecture in the forest
@@ -124,6 +152,7 @@ press:
 
 
 
+
 # ------------------
 
 
@@ -135,7 +164,7 @@ awards:
     description: Wood Chip Barn project shortlisted for the IStructE awards
     link:
   - year: 2016
-    description: AA Design + Make MArch awarded with distinction
+    description: MArch awarded with distinction - AA Design + Make 
     link:
   - year: 2010
     description: Dalhousie University Physics and Atmospheric Science Award
@@ -147,13 +176,10 @@ awards:
 
 
 clients:
+  - name: Novita Interpares
   - name: Musique Royale
   - name: Ironworks Distillery
-  - name: Centre for City Ecology
   - name: Tides Canada
-  - name: Class Afloat
-
-
 
 
 

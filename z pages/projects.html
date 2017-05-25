@@ -4,64 +4,32 @@ title: Projects
 permalink: /projects/
 ---
 <div class="row">
-
     {% assign sorted_pages = site.projects | sort:"order" %}
+    {% for project in sorted_pages %}
+        <a href="{{ project.url }}">
+            <div class="span3" style="position:relative;">
+                <div class="project">
+                <div class="project-title">
+                    <h3>{{ project.year }}
 
+                    {% if project.name %}
+                    <h2>{{ project.name }}</h2>
+                    {% else %}
+                    <h2>{{ project.title }}</h2>
+                    {% endif %}
+                </div>
+                <div class="square-person" style="background-image: url(/assets/{{ project.title | slugify }}/thumb.gif);"></div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
 
-{% for project in sorted_pages %}
-<a href="{{ project.url }}">
-<div class="span3 project" style="position:relative;">
-        <div class="project-date">{{ project.year }}</div>
-
-<div class="project-title">
-
-{% if project.name %}
-<h2>{{ project.name }}</h2>
-{% else %}
-<h2>{{ project.title }}</h2>
-{% endif %}
-
-
-</div>
-
-
-
-<div class="square-person" style="background-image: url(/assets/{{ project.title | slugify }}/thumb.gif);">
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-</div>
-</a>
-
-
-{% endfor %}
-
-
-<a href="http://www.instagram.com/zacharymollica">
-    <div class="span3 project" style="position:relative;">
-        <div class="project-date">Instagram</div>
-        <div class="project-title">
-            <h2>@zacharymollica</h2>
+    <a href="http://www.instagram.com/zacharymollica">
+        <div class="span3 project" style="position:relative;">
+            <div class="project-title">
+                <h2>@zacharymollica</h2>
+            </div>
+            <div class="square-person" style="background-image: url(/assets/instagram.jpg);"></div>
         </div>
-
-
-
-
-        <div class="square-person" style="background-image: url(/assets/instagram.jpg);"></div>
-
-
-
-
-    </div>
-</a>
+    </a>
 </div>

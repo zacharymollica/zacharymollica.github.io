@@ -5,37 +5,41 @@
     <div class="container">
         <div id="project">
             <div class="content">
-            <div class="row">
-                <div class="span8">
-                    <div class="projectdate">{{ page.year }}</div>
-                
-                    {% if page.name %}
-                    <h1 class="tl">{{ page.name }}</h1>
-                    {% else %}
-                    <h1 class="tl">{{ page.title }}</h1>
-                    {% endif %}
-                </div>
-                <div class="span8" style="font-family: 'webmono';">
-                    {{ page.comment }}
-                </div>
-                <div class="span4">
-                    {% if page.people %} {% assign people = page.people | split: "," %}
-                    <div style="font-size:.8em;text-align: left">
-                        With: {% assign peoplejoin = people | join: "," %} {% for person in people %}
-                        <div style="">
-                            {{ person }}
-                        </div>
-                        {% endfor %}
+                <div class="row">
+                    <div class="span8">
+                        <!--<div class="projectdate">{{ page.year }}</div>
+               -->
+                        {% if page.name %}
+                        <h1 class="tl">{{ page.name }}</h1>{% else %}
+                        <h1 class="tl">{{ page.title }}</h1>{% endif %}
                     </div>
-                    {% endif %}
+                    <div class="span8" style="font-family: 'webmono';">
+                        <p>{{ page.comment }}</p>
+                        {% if page.link %}
+                        <a href="http://{{ page.link }}">{{ page.link}}</a> {% endif %}
+                    </div>
+                    <div class="span4">
+                        {% if page.team %}
+                        <div style="font-size:.8em;text-align:left">
+                            With:<br>
+                            {% for person in page.team %}
+                                {% if site.data.collaborators[person].link %}
+                                <a href="{{ site.data.collaborators[person].link }}">{{ person }}</a>
+                                {% else %}
+                                {{ person }}
+                                {% endif %}
+                                {% if forloop.last == false %}/ {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="span12">
+                        <hr>
+                    </div>
+                    {{ content }}
                 </div>
-                <div style="clear:both;"></div>
-                <div class="span12">
-                <hr>
-                </div>
-                {{ content }}
             </div>
-        </div>
         </div>
     </div>
     {% include footer.html %}

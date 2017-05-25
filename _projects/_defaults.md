@@ -1,11 +1,11 @@
 ---
 layout: project
 title: Ball in a Box
-name: ballinabox
 year: 2011
 order: 11
 published: false
 ---
+
 
 PLACE IMAGES IN SPANS BASED ON NAME
 
