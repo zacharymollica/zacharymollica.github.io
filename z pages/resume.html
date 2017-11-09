@@ -4,165 +4,42 @@ title: Resume
 permalink: /resume/
 ---
 
-<div class="resume">
-
-<div class="row" style="font-family: 'webmono';">
-<div class="span8">
-
-    <h2>Bio</h2>
-    <p>Zachary Mollica is a 26 year old Canadian architect and maker currently working full time as a Studio Tutor for the Architectural Association's Design + Make masters programme. Zac completed his MArch at the AA and his BEDS at Dalhousie School of Architecture.</p>
-
-    <p><a href="mailto:zacharymollica@gmail.com">zacharymollica@gmail.com</a></p>
-
-    <hr>
-
-<!-- Education -->
-
-<h2>Teaching</h2>
-{% for job in site.data.resume.academic %}
-<div class="block">
-    <div class="date">{{ job.date }} // {{ job.location }}</div>
-    <div class="name">{{ job.name }}</div>
-    <div class="role">{{ job.role }}</div>
-    <p>{{ job.description }}</p>
-</div>
-{% endfor %}
-
-<hr>
 
 
-<!-- Professional -->
+<div class="resume" style="max-width: 640px;">
+    <div class="row">
+        <div class="span12">
+            <p>Zachary Mollica is a 26 year old Canadian architect and maker currently working full time as a Studio Tutor for the Architectural Association's M.Arch Design + Make programme.</p>
+            <p>
+                <a href="mailto:zacharymollica@gmail.com">zacharymollica@gmail.com</a>
+                <br>
+                <a href="https://instagram.com/zacharymollica">@zacharymollica</a>
+            </p>
+        </div>
 
 
-<h2>Working</h2>
-{% for job in site.data.resume.jobs %}
+        <div class="span12">
+            {% for listing in site.data.resume %}
+                <h3>{{ listing.category }}</h3>
 
-<div class="block">
-    <div class="date">{{ job.date }} // {{ job.location }}</div>
-    <div class="name">{{ job.name }}</div>
-    <div class="role">{{ job.role }}</div>
-    <p>{{ job.description }}</p>
-</div>
+                {% for item in listing.sub %}
+                            <div class="resume-item">
 
-{% endfor %}
+                {% if item.role %}<h5>{{ item.role }}</h5>{% endif %}
+                <h4>{{ item.name }}</h4>
 
-<hr>
+                {% if item.description or item.location or item.link %}
+                <p>{{ item.description }}
 
+                    {% if item.location or item.date or item.link %}<br>{% if item.location %}{{ item.location }}{% endif %}{% if item.date %} / {{ item.date }}{% endif %}
+                    
+                    {% if item.link %} / <a href="{{ item.link }}" target="_blank">Link</a>{% endif %}{% endif %}
+                </p>
+                {% endif %}
+                            </div>
 
-<!-- Education -->
-
-<h2>Schooling</h2>
-
-{% for school in site.data.resume.schools %}
-
-<div class="block">
-    <div class="date">{{ school.date }} // {{ school.location }}</div>
-    <div class="name">{{ school.name }}</div>
-    <p>{{ school.description }}</p>
-</div>
-
-{% endfor %}
-
-<hr>
-
-
-
-<!-- Writing -->
-
-
-<h2>Writing</h2>
-<ul>
-    {% for paper in site.data.resume.papers %}
-    <li>
-        <span>{{ paper.year }}</span>
-        <a href="{{ paper.file }}"><span>{{ paper.name }}</span></a>
-        <p>{{ paper.context }}</p>
-    </li>
-    {% endfor %}
-</ul>
-<hr>
-
-
-<!-- Press -->
-
-
-        <h2>Press</h2>
-        <ul>
-            {% for piece in site.data.resume.press %}
-            <li>
-                <span>{{ piece.year }}</span>
-                <span>
-			{% if piece.link %}
-				<a href="{{ piece.link }}">{{ piece.name }}</a>
-			{% else %}
-			{{ piece.name }}
-			{% endif %}
-			{{ piece.description }}
-
-			</span>
-            </li>
+                {% endfor %}
             {% endfor %}
-        </ul>
-        <hr>
-
-<!-- Awards -->
-
-
-<h2>Awards</h2>
-<ul>
-    {% for award in site.data.resume.awards %}
-    <li>
-        <span>{{ award.year }}</span>
-        <span>{{ award.description }}</span>
-    </li>
-    {% endfor %}
-</ul>
-
-<hr>
-
-
-
-<!--  -->
-
-
-
-<h2>Events</h2>
-{% for event in site.data.resume.events %}
-<div class="block">
-    <div class="date">{{ event.year }}</div>
-    <span>
-            {% if piece.link %}
-                <a href="{{ event.link }}">{{ event.name }}</a>
-            {% else %}
-            {{ event.name }}
-            {% endif %}
-            {{ event.description }}
-
-            </span>
-</div>
-{% endfor %}
-<hr>
-<!--  -->
-
-
-
-
-
-
-
-
-
-
+        </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-</div>
-

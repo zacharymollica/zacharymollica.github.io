@@ -1,0 +1,140 @@
+/*! Flickity v2.0.8
+http://flickity.metafizzy.co
+---------------------------------------------- */
+
+.main-carousel {
+        margin-bottom: 30px;
+}
+
+
+.flickity-enabled {
+    position: relative;
+}
+
+.flickity-enabled:focus {
+    outline: none;
+}
+
+.flickity-viewport {
+    overflow: hidden;
+    position: relative!important;
+    height: 100%;
+}
+
+.flickity-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 0px;
+    background: transparent;
+    cursor: pointer;
+    outline: 2px solid blue;
+    /* vertically center SHOULD USE THIS OTHER PLACES TO CENTER */
+
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.flickity-prev-next-button:hover {
+}
+.flickity-prev-next-button:focus {
+    outline: none;
+}
+.flickity-prev-next-button:active {
+    /* opacity: 0.6; */
+}
+.flickity-prev-next-button.previous {
+    left: 10px;
+}
+.flickity-prev-next-button.next {
+    right: 10px;
+}
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+    left: auto;
+    right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+    right: auto;
+    left: 10px;
+}
+
+.flickity-prev-next-button:disabled {
+    opacity: 0.3;
+    cursor: auto;
+}
+
+.flickity-prev-next-button svg {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+}
+.flickity-prev-next-button .arrow {
+    fill: blue;
+}
+.flickity-prev-next-button:hover .arrow {
+    fill: white;
+}
+.flickity-prev-next-button:hover {
+    background: blue;
+}
+.carousel {
+    background: #EEE;
+}
+.carousel-cell {
+    width: 100%;
+    margin-right: 0px;
+    background: lightgrey;
+    counter-increment: carousel-cell;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.carousel-cell:after {
+    display: block;
+    padding-bottom: 70%;
+    content: '';
+}
+
+
+
+
+/* external css: flickity.css */
+
+
+/* Need to be thinking about adding media queries for the flickity slider set if this is something to be used more */
+

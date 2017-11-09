@@ -1,8 +1,10 @@
 ---
-layout: project
+layout: project-plain
 year: Ongoing
-order: 8
+order: 4
 ---
+
+
 
 {% for image in site.static_files %}
     {% if image.path contains 'sketchbook' %}
@@ -13,4 +15,3 @@ order: 8
         {% endunless %}
     {% endif %}
 {% endfor %}
-

@@ -1,153 +1,162 @@
 # ------------------
 
 
-
-schools:
-  - name: Architectural Association School of Architecture
+- category: Schools
+  sub:
+  - name: Architectural Association
     location: London, UK
     description: MArch Design + Make programme completed with Distinction at the Architectural Association School of Architecture.
     date: 2014-16
-    programme: MArch Design + Make
+    role: M.Arch
+    link: "http://designandmake.aaschool.ac.uk"
   - name: Dalhousie University
     location: Halifax, NS
-    description: After a year studying physics and environmental science at Dalhousie completed the BEDS programme at Dalhousie School of Architecture.
+    description: After a year studying physics and environmental science at Dalhousie completed a Bachelor of Environmental Design Studies (BEDS) programme at Dalhousie School of Architecture.
     date: 2009-12
-    programme: Bachelor of Environmental Design Studies (BEDS)
+    role: BEDS
+    link: 
   - name: University of King's College
     location: Halifax, NS
-    description: The Foundation Year Programme offers a one year intensive exploration of foundational texts of western thoughtof the history of western thought.
+    description: The Foundation Year Programme offers a one year intensive exploration of foundational texts of western thought.
     date: 2008–09
-    programme: Foundation Year Programme
+    role: Foundation
+    link: 
 
 
-# ------------------
-
-
-
-jobs:
-
+- category: Jobs
+  sub:
   - name: Novita Interpares
-    location: Toronto + Lunenburg
+    location: Lunenburg
     date: 2012-15
     role: Designer
-    description: Responsible for project design work, the production of cultural consulting reports, as well as a redesign of the firm’s print and web materials.
+    description: Responsible for project design work, the production of cultural consulting reports, as well as a redesign of the firm’s website and print materials.
+    link: "http://novitainterpares.ca/"
   - name: NL Architects
     location: Amsterdam
     date: 2012
     role: Architectural Intern
-    description: Worked on the preparation of competition proposals as well as development on active projects
+    description: Worked on the preparation of competition proposals as well as ongoing development work on active projects.
+    link: "http://www.nlarchitects.nl/"
   - name: Plant Architects
     location: Toronto
     date: 2012
     role: Collaborator
-    description: Collaboration with Plant on the design of two architectural installations including one for the 2012 Venice Biennale.
+    description: Assisted Plant's partners with the design of two architectural installations including one for the 2012 Venice Biennale.
+    link: "http://branchplant.com/"
   - name: Measured Architecture Inc.
     location: Vancouver
     date: 2011
     role: Architectural Intern
-    description: Responsible for constructing scale models and full size mockups as well as helping to establish the firm’s model shop.
-
-
+    description: Working closely with Measured's partners, responsible for constructing both scale models and full size mockups as well as helping to establish the firm’s model making shop.
+    link: "http://www.measured.ca/"
 # ------------------
 
-
-
-academic:
-
-  - name: Architectural Association School of Architecture
+- category: Academic Positions
+  sub:
+  - name: Architectural Association
     location: London + Hooke Park
     date: "2016–"
     role: Course Tutor
-    description: "Tutor for the Design + Make programme."
+    description: "After graduating with Distinction from the Architectural Association’s MArch Design + Make in early 2016, began working as a studio tutor for the programme."
+    link: "http://designandmake.aaschool.ac.uk"
   - name: Robotic Fabrications Visiting School
     location: Hooke Park
     date: "2016–"
     role: Tutor
-    description: "Tutor for the AA's Robotic Fabrications Visiting School along with Director Emmanuel Vercruysse"
+    description: "Tutor for the AA's Robotic Fabrications Visiting School along with Director Emmanuel Vercruysse."
   - name: Makelab Visiting School
     location: Hooke Park
     date: "2016–"
     role: Tutor
-    description: "Tutor for the AA's Makelab Visiting School along with Director Jeroen"
+    description: "Tutor for the AA's Makelab Visiting School along with Director Jeroen van Ameijde."
+  - name: Dalhousie School of Architecture
+    location: Halifax
+    date: "2011–12"
+    role: Workshop Assistant
+    description: "Workshop TA while studying architecture at Dalhousie."
 
 # ------------------
 
-
-papers:
-
-  - name: "Infinite Variation; Radical ..."
-    year: 2017
-    context: Paper published as part of 2017 Fabricate conference in Stuttgart with Emmanuel Vercruysse and Martin Self.
-    file: ""
+- category: Papers
+  sub:
+  - name: "Infinite Variation; Radical Strategies"
+    date: 2017
+    location: Stuttgart
+    description: Contribution to a paper published as part of 2017 Fabricate conference in Stuttgart by Design + Make directors Emmanuel Vercruysse and Martin Self.
+    link: "/assets/download/Self-Vercruysse-Fabricate-2017.pdf"
   - name: "Tree Fork Truss: Geometric Strategies for Exploiting Inherent Form"
-    year: 2016
-    context: Paper published as part of 2016 Advances in Architectural Geometry conference.
-    file: "/assets/download/Mollica-Self-AAG-Tree-Fork-Truss.pdf"
+    date: 2016
+    location: Zurich
+    description: Paper published as part of 2016 Advances in Architectural Geometry conference.
+    link: "/assets/download/Mollica-Self-AAG-Tree-Fork-Truss.pdf"
   - name: "Tree Fork Truss: An Architecture of Inherent Forms"
-    year: 2016
-    context: Design + Make MArch thesis
-    file: "/assets/download/Mollica-DMThesis-Tree-Fork-Truss-an-Architecture-of-Inherent-Forms.pdf"
-  - name: 
-    year: 
-    context:
-    file:
-
-
+    date: 2016
+    location: Hooke Park
+    description: Design + Make MArch thesis
+    link: "/assets/download/Mollica-DMThesis-Tree-Fork-Truss-an-Architecture-of-Inherent-Forms.pdf"
 
 # ------------------
 
-events:
-
-  - name: "Fabricate"
-    year: 2017
-    description:
-    location: Stuttgart, Germany
-  - name: "Advances in Architectural Geometry"
-    year: 2016
-    description:
-    location: Zurich, Switzerland
-  - name: "New Languages of Wood"
-    year: 2016
-    description:
-    location: Fayetteville, Arkansas
-  - name: "Ideas in Things (Ghost 13)"
-    year: 2011
-    description: Lunenburg, Nova Scotia
-    location: 
-# ------------------
 
 
-
-press: 
-
-
+- category: Press
+  sub:
   - name: Architecture Graduates to Watch - Something Curated
-    year: 2016
-    description: 
+    date: 2016
+    description: Masters thesis work profiled on the website Something Curated.
     link: "http://somethingcurated.com/2016/07/06/architecture-graduates-watch-aa-bartlett/"
     image:
   - name: The Temple Radio Show
-    year: 2016
-    description: Discussing robots and architecture in the forest
+    date: 2016
+    description: Discussing robots and architecture in the forest with fellow Canadian Joshua Harskamp.
     link: "http://www.thetempleshow.com/Episode-8-Zachary-Mollica"
     image:
   - name: CNN Style
-    year: 2016
-    description: profile of ongoing work at Hooke Park
+    date: 2016
+    description: Video interview and profile focused on Design + Make's ongoing work at Hooke Park.
     link: "http://www.cnn.com/videos/architecture/2016/02/22/woodland-architecture-style.cnn"
     image:
   - name: BBC Countryfile
-    year: 2016
-    description: episode focused on Wood Chip Barn project
+    date: 2016
+    description: An episode of Countrfile focused on Dorset, UK includes a feature on the Wood Chip Barn.
     link: "http://www.bbc.co.uk/programmes/b06qz9fk"
   - name: Dezeen
-    year: 2016
-    description: article for the Wood Chip Barn project
+    date: 2016
+    description: Article for the Wood Chip Barn project
     link: "http://www.dezeen.com/2016/02/23/architectural-association-students-london-robotically-fabricated-barn-dorset-woodland/"
   - name: Dezeen
-    year: 2014
-    description: article for the Inhabitable Tetrahedron
+    date: 2014
+    description: Article focused on the Inhabitable Tetrahedron
     link: "http://www.dezeen.com/2015/02/07/floating-pyramid-and-wooden-tunnel-built-in-the-woods-by-architectural-association-students/"
+
+
+# ------------------
+
+
+
+
+- category: Events
+  sub:
+  - name: "Fabricate"
+    date: 2017
+    description:
+    location: Stuttgart, Germany
+    link: "http://www.fabricate.org/"
+  - name: "Advances in Architectural Geometry"
+    date: 2016
+    description:
+    location: Zurich, Switzerland
+    link:
+  - name: "New Languages of Wood"
+    date: 2016
+    description:
+    location: Fayetteville, Arkansas
+    link:
+  - name: "Ideas in Things (Ghost 13)"
+    date: 2011
+    description:
+    location: Lunenburg, Nova Scotia
+    link:
 
 
 
@@ -158,28 +167,42 @@ press:
 
 
 
-awards:
-
-  - year: 2016
-    description: Wood Chip Barn project shortlisted for the IStructE awards
+- category: Awards
+  sub:
+  - name: IStructE
+    role:
+    date: 2016
+    description: "'Tree Fork Truss' designed and fabricated while completing the Design + Make programme shortlisted for the IStructE awards."
+    location: London
     link:
-  - year: 2016
-    description: MArch awarded with distinction - AA Design + Make 
+  - name: Architectural Association
+    role:
+    date: 2016
+    description: "MArch degree awarded with distinction from the AA's Design + Make programme."
+    location: London + Hooke Park
     link:
-  - year: 2010
-    description: Dalhousie University Physics and Atmospheric Science Award
+  - name: Dalhousie University
+    role:
+    date: 2010
+    description: Physics and Atmospheric Science Award.
+    location: Halifax
     link:
-  - year: 2009
-    description: University of King’s College, in course scholarship
+  - name: University of King’s College
+    role:
+    date: 2009
+    description: In course scholarship.
+    location: Halifax
     link:
 
 
 
-clients:
-  - name: Novita Interpares
-  - name: Musique Royale
-  - name: Ironworks Distillery
-  - name: Tides Canada
+#- category: Clients
+#  sub:
+#  - name: Novita Interpares
+#    link: "http://novitainterpares.ca"
+#  - name: Musique Royale
+#  - name: Ironworks Distillery
+#  - name: Tides Canada
 
 
 

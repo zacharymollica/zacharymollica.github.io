@@ -1,35 +1,40 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects/
 ---
-<div class="row">
+
+
+<div class="project-grid">
+
     {% assign sorted_pages = site.projects | sort:"order" %}
     {% for project in sorted_pages %}
         <a href="{{ project.url }}">
-            <div class="span3" style="position:relative;">
-                <div class="project">
-                <div class="project-title">
-                    <h3>{{ project.year }}
 
+            <div class="span4 project-grid-item" style="background-image: url(/assets/projects/{{ project.title | slugify }}/thumb.gif);">
+                <div class="project-grid-title">
                     {% if project.name %}
-                    <h2>{{ project.name }}</h2>
+                    <h4>{{ project.name }}</h4>
                     {% else %}
-                    <h2>{{ project.title }}</h2>
+                    <h4>{{ project.title }}</h4>
                     {% endif %}
-                </div>
-                <div class="square-person" style="background-image: url(/assets/{{ project.title | slugify }}/thumb.gif);"></div>
                 </div>
             </div>
         </a>
     {% endfor %}
 
-    <a href="http://www.instagram.com/zacharymollica">
-        <div class="span3 project" style="position:relative;">
-            <div class="project-title">
-                <h2>@zacharymollica</h2>
+
+
+        <a href="/about">
+
+            <div class="span4 project-grid-item" style="background-image: url(/assets/zac.jpg);">
+                <div class="project-grid-title">
+                    <h4>About Zac.</h4>
+                </div>
             </div>
-            <div class="square-person" style="background-image: url(/assets/instagram.jpg);"></div>
-        </div>
-    </a>
+        </a>
+
+
+
+<div style="clear:both;"></div>
 </div>
