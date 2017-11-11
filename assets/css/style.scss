@@ -518,6 +518,7 @@ text-decoration: underline;
   display: inline-block;
   outline: 2px solid blue;
   padding: 6px 16px;
+  margin-top: 60px;
   margin-bottom: 60px;
 }
 #page h3:after {
@@ -1113,14 +1114,18 @@ http://flickity.metafizzy.co
         font-size: 3em;
     }
 
+    #page h3 {
 
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
     #page h4 {
         font-size: 1.2em;
         margin-bottom: 5px;
     }
 
     .resume-item {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .next-wrapper {}

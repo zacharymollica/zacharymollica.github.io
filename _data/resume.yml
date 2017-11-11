@@ -63,12 +63,14 @@
     location: Hooke Park
     date: "2016–"
     role: Tutor
+    link: "http://roboticfabrications.aaschool.ac.uk"
     description: "Tutor for the AA's Robotic Fabrications Visiting School along with Director Emmanuel Vercruysse."
   - name: Makelab Visiting School
     location: Hooke Park
     date: "2016–"
     role: Tutor
     description: "Tutor for the AA's Makelab Visiting School along with Director Jeroen van Ameijde."
+    link: "http://makelab.aaschool.ac.uk"
   - name: Dalhousie School of Architecture
     location: Halifax
     date: "2011–12"
