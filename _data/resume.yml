@@ -1,7 +1,7 @@
 # ------------------
 
 
-- category: Schools
+- category: Schooling
   sub:
   - name: Architectural Association
     location: London, UK
@@ -23,7 +23,7 @@
     link: 
 
 
-- category: Jobs
+- category: Professional
   sub:
   - name: Novita Interpares
     location: Lunenburg
@@ -139,7 +139,7 @@
   sub:
   - name: "Fabricate"
     date: 2017
-    description:
+    description: Fabricate is an international peer reviewed conference with supporting publication on the theme of Digital Fabrication.
     location: Stuttgart, Germany
     link: "http://www.fabricate.org/"
   - name: "Advances in Architectural Geometry"

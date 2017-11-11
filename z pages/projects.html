@@ -14,22 +14,20 @@ permalink: /projects/
             <div class="span4 project-grid-item" style="background-image: url(/assets/projects/{{ project.title | slugify }}/thumb.gif);">
                 <div class="project-grid-title">
                     {% if project.name %}
-                    <h4>{{ project.name }}</h4>
+                    <h3>{{ project.name }}</h3>
                     {% else %}
-                    <h4>{{ project.title }}</h4>
+                    <h3>{{ project.title }}</h3>
                     {% endif %}
                 </div>
             </div>
         </a>
     {% endfor %}
 
-
-
         <a href="/about">
 
             <div class="span4 project-grid-item" style="background-image: url(/assets/zac.jpg);">
                 <div class="project-grid-title">
-                    <h4>About Zac.</h4>
+                    <h3>About Zac.</h3>
                 </div>
             </div>
         </a>
