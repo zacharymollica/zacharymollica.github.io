@@ -1,0 +1,23 @@
+        <div class="project-footer ">
+            {% if page.next.url %}
+            <div style="background: blue;">
+            <a href="{{ page.next.url }}">
+                <div class="next-wrapper" style="background-image: url(/assets/projects/{{ page.next.title | slugify }}/thumb.gif); ">
+                    <div class="next-project-name ">
+                        <h4>{{ page.next.title }}</h4>
+                    </div>
+                </div>
+            </a>
+            </div>
+            {% else %}
+            <div style="background: blue;">
+            <a href="/projects/">
+                <div class="next-wrapper" style="background: blue;">
+                    <div class="next-project-name ">
+                        <h4>Project index</h4>
+                    </div>
+                </div>
+            </a>
+            </div>
+            {% endif %}
+        </div>

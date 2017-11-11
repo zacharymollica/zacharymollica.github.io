@@ -1,12 +1,5 @@
 <header>
-
-
     <nav>
-
-
-
-
-
         <div id="nav-container">
             <div class="toggle-icon">
                 <span class="bar"></span>
@@ -14,27 +7,24 @@
                 <span class="bar"></span>
             </div>
         </div>
-
         <div id="navigation">
-            <div class="navigation-content">
-                {% for item in site.data.menuitems %}
-                <div class="navigation-block">
-                    <h2><a href="{{ item.href }}">{{ item.title }}</a></h2>
-
-                    {% if item.sub != null %}
+            <div class="content">
+                <div class="navigation-content">
+                    {% for item in site.data.menuitems %}
+                    <div class="navigation-block">
+                        <h2><a href="{{ item.href }}">{{ item.title }}</a></h2> {% if item.sub != null %}
                         <div style="clear:both;"></div>
-                    {% endif %}
-
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                        <p style="margin-top: 20px">Zachary Mollica is a Canadian architect and maker working as a studio tutor for the Architectural Association's Design + Make masters programme.</p>
+                        <div class="navigation-content-contact">
+                            <p>Email: <a href="mailto:zacharymollica@gmail.com">zacharymollica@gmail.com</a>
+                                <br>Instagram: <a href="http://www.instagram.com/zacharymollica" target="_blank">@zacharymollica</a>
+                                <!--<br><br><a href="/credits/">Credits</a>-->
+                            </p>
+                        </div>
                 </div>
-                {% endfor %}
-                    <p style="margin-top: 20px">Zachary Mollica is a Canadian architect and maker working as a studio tutor for the Architectural Association's Design + Make masters programme.</p>
-
-
-
-                    <div class="navigation-content-contact"><p>Email: <a href="mailto:zacharymollica@gmail.com">zacharymollica@gmail.com</a>
-                        <br>Instagram: <a href="http://www.instagram.com/zacharymollica" target="_blank">@zacharymollica</a>
-                        <!--<br><br><a href="/credits/">Credits</a>-->
-                    </p></div>
             </div>
         </div>
     </nav>

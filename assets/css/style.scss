@@ -107,7 +107,9 @@ p {
     margin-bottom: 30px;
     font-size: .8em;
 }
-
+.small a {
+    text-decoration: none;
+}
 .large {
     line-height: 1.3;
     margin-bottom: 30px;
@@ -118,6 +120,10 @@ p {
 .large a {
     border-bottom: .4vw solid white;
 }
+
+
+
+
 
 b,
 strong {
@@ -133,8 +139,6 @@ p a {
     color: $accentcolour;
 }
 
-
-
 h1,
 h2,
 h3,
@@ -146,7 +150,7 @@ h6 {
 
 h1 {
     font-size: 5em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
     font-family: $boldfont;
 }
@@ -159,46 +163,47 @@ h2 {
 
 h3 {
     font-size: 2em;
-    font-family: $normalfont;
+    font-family: $boldfont;
     margin-bottom: 20px;
 }
 
 h4 {
-    font-size: 2em;
+    font-size: 1.6em;
     font-family: $boldfont;
-    font-weight: 700;
 }
 
 h5 {
-
-    font-size: .8em;
-    margin-bottom: 0px;
+    font-size: 1em;
     text-transform: uppercase;
     font-family: $monofont;
 }
 
 h6 {
     font-size: 2em;
-    font-weight: 700;
+    font-family: $boldfont;
 }
 
-.tc {
-    text-align: center;
+.tc {text-align: center;}
+.tl {text-align: left;}
+.tr {text-align: right;}
+
+.two-col {
+    column-count: 2;
+    column-gap: 40px;
+}
+.three-col {
+    column-count: 3;
+    column-gap: 40px;
 }
 
-.tl {
-    text-align: left;
+
+ul {
+
 }
 
-.tr {
-    text-align: right;
+li {
+
 }
-
-ul {}
-
-li {}
-
-
 
 
 
@@ -207,7 +212,7 @@ li {}
 /* Main Elements Styles */
 
 .container {
-    margin: 0 auto 0 auto;
+    margin: 0;
     padding: 0;
     width: 100%;
 }
@@ -218,9 +223,10 @@ li {}
     padding: 0 40px;
 }
 
-.project-content a {
-    color: $accentcolour;
-}
+
+
+/* SpanX based grid elements */
+
 
 .row:before,
 .row:after {
@@ -235,6 +241,7 @@ li {}
 
 .row:after {
     clear: both;
+    margin-bottom: 20px;
 }
 
 [class*="span"] {
@@ -242,8 +249,7 @@ li {}
     float: left;
     padding: 0 15px;
     width: 100%;
-    margin-bottom: 30px;
-    margin-top: 0px;
+    margin: 0px;
 }
 
 [class*="span"] img {
@@ -253,103 +259,32 @@ li {}
     width: 100%;
 }
 
+.span1{width:8.3333%}
+.span2{width:16.666667%}
+.span3{width:25%}
+.span4{width:33.333%}
+.span5{width:41.6667%}
+.span6{width:50%}
+.span7{width:58.3333%}
+.span8{width:66.6667%}
+.span9{width:75%}
+.span10{width:83.3333%}
+.span11{width:91.6667%}
+.span12{width:100%}
+.offset1{margin-left:8.3333%}
+.offset2{margin-left:16.666667%}
+.offset3{margin-left:25%}
+.offset4{margin-left:33.333%}
+.offset5{margin-left:41.6667%}
+.offset6{margin-left:50%}
+.offset7{margin-left:58.3333%}
+.offset8{margin-left:66.6667%}
+.offset9{margin-left:75%}
+.offset10{margin-left:83.3333%}
+.offset11{margin-left:91.6667%}
+.offset12{margin-left:100%}
 
-
-.span1 {
-    width: 8.3333%
-}
-
-.span2 {
-    width: 16.666667%
-}
-
-.span3 {
-    width: 25%
-}
-
-.span4 {
-    width: 33.333%
-}
-
-.span5 {
-    width: 41.6667%
-}
-
-.span6 {
-    width: 50%
-}
-
-.span7 {
-    width: 58.3333%
-}
-
-.span8 {
-    width: 66.6667%
-}
-
-.span9 {
-    width: 75%
-}
-
-.span10 {
-    width: 83.3333%
-}
-
-.span11 {
-    width: 91.6667%
-}
-
-.span12 {
-    width: 100%
-}
-
-.offset1 {
-    margin-left: 8.3333%
-}
-
-.offset2 {
-    margin-left: 16.666667%
-}
-
-.offset3 {
-    margin-left: 25%
-}
-
-.offset4 {
-    margin-left: 33.333%
-}
-
-.offset5 {
-    margin-left: 41.6667%
-}
-
-.offset6 {
-    margin-left: 50%
-}
-
-.offset7 {
-    margin-left: 58.3333%
-}
-
-.offset8 {
-    margin-left: 66.6667%
-}
-
-.offset9 {
-    margin-left: 75%
-}
-
-.offset10 {
-    margin-left: 83.3333%
-}
-
-.offset11 {
-    margin-left: 91.6667%
-}
-
-.offset12 {
-    margin-left: 100%
-}
+/* END -- SpanX based grid elements */
 
 
 /** Header **/
@@ -364,6 +299,12 @@ header {
 }
 
 
+
+.zac {
+    position: relative;
+}
+
+/** END -- Header **/
 
 /** FOOTER **/
 
@@ -383,6 +324,9 @@ footer .content {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+
+
 
 
 
@@ -406,38 +350,7 @@ footer .content {
 
 
 
-
-
-.zac {
-    position: relative;
-    padding-left: 40px;
-}
-
-
-.index-button {
-    position: absolute;
-    padding: 12px 24px;
-    margin: 0 auto;
-    color: $accentcolour;
-    border: 4px solid $accentcolour;
-    bottom: 0;
-    left: 0;
-}
-
-.index-button:hover {
-    text-decoration: underline;
-}
-
-
-
-
-
-
-/** Project Index **/
-
-
 /* Full Width Header Image - 'Page' layout  */
-
 .wide-header {
     position: relative;
     overflow: hidden;
@@ -461,9 +374,7 @@ footer .content {
 
 
 
-
-
-
+/* Full Width Header Image - 'Page' layout  */
 
 
 .square-person {
@@ -512,10 +423,23 @@ footer .content {
 
 
 
+/** index.html styling **/
 
 
+.index-button {
+    position: absolute;
+    padding: 12px 24px;
+    margin: 0 auto;
+    background: $accentcolour;
+    color: white;
+    border: 4px solid $accentcolour;
+    bottom: 0;
+    left: 0;
+}
 
-
+.index-button:hover {
+    text-decoration: underline;
+}
 
 /* Projects Page Grid */
 
@@ -523,6 +447,9 @@ footer .content {
     background: $bodycolor;
     margin-top: 0px;
     position: relative;
+}
+.project-grid h3 {
+    margin: 0;
 }
 
 .project-grid-item {
@@ -537,37 +464,16 @@ footer .content {
     -o-background-size: cover;
     background-size: cover;
 }
-
-
-
-.project-grid-item:after {
-    display: block;
-    padding-bottom: 75%;
-    content: '';
-}
-
 .project-grid-item img {
     position: relative;
     z-index: 0;
     margin: 0;
     padding: 0;
 }
-
-.project-grid h3 {
-    margin: 0;
-}
-
-
-.project-date {
-    font-family: $monofont;
-    font-size: .6em;
-    width: 100%;
-    top: 10px;
-    left: 10px;
-    margin-bottom: 10px;
-    text-align: left;
-    position: absolute;
-    color: #898989;
+.project-grid-item:after {
+    display: block;
+    padding-bottom: 75%;
+    content: '';
 }
 
 .project-grid-title {
@@ -592,43 +498,31 @@ footer .content {
 }
 
 
+/* END -- Projects Page Grid */
 
 
-
-
-
-
-
-/** Project Page **/
+/** Project template Page **/
 
 #project {
     margin-top: 40px
 }
 
-#project img {
-    margin-bottom: 2%;
-}
 
 .project-content {
     max-width: 800px;
-    margin: 80px auto 30px auto;
+    margin: 0 auto 60px auto;
 }
+
 .project-content p {
     hyphens: auto;
 }
-
-
-
-
-
-
-.two-col {
-    column-count: 2;
-    column-gap: 40px;
+.project-content a {
+    color: $accentcolour;
 }
 
 
 
+/** page.html template **/
 #page h3 {
     padding: 10px;
     color: white;
@@ -651,9 +545,7 @@ footer .content {
 
 
 
-
 /** Embed Responsively Vimeo/Youtube **/
-
 .embed-container {
     position: relative;
     overflow: hidden;
@@ -684,16 +576,9 @@ footer .content {
 
 
 
+/** NAVIGATION - Credits to Alex Cican for navigation functionality **/
 
-
-
-
-
-
-/** StarT TESTING BARS **/
-
-
-/* === Black Box Menu === */
+/* Basic Elements */
 
 nav {
     color: $bodycolor;
@@ -730,7 +615,6 @@ nav a {
         -webkit-transform: translate(0, 0);
     }
 }
-
 @-moz-keyframes firstFadeInAndDrop {
     0% {
         -moz-transform: translate(0, -54px);
@@ -748,17 +632,12 @@ nav a {
         transform: translate(0, 0);
     }
 }
-
-
 /* Attached to BODY on menu click */
-
 .no_scroll {
     overflow: hidden;
 }
 
-
 /* increases menu width & height NAV BACK COLOUR */
-
 nav.expanded {
     width: 100%;
     height: 100%;
@@ -787,9 +666,7 @@ nav.expanded {
     font-family: $monofont;
 }
 
-
 /* shows navigation */
-
 nav.expanded #navigation {
     -webkit-transform: translate(0, 0);
     /* hardware acceleration */
@@ -804,11 +681,9 @@ nav.expanded #navigation {
     position: relative;
     width: 100%;
 }
-
 #navigation a {
     color: white;
 }
-
 #navigation a:hover {
     color: white;
 }
@@ -823,43 +698,25 @@ nav.expanded #navigation {
     top: 50%;
 }
 
-
-
 #navigation h2:hover:after {
     content: '.';
 }
-
 #navigation h2:hover:after #navigation h2 a {
     text-decoration: none;
 }
 
-
 /* Gives padding to expanded navigation  */
 
 .navigation-content {
-    margin: 0px auto 0 auto;
-    padding: 40px 60px;
+    margin: 0;
+    padding-top: 20px;
     text-align: left;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 100%;
     max-width: 600px;
 }
-
 .navigation-content p {
     font-size: 1.2em!important;
 }
-
-.navigation-block {}
-
-
-/* SUB NAVIGATION ON FULL SCREEN NAV  */
-
-.navigation-content {
-    margin: 0 auto;
-    width: 100%;
-}
-
 .navigation-content a {
     text-decoration: none;
     border-bottom: none;
@@ -870,17 +727,6 @@ nav.expanded #navigation {
     border-bottom: none;
     position: relative;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Bar Transition to X  */
 
@@ -894,7 +740,6 @@ nav.expanded #navigation {
     margin: 0;
     z-index: 999;
 }
-
 .toggle-icon {
     position: relative;
     display: block;
@@ -905,9 +750,6 @@ nav.expanded #navigation {
     -moz-transition: margin 600ms;
     transition: margin 600ms;
 }
-
-
-
 /* Positiioning Bars  */
 
 .toggle-icon .bar {
@@ -1144,36 +986,27 @@ http://flickity.metafizzy.co
     p {
         font-size: 1.2em !important;
     }
+
     h1 {
         font-size: 4em;
     }
     .small {
         margin-bottom: 30px;
-        font-size: 1em;
     }
     #page a {
         border-bottom: 2px inherit;
     }
-    .content {
-        margin: 0 auto;
-    }
 
-    .content,
-    .navigation-content {
+
+    .content {
         padding: 0 30px;
     }
     .navigation-content {
-        text-align: left;
-        position: absolute;
-        left: 0;
-        top: 0;
-        padding-top: 40px;
         max-width: 600px;
     }
 
     .row {
-        margin: 0;
-        padding: 0;
+
     }
     .span4 {
         width: 100%;
@@ -1220,13 +1053,16 @@ http://flickity.metafizzy.co
 @media only screen and (max-width: 480px) {
 
     p {
-        font-size: .8em!important;
+        font-size: .9em!important;
     }
 
     .small {
         margin-bottom: 30px;
+
     }
-    .large {}
+    .large {
+
+    }
     .two-col {
         column-count: 1;
         column-gap: 0px;
@@ -1245,20 +1081,18 @@ http://flickity.metafizzy.co
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     h4 {}
     h5 {
         font-size: .8em;
     }
     .content {
-        padding: 20px 10px;
+        padding: 0px 20px;
     }
-
     .navigation-content {
-        padding: 20px 30px;
+        padding-top: 10px;
     }
-
     .navigation-content p {
         font-size: .9em!important;
     }
@@ -1288,12 +1122,6 @@ http://flickity.metafizzy.co
         padding-bottom: 50%;
     }
     /* index.html styles */
-    .zac {
-        z-index: 999;
-        text-decoration: none;
-        position: relative;
-        padding-left: 20px;
-    }
     .zac h1 {
         font-size: 3.5em;
         text-transform: none;

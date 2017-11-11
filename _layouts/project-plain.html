@@ -1,78 +1,25 @@
 ---
 layout: default
 ---
+
+
 <div class="container">
     <div id="project">
         <div class="content">
-            <h5 class="tc">Year: {{ page.year }}</h5>
-            {% if page.name %}
-
+            <h5 class="tc">Year: {{ page.year }}</h5> {% if page.name %}
             <h1 class="tc project-title">{{ page.name }}</h1>{% else %}
             <h1 class="tc project-title">{{ page.title }}</h1>{% endif %}
-           
-
-
-
-
             <div class="project-content">
+
+                {{ content }}
                 
-                        {{ content }}
-
-<div style="clear:both;"></div>
-
-                <div class="row ">
-
-                        {% if page.team %}
-                        <div class="span6">
-                            <h4>Team</h4>
-                            <p class="small">
-                                {% for person in page.team %} {% if site.data.collaborators[person].link %}
-                                <a href="{{ site.data.collaborators[person].link }} ">{{ person }}</a> {% else %} {{ person }} {% endif %} {% if forloop.last == false %}
-                                <br>{% endif %} {% endfor %}
-                            </p>
-                        </div>
-                        {% endif %}
-                        <div class="span6">
-                            {% if page.link %}
-                            <h4>Info</h4>
-                            <p class="small">
-                                <a href="http://{{ page.link }} ">{{ page.link}}</a>
-                            </p>
-                            {% endif %}
-                        </div>
+                <div style="clear:both;"></div>
 
 
-                    </div>
-
-
+                {% if page.team or page.link %}{% include project-details.html %}{% endif %}
             </div>
-</div>
-
-           <!--Add next/previous projects -->
-        <div class="project-footer ">
-            {% if page.next.url %}
-            <div style="background: blue;">
-            <a href="{{ page.next.url }}">
-                <div class="next-wrapper" style="background-image: url(/assets/projects/{{ page.next.title | slugify }}/thumb.gif); ">
-                    <div class="next-project-name ">
-                        <h4>{{ page.next.title }}</h4>
-                    </div>
-                </div>
-            </a>
-            </div>
-            {% else %}
-            <div style="background: blue;">
-            <a href="/projects/">
-                <div class="next-wrapper" style="background: blue;">
-                    <div class="next-project-name ">
-                        <h4>Project index</h4>
-                    </div>
-                </div>
-            </a>
-            </div>
-            {% endif %}
         </div>
-
-
-</div>
+        <!--Add next/previous projects -->
+        {% include next-prev-project.html %}
+    </div>
 </div>
