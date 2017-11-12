@@ -1,23 +1,23 @@
 ---
 ---
 
-/* SCSS Variables. Colour to keep: 474746, 363636 */
+/* Zac. Style Variables
+---------------------------------------------- */
 
 $bodycolor: #222;
-$monofont: 'webmono', "Courier New", Courier, arial, helvetica, monospace;
+$monofont: 'webmono','Roboto Mono', "Courier New", Courier, arial, helvetica, monospace;
 $boldfont: 'webbold','Roboto', arial, helvetica, sans-serif; 
 $normalfont: 'webregular','Roboto', arial, helvetica, sans-serif;
 $fontserif: serif;
 $accentcolour: blue;
 
-
-/* CSS Reset */
+/* CSS Reset
+---------------------------------------------- */
 
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
-
-/* Fonts */
-
+/* Establishing Web Fonts
+---------------------------------------------- */
 @font-face {
     font-family: 'webregular';
     font-weight: 400;
@@ -42,30 +42,20 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     src: url(/assets/fonts/bold-webfont.eot?#iefix) format('embedded-opentype'), url(/assets/fonts/bold-webfont.woff2) format('woff2'), url(/assets/fonts/bold-webfont.woff) format('woff'), url(/assets/fonts/bold-webfont.ttf) format('truetype'), url(/assets/fonts/bold-webfont.svg#webbold) format('svg');
 }
 
-
-
-
-
-
-
-
-
-/* Site Styles */
-
+/* Base Elements
+---------------------------------------------- */
 body,
 html {
     font-family: $normalfont;
     margin: 0;
     padding: 0;
 }
-
 body {
     font-size: 16px;
     line-height: 1.6;
     margin-top: 0;
     color: $bodycolor;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -86,14 +76,13 @@ video {
     max-width: 100%;
     border: 0;
 }
-
 hr {
     display: block;
     height: 3px;
     margin: 3em 0;
     padding: 0;
     border: 0;
-    border-top: 3px solid #000;
+    border-top: 3px solid $bodycolor;
 }
 
 p {
@@ -116,18 +105,13 @@ p {
     font-size: 1.2em;
     font-family: $monofont;
 }
-
 .large a {
-    border-bottom: .4vw solid white;
+    border-bottom: .35vw solid white;
 }
 
-
-
-
-
-b,
-strong {
+b, strong {
     font-weight: 700;
+    font-family: $boldfont;
 }
 
 a {
@@ -139,37 +123,28 @@ p a {
     color: $accentcolour;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $normalfont;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $boldfont;
 }
 
 h1 {
     font-size: 5em;
     margin-bottom: 30px;
     text-align: center;
-    font-family: $boldfont;
 }
 
 h2 {
     font-size: 4em;
-    font-family: $boldfont;
     margin-bottom: 20px;
 }
 
 h3 {
     font-size: 2em;
-    font-family: $boldfont;
     margin-bottom: 20px;
 }
 
 h4 {
     font-size: 1.6em;
-    font-family: $boldfont;
 }
 
 h5 {
@@ -180,8 +155,8 @@ h5 {
 
 h6 {
     font-size: 2em;
-    font-family: $boldfont;
 }
+
 
 .tc {text-align: center;}
 .tl {text-align: left;}
@@ -205,11 +180,9 @@ li {
 
 }
 
+/* Main Elements Styles
+---------------------------------------------- */
 
-
-
-
-/* Main Elements Styles */
 
 .container {
     margin: 0;
@@ -224,9 +197,7 @@ li {
 }
 
 
-
 /* SpanX based grid elements */
-
 
 .row:before,
 .row:after {
@@ -287,7 +258,13 @@ li {
 /* END -- SpanX based grid elements */
 
 
-/** Header **/
+
+/* Primary site sections
+---------------------------------------------- */
+
+
+/* Header */
+
 
 header {
     position: absolute;
@@ -298,285 +275,11 @@ header {
     padding: 0px;
 }
 
-
-
 .zac {
     position: relative;
 }
 
-/** END -- Header **/
-
-/** FOOTER **/
-
-footer {
-    width: 100%;
-    background: $bodycolor;
-    position: relative;
-    color: white;
-    font-size: .9em;
-}
-
-footer a {
-    color: $accentcolour;
-}
-
-footer .content {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-
-
-
-
-
-/** Landing Page Fullscreen Background **/
-
-.background {
-    position: relative;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
-
-
-/* Full Width Header Image - 'Page' layout  */
-.wide-header {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-}
-
-.wide-header:after {
-    content: "";
-    display: block;
-    padding-bottom: 50%;
-}
-
-.wide-header-space {
-    margin-top: 80px;
-}
-
-
-
-/* Full Width Header Image - 'Page' layout  */
-
-
-.square-person {
-    overflow: hidden;
-    width: 100%;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.square-person:after {
-    display: block;
-    padding-bottom: 80%;
-    content: '';
-}
-
-.next-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
-.next-wrapper:after {
-    display: block;
-    padding-bottom: 35%;
-    content: '';
-}
-
-.next-project-name {
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    color: white;
-    transform: translateY(-50%);
-}
-
-
-
-/** index.html styling **/
-
-
-.index-button {
-    position: absolute;
-    padding: 12px 24px;
-    margin: 0 auto;
-    background: $accentcolour;
-    color: white;
-    border: 4px solid $accentcolour;
-    bottom: 0;
-    left: 0;
-}
-
-.index-button:hover {
-    text-decoration: underline;
-}
-
-/* Projects Page Grid */
-
-.project-grid {
-    background: $bodycolor;
-    margin-top: 0px;
-    position: relative;
-}
-.project-grid h3 {
-    margin: 0;
-}
-
-.project-grid-item {
-    position: relative;
-    margin-bottom: 0;
-    padding: 0 !important;
-    overflow: hidden;
-    background-color: $accentcolour;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.project-grid-item img {
-    position: relative;
-    z-index: 0;
-    margin: 0;
-    padding: 0;
-}
-.project-grid-item:after {
-    display: block;
-    padding-bottom: 75%;
-    content: '';
-}
-
-.project-grid-title {
-    position: absolute;
-    z-index: 10;
-    bottom: -15px;
-    left: 25px;
-    opacity: 0;
-    color: #fff;
-}
-
-.project-grid-item:hover .project-grid-title {
-    display: block;
-    opacity: 1;
-    transform: translateY(-30px);
-    -webkit-transition-property: transform, opacity;
-    -webkit-transition-duration: 500ms;
-}
-
-.project-grid-item:hover {
-    opacity: 50%;
-}
-
-
-/* END -- Projects Page Grid */
-
-
-/** Project template Page **/
-
-#project {
-    margin-top: 40px
-}
-
-
-.project-content {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-}
-
-.project-content p {
-    hyphens: auto;
-}
-.project-content a {
-    color: $accentcolour;
-}
-
-
-
-/** page.html template **/
-#page h3 {
-    padding: 10px;
-    color: white;
-    background: $accentcolour;
-    display: inline-block;
-    outline: 2px solid $accentcolour;
-    padding: 6px 16px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-#page h3:after {
-    clear: both;
-}
-
-.resume-item {
-    margin-bottom: 60px;
-}
-
-
-
-
-/** Embed Responsively Vimeo/Youtube **/
-.embed-container {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    height: 0;
-    margin-bottom: 20px;
-    padding-bottom: 56.25%;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/** NAVIGATION - Credits to Alex Cican for navigation functionality **/
+/** Expanding Nav - Credit to Alex Cican for navigation functionality **/
 
 /* Basic Elements */
 
@@ -801,17 +504,267 @@ nav.expanded #navigation {
 }
 
 
+/** END -- Header **/
+
+
+/** FOOTER **/
+
+footer {
+    width: 100%;
+    background: $bodycolor;
+    position: relative;
+    color: white;
+    font-size: .9em;
+}
+
+footer a {
+    color: $accentcolour;
+}
+
+footer .content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 
 
-
-
-/** END TESTING BARS **/
-
-
-/*! Flickity v2.0.8
-http://flickity.metafizzy.co
+/* Background Imaged Span Types
 ---------------------------------------------- */
+
+
+/** Landing Page Fullscreen Background **/
+
+.background {
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+/* Full Width Header Image - 'Page' layout  */
+.wide-header {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.wide-header:after {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
+}
+
+.wide-header-space {
+    margin-top: 80px;
+}
+
+/* Full Width Header Image - 'Page' layout  */
+.square-person {
+    overflow: hidden;
+    width: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.square-person:after {
+    display: block;
+    padding-bottom: 80%;
+    content: '';
+}
+.next-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.next-wrapper:after {
+    display: block;
+    padding-bottom: 35%;
+    content: '';
+}
+.next-project-name {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    color: white;
+    transform: translateY(-50%);
+}
+
+
+/* Individual Pages Styles - to be worked on
+---------------------------------------------- */
+
+/** index.html **/
+
+
+.index-button {
+    position: absolute;
+    padding: 12px 24px;
+    margin: 0 auto;
+    background: $accentcolour;
+    color: white;
+    border: 4px solid $accentcolour;
+    bottom: 0;
+    left: 0;
+}
+
+.index-button:hover {
+    text-decoration: underline;
+}
+
+/* projects.html */
+
+.project-grid {
+    background: $bodycolor;
+    margin-top: 0px;
+    position: relative;
+}
+.project-grid h3 {
+    margin: 0;
+}
+
+.project-grid-item {
+    position: relative;
+    margin-bottom: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: $accentcolour;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.project-grid-item img {
+    position: relative;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+}
+.project-grid-item:after {
+    display: block;
+    padding-bottom: 75%;
+    content: '';
+}
+
+.project-grid-title {
+    position: absolute;
+    z-index: 10;
+    bottom: -15px;
+    left: 25px;
+    opacity: 0;
+    color: #fff;
+}
+
+.project-grid-item:hover .project-grid-title {
+    display: block;
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transition-property: transform, opacity;
+    -webkit-transition-duration: 500ms;
+}
+
+.project-grid-item:hover {
+    opacity: 50%;
+}
+
+/* project.html template */
+
+#project {
+    margin-top: 40px
+}
+
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.project-content p {
+    hyphens: auto;
+}
+.project-content a {
+    color: $accentcolour;
+}
+
+
+/* page.html template */
+#page h3 {
+    padding: 10px;
+    color: white;
+    background: $accentcolour;
+    display: inline-block;
+    outline: 2px solid $accentcolour;
+    padding: 6px 16px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+#page h3:after {
+    clear: both;
+}
+
+
+/* resume.html */
+
+.resume-item {
+    margin-bottom: 60px;
+}
+
+
+
+
+
+/* External CSS Sources
+---------------------------------------------- */
+
+
+/* Vimeo / Youtube responsive embed */
+.embed-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 0;
+    margin-bottom: 20px;
+    padding-bottom: 56.25%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Flickity v2.0.8 */
 
 .main-carousel {
     margin-bottom: 20px;
@@ -838,7 +791,6 @@ http://flickity.metafizzy.co
     height: 100%;
 }
 
-
 /* draggable */
 
 .flickity-enabled.is-draggable {
@@ -861,9 +813,7 @@ http://flickity.metafizzy.co
     cursor: grabbing;
 }
 
-
 /* ---- previous/next buttons ---- */
-
 .flickity-prev-next-button {
     position: absolute;
     bottom: 50%;
@@ -874,13 +824,13 @@ http://flickity.metafizzy.co
     background: transparent;
     cursor: pointer;
     outline: 3px solid $accentcolour;
-    /* vertically center SHOULD USE THIS OTHER PLACES TO CENTER */
     -webkit-transform: translateY(50%);
     transform: translateY(50%);
 }
 
+.flickity-prev-next-button:hover {
 
-.flickity-prev-next-button:hover {}
+}
 
 .flickity-prev-next-button:focus {
     outline: none;
@@ -898,24 +848,10 @@ http://flickity.metafizzy.co
     right: 20px;
 }
 
-
-/* right to left */
-
-.flickity-rtl .flickity-prev-next-button.previous {
-    left: auto;
-    right: 20px;
-}
-
-.flickity-rtl .flickity-prev-next-button.next {
-    right: auto;
-    left: 20px;
-}
-
 .flickity-prev-next-button:disabled {
     opacity: 0.3;
     cursor: auto;
 }
-
 .flickity-prev-next-button svg {
     position: absolute;
     left: 20%;
@@ -953,6 +889,7 @@ http://flickity.metafizzy.co
     background-repeat: no-repeat;
 }
 
+/* Set slider height with padding-bottom */
 .carousel-cell:after {
     display: block;
     padding-bottom: 70%;
@@ -960,16 +897,16 @@ http://flickity.metafizzy.co
 }
 
 
+/* End Flickity */
+/* End External CSS */
 
 
 
-/* END FLICKITY CSS */
+
+
 
 
 /** MEDIA QUERIES **/
-
-
-/*@media only screen and (max-width: 1024px) {*/
 
 @media only screen and (max-width: 1200px) {
     /* tablets and desktop */
@@ -996,7 +933,6 @@ http://flickity.metafizzy.co
     #page a {
         border-bottom: 2px inherit;
     }
-
 
     .content {
         padding: 0 30px;
@@ -1032,7 +968,6 @@ http://flickity.metafizzy.co
         opacity: 1;
         color: #fff;
     }
-
     .project-grid-item:hover .project-grid-title {
         display: block;
         opacity: 1;
@@ -1055,13 +990,10 @@ http://flickity.metafizzy.co
     p {
         font-size: .9em!important;
     }
-
     .small {
         margin-bottom: 30px;
-
     }
     .large {
-
     }
     .two-col {
         column-count: 1;
@@ -1070,8 +1002,6 @@ http://flickity.metafizzy.co
     [class*='span'] {
         width: 100%;
     }
-
-
     h1 {
         font-size: 2em;
         text-align: left;
@@ -1130,7 +1060,7 @@ http://flickity.metafizzy.co
         position: absolute;
         padding: 15px;
         margin: 0 auto;
-        color: $accentcolour;
+        color: white;
         border: 4px solid $accentcolour;
         width: 100%;
         text-align: center;
@@ -1147,12 +1077,9 @@ http://flickity.metafizzy.co
         background: transparent;
         cursor: pointer;
         outline: 3px solid $accentcolour;
-        /* vertically center SHOULD USE THIS OTHER PLACES TO CENTER */
-        -webkit-transform: translateY(0%);
         transform: translateY(0%);
+        -webkit-transform: translateY(0%);
     }
-
-
     .flickity-prev-next-button:hover {}
     .flickity-prev-next-button:focus {
         outline: none;
@@ -1167,7 +1094,3 @@ http://flickity.metafizzy.co
         right: 8px;
     }
 }
-
-
-
-

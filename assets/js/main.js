@@ -8,7 +8,6 @@ $(".toggle-icon").on('click touchstart', function() {
 // ESC Function Tranforms Bars to 'X'
 
 $('body').keydown(function(e) {
-
     // if ESC show/hide menu
     if (e.keyCode === 27 || e.keyCode === 77) {
         $('#nav-container').toggleClass("pushed");
@@ -70,93 +69,5 @@ $('body').keydown(function(e) {
 
     }
 })
-
-
-
-
-
-
-// Filter Project Pages by Category on PROJECTS.HTML
-var $boxs = $("#parent > .box");
-var $btns = $(".btn").on("click", function() {
-
-    var active =
-        $btns.removeClass("active")
-        .filter(this)
-        .addClass("active")
-        .data("filter");
-
-    $boxs
-        .hide()
-        .filter("." + active)
-        .fadeIn(450);
-
-});
-
-
-var $btns = $('.btn').click(function() {
-    if (this.id == 'all') {
-        $('#parent > div').fadeIn(450);
-    } else {
-        var $el = $('.' + this.id).fadeIn(450);
-        $('#parent > div').not($el).hide();
-    }
-    $btns.removeClass('active');
-    $(this).addClass('active');
-})
-
-
-
-
-
-
-
-// FAQ EXPANDABLE FUNCTION
-
-
-
-$(".question").click(function() {
-    //getting the next element
-    $answer = $(this).next();
-    //checking if its already visible
-    if (!($answer.is(":visible"))) {
-        //no - its hidden - slide all the other open tabs to hide
-        $(".answer").slideUp(500);
-        //open up the content needed
-        $answer.slideToggle(500);
-    }
-});
-
-
-
-
-
-
-
-
-
-// Reduce Title Size on Scroll
-
-
-$(document).ready(function() {
-    //your code here
-
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        //console.log(scroll);
-        if (scroll >= 100) {
-            //console.log('a');
-            $(".title-small").addClass("shrink");
-        } else {
-            //console.log('a');
-            $(".title-small").removeClass("shrink");
-        }
-
-    });
-});
-
-
-
-
 
 
