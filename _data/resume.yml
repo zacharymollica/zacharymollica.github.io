@@ -59,15 +59,21 @@
     role: Course Tutor
     description: "After graduating with Distinction from the Architectural Association’s MArch Design + Make in early 2016, began working as a studio tutor for the programme."
     link: "http://designandmake.aaschool.ac.uk"
-  - name: Robotic Fabrications Visiting School
+  - name: SummerBuild
+    location: Hooke Park
+    date: "2016–"
+    role: Director
+    link: "http://summerbuild.aaschool.ac.uk"
+    description: "Coordinating director for the AA's SummerBuild programme. Organising an international work force to help Design + Make students construct their experimental architectures."
+  - name: Robotic Fabrications
     location: Hooke Park
     date: "2016–"
     role: Tutor
     link: "http://roboticfabrications.aaschool.ac.uk"
     description: "Tutor for the AA's Robotic Fabrications Visiting School along with Director Emmanuel Vercruysse."
-  - name: Makelab Visiting School
+  - name: MakeLab
     location: Hooke Park
-    date: "2016–"
+    date: "2016–17"
     role: Tutor
     description: "Tutor for the AA's Makelab Visiting School along with Director Jeroen van Ameijde."
     link: "http://makelab.aaschool.ac.uk"

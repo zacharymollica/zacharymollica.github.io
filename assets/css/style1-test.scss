@@ -44,19 +44,17 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Base Elements
 ---------------------------------------------- */
-body,html {
+body,
+html {
+    font-family: $normalfont;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: $normalfont;
-    font-size: 16px;
-}    
-
+}
 body {
-    font-size: 1.2em;
-    color: $bodycolor;
+    font-size: 16px;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    margin-top: 0;
+    color: $bodycolor;
 }
 * {
     margin: 0;
@@ -88,45 +86,28 @@ hr {
 }
 
 p {
-  margin-bottom: 1em;
-  line-height: 1.6;
-
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-size: 1.5em;
 }
 
 .small {
     line-height: 1.3;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: .8em;
 }
 .small a {
     text-decoration: none;
 }
 .large {
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    font-size: 1.5em;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    font-size: 1.2em;
     font-family: $monofont;
-    font-weight: 700;
-    max-width: 40em;
-    padding: 15px;
-}
-.large p {
-    line-height: 1.7;
 }
 .large a {
-    border-bottom: .25vw solid white;
-  text-decoration:none !important;
-  padding-bottom: .25vw;
-
+    border-bottom: .35vw solid white;
 }
-.large a:hover {
-    border-bottom: 0px solid red!important;
-
-}
-
-
-
 
 b, strong {
     font-weight: 700;
@@ -142,32 +123,18 @@ p a {
     color: $accentcolour;
 }
 
-
-
-i, em {
-  font-style: italic;
-}
-
-sup { 
-    vertical-align: super;
-    font-size: .6em;
-}
-
-
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $boldfont;
-    color: $bodycolor;
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 5em;
     margin-bottom: 30px;
     text-align: center;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 4em;
     margin-bottom: 20px;
 }
 
@@ -181,7 +148,6 @@ h4 {
 }
 
 h5 {
-    text-align: center;
     font-size: 1em;
     text-transform: uppercase;
     font-family: $monofont;
@@ -227,7 +193,7 @@ li {
 .content {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 2em 2em;
+    padding: 0 40px;
 }
 
 
@@ -241,19 +207,20 @@ li {
 }
 
 .row {
-    margin: 0 -1em;
+    margin: 0 -15px;
 }
 
 .row:after {
     clear: both;
+    margin-bottom: 20px;
 }
 
 [class*="span"] {
     display: block;
     float: left;
-    padding: 0 1em;
+    padding: 0 15px;
     width: 100%;
-    margin: 0 0 1em 0;
+    margin: 0px;
 }
 
 [class*="span"] img {
@@ -305,12 +272,11 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 2em;
+    padding: 0px;
 }
 
 .zac {
     position: relative;
-    font-size: 1.3em;
 }
 
 /** Expanding Nav - Credit to Alex Cican for navigation functionality **/
@@ -320,8 +286,8 @@ header {
 nav {
     color: $bodycolor;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 0px;
     z-index: 1000;
     cursor: pointer;
     -webkit-transform: translate(0, 0);
@@ -369,10 +335,10 @@ nav a {
         transform: translate(0, 0);
     }
 }
-/* Attached to BODY on menu click 
+/* Attached to BODY on menu click */
 .no_scroll {
     overflow: hidden;
-}*/
+}
 
 /* increases menu width & height NAV BACK COLOUR */
 nav.expanded {
@@ -389,16 +355,16 @@ nav.expanded {
 /* positions navigation content */
 
 #navigation {
-    -webkit-transform: translate(0, -1000px);
-    -moz-transform: translate(0, -1000px);
-    -o-transform: translate(0, -1000px);
-    transform: translate(0, -1000px);
+    -webkit-transform: translate(0, -700px);
+    -moz-transform: translate(0, -700px);
+    -o-transform: translate(0, -700px);
+    transform: translate(0, -700px);
     opacity: 0;
     display: none;
-    -webkit-transition: -webkit-transform 5s, opacity 7s;
-    -moz-transition: -moz-transform 5s, opacity 7s;
-    -o-transition: -o-transform 5s, opacity 7s;
-    transition: transform 5s, opacity 7s;
+    -webkit-transition: -webkit-transform .15s, opacity .7s;
+    -moz-transition: -moz-transform .15s, opacity .7s;
+    -o-transition: -o-transform .15s, opacity .7s;
+    transition: transform .15s, opacity .7s;
     color: white;
     font-family: $monofont;
 }
@@ -413,6 +379,7 @@ nav.expanded #navigation {
     opacity: 1;
     display: block;
     margin: 0 auto;
+    max-width: 1400px;
     z-index: 998;
     position: relative;
     width: 100%;
@@ -434,12 +401,8 @@ nav.expanded #navigation {
     top: 50%;
 }
 
-#navigation h2 {
-    display: inline-block
-}
 #navigation h2:hover:after {
     content: '.';
-    color: white;
 }
 #navigation h2:hover:after #navigation h2 a {
     text-decoration: none;
@@ -449,12 +412,13 @@ nav.expanded #navigation {
 
 .navigation-content {
     margin: 0;
-    padding: 2em;
+    padding-top: 20px;
     text-align: left;
     width: 100%;
-    max-width: 35em;
+    max-width: 600px;
 }
 .navigation-content p {
+    font-size: 1.2em!important;
 }
 .navigation-content a {
     text-decoration: none;
@@ -649,9 +613,7 @@ footer .content {
     color: white;
     transform: translateY(-50%);
 }
-.next-project-name h4 {
-    color: white;
-}
+
 
 /* Individual Pages Styles - to be worked on
 ---------------------------------------------- */
@@ -661,7 +623,7 @@ footer .content {
 
 .index-button {
     position: absolute;
-    padding: .9em 1.8em;
+    padding: 12px 24px;
     margin: 0 auto;
     background: $accentcolour;
     color: white;
@@ -669,9 +631,7 @@ footer .content {
     bottom: 0;
     left: 0;
 }
-.index-button h4 {
-    color: white;
-}
+
 .index-button:hover {
     text-decoration: underline;
 }
@@ -682,12 +642,9 @@ footer .content {
     background: $bodycolor;
     margin-top: 0px;
     position: relative;
-    color: white;
 }
 .project-grid h3 {
     margin: 0;
-    color: white;
-
 }
 
 .project-grid-item {
@@ -720,7 +677,7 @@ footer .content {
     bottom: -15px;
     left: 25px;
     opacity: 0;
-    color: white;
+    color: #fff;
 }
 
 .project-grid-item:hover .project-grid-title {
@@ -738,13 +695,13 @@ footer .content {
 /* project.html template */
 
 #project {
-    margin-top: 60px
+    margin-top: 40px
 }
 
 
 .project-content {
-    max-width: 40em;
-    margin: 0 auto 3em auto;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
 }
 
 .project-content p {
@@ -756,18 +713,13 @@ footer .content {
 
 
 /* page.html template */
-
-#resume {
-    max-width: 35em;
-}
-
-
 #page h3 {
+    padding: 10px;
     color: white;
     background: $accentcolour;
     display: inline-block;
     outline: 2px solid $accentcolour;
-    padding: .15em .5em;
+    padding: 6px 16px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -776,13 +728,11 @@ footer .content {
     clear: both;
 }
 
-#page h4 {
-        margin-bottom: 5px;
-}
+
 /* resume.html */
 
 .resume-item {
-    margin-bottom: 2.5em;
+    margin-bottom: 60px;
 }
 
 
@@ -799,7 +749,7 @@ footer .content {
     overflow: hidden;
     max-width: 100%;
     height: 0;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
     padding-bottom: 56.25%;
 }
 
@@ -817,7 +767,7 @@ footer .content {
 /* Flickity v2.0.8 */
 
 .main-carousel {
-    margin-bottom: 1em;
+    margin-bottom: 20px;
 }
 
 
@@ -866,24 +816,24 @@ footer .content {
 /* ---- previous/next buttons ---- */
 .flickity-prev-next-button {
     position: absolute;
-    bottom: 0em;
-    color: white;
-    width: 44px;
-    height: 44px;
+    bottom: 50%;
+    width: 40px;
+    height: 40px;
     border: none;
-    background: $bodycolor;
-    cursor: pointer;
     border-radius: 0px;
-    /* vertically center SHOULD USE THIS OTHER PLACES TO CENTER */
-
+    background: transparent;
+    cursor: pointer;
+    outline: 3px solid $accentcolour;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
 }
 
 .flickity-prev-next-button:hover {
+
 }
 
 .flickity-prev-next-button:focus {
     outline: none;
-    box-shadow: 0 0 0 5px #09F;
 }
 
 .flickity-prev-next-button:active {
@@ -891,29 +841,27 @@ footer .content {
 }
 
 .flickity-prev-next-button.previous {
-    left: 0em;
+    left: 20px;
 }
 
 .flickity-prev-next-button.next {
-    right: 0em;
+    right: 20px;
 }
 
 .flickity-prev-next-button:disabled {
     opacity: 0.3;
     cursor: auto;
 }
-
 .flickity-prev-next-button svg {
     position: absolute;
     left: 20%;
     top: 20%;
     width: 60%;
     height: 60%;
-        color: white;
 }
 
 .flickity-prev-next-button .arrow {
-    fill: white;
+    fill: $accentcolour;
 }
 
 .flickity-prev-next-button:hover .arrow {
@@ -921,7 +869,7 @@ footer .content {
 }
 
 .flickity-prev-next-button:hover {
-
+    background: $accentcolour;
 }
 
 .carousel {
@@ -930,8 +878,8 @@ footer .content {
 
 .carousel-cell {
     width: 100%;
-    margin: 0;
-    background: #EEE;
+    margin-right: 0px;
+    background: lightgrey;
     counter-increment: carousel-cell;
     background-position: center;
     -webkit-background-size: cover;
@@ -944,7 +892,7 @@ footer .content {
 /* Set slider height with padding-bottom */
 .carousel-cell:after {
     display: block;
-    padding-bottom: 66%;
+    padding-bottom: 70%;
     content: '';
 }
 
@@ -962,23 +910,6 @@ footer .content {
 
 @media only screen and (max-width: 1200px) {
     /* tablets and desktop */
-    body {
-      font-size: 1.2em;
-    }
-
-    .span3 {
-        width: 33.33%;
-    }
-    .span4 {
-        width: 50%;
-    }
-}
-@media only screen and (max-width: 1024px) {
-    /* tablets and desktop */
-    body {
-      font-size: 1.2em;
-    }
-
     .span3 {
         width: 33.33%;
     }
@@ -989,12 +920,28 @@ footer .content {
 
 @media only screen and (max-width: 767px) {
     /* phones */
-    body {
-      font-size: .9em;
+    p {
+        font-size: 1.2em !important;
     }
 
+    h1 {
+        font-size: 4em;
+    }
+    .small {
+        margin-bottom: 30px;
+    }
+    #page a {
+        border-bottom: 2px inherit;
+    }
 
-    p {
+    .content {
+        padding: 0 30px;
+    }
+    .navigation-content {
+        max-width: 600px;
+    }
+
+    .row {
 
     }
     .span4 {
@@ -1003,9 +950,8 @@ footer .content {
     .span3 {
         width: 50%;
     }
-
     header {
-        padding: 2em;
+        padding: 20px;
     }
     [class*='offset'] {
         margin-left: 0;
@@ -1040,10 +986,15 @@ footer .content {
 
 
 @media only screen and (max-width: 480px) {
-    body {
-        font-size: .8em;
-    }
 
+    p {
+        font-size: .9em!important;
+    }
+    .small {
+        margin-bottom: 30px;
+    }
+    .large {
+    }
     .two-col {
         column-count: 1;
         column-gap: 0px;
@@ -1051,22 +1002,47 @@ footer .content {
     [class*='span'] {
         width: 100%;
     }
-    .project-details .span6 {
-        width: 50%
-    }
     h1 {
+        font-size: 2em;
         text-align: left;
     }
     h2 {
+        font-size: 1.8em;
     }
 
     h3 {
+        font-size: 1.2em;
     }
-    h4 {
+    h4 {}
+    h5 {
+        font-size: .8em;
+    }
+    .content {
+        padding: 0px 20px;
+    }
+    .navigation-content {
+        padding-top: 10px;
+    }
+    .navigation-content p {
+        font-size: .9em!important;
     }
 
-    h5 {
-        text-align: left;
+    .navigation-content h2 {
+        font-size: 3em;
+    }
+
+    #page h3 {
+
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    #page h4 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .resume-item {
+        margin-bottom: 30px;
     }
 
     .next-wrapper {}
@@ -1076,7 +1052,10 @@ footer .content {
         padding-bottom: 50%;
     }
     /* index.html styles */
-
+    .zac h1 {
+        font-size: 3.5em;
+        text-transform: none;
+    }
     .index-button {
         position: absolute;
         padding: 15px;
@@ -1087,6 +1066,31 @@ footer .content {
         text-align: center;
     }
 
-
-
+    /* FLICKITY SCALED */
+    .flickity-prev-next-button {
+        position: absolute;
+        bottom: 8px!important;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 0px;
+        background: transparent;
+        cursor: pointer;
+        outline: 3px solid $accentcolour;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+    }
+    .flickity-prev-next-button:hover {}
+    .flickity-prev-next-button:focus {
+        outline: none;
+    }
+    .flickity-prev-next-button:active {
+        /* opacity: 0.6; */
+    }
+    .flickity-prev-next-button.previous {
+        left: 8px;
+    }
+    .flickity-prev-next-button.next {
+        right: 8px;
+    }
 }

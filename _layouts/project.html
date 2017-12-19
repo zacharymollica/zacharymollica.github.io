@@ -7,9 +7,9 @@ layout: default
             <div class="row">
 
                 <div class="span12">
-                    <h5 class="tc">Year: {{ page.year }}</h5> {% if page.name %}
-                    <h1 class="tc project-title">{{ page.name }}</h1>{% else %}
-                    <h1 class="tc project-title">{{ page.title }}</h1>{% endif %}
+                    <h5>Year: {{ page.year }}</h5> {% if page.name %}
+                    <h1 class="project-title">{{ page.name }}</h1>{% else %}
+                    <h1 class="project-title">{{ page.title }}</h1>{% endif %}
                     <!-- Testing Out Autobuilt Slider for Projects Need to have alternative case if there is only one image. -->
                     <script src="/assets/js/flickity.js"></script>
                     <div class="main-carousel" data-flickity='{ "pageDots": false, "wrapAround": true, "pauseAutoPlayOnHover": true, "autoPlay": 2000, "imagesLoaded": true, "bgLazyLoad": 1 }'>
