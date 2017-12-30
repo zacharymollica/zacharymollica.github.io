@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+
+<style>
+.zac a {
+	color:white;
+}
+
+
+    body {
+    background-image: url(/assets/projects/robotic-fabrications/thumb.gif);
+    background-image: url(/assets/truss-projection.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    }
+
+
+
+</style>
+
+
+
+
+
+ <script src="/assets/js/flickity.js"></script>
+                    <div class="main-carousel" data-flickity='{ "pageDots": false, "wrapAround": true, "pauseAutoPlayOnHover": true, "autoPlay": 2000, "imagesLoaded": true, "bgLazyLoad": 1 }'>
+                        {% capture project-path %}/assets/projects/{{ page.title | slugify }}{% endcapture %} {% for image in site.static_files %} {% if image.path contains project-path %}{% unless image.path contains 'thumb' %}
+                        <div class="carousel-cell" style="background-image: url({{ image.path }})"></div>
+                        {% endunless %}{% endif %}{% endfor %}
+                    </div>
+
+
+
+
+
+
+
+
+
+    <a href="/projects/">
+        <div class="index-button" style="display:inline-block">
+            <h4>Project Index</h4>
+        </div>
+    </a>
+
+
+</div>

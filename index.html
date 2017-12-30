@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 
@@ -9,27 +9,33 @@ layout: page
 }
 
 
-    body {
-    background-image: url(/assets/projects/robotic-fabrications/thumb.gif);
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+.main-carousel {
+    position:fixed;
+    top:0;
+    left:0;
     width: 100%;
-    height: 100vh;
-    background-position: center;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    }
-
-
+}
 
 </style>
+
+
+
+
+
+ <script src="/assets/js/flickity.js"></script>
+
+
+                    <div class="main-carousel" data-flickity='{ "pageDots": false, "wrapAround": true, "pauseAutoPlayOnHover": false, "autoPlay": 3000, "imagesLoaded": true, "bgLazyLoad": 1, "draggable": false }'>
+                        {% for image in site.static_files %}
+                        {% if image.path contains 'coverslide' %}
+                        <div class="carousel-cell-big" style="background-image: url({{ image.path }})"></div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+
+
 
 
 
