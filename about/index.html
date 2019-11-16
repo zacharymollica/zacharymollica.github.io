@@ -85,6 +85,12 @@
                 
                 <div class="navigation-block">
                     <h1 class="tl">
+                        <a href="/influences/">Influences</a>
+                    </h1>
+                </div>
+                
+                <div class="navigation-block">
+                    <h1 class="tl">
                         <a href="https://instagram.com/zacharymollica">Instagram</a>
                     </h1>
                 </div>
@@ -150,6 +156,34 @@
   <div style="clear:both; padding-bottom:2em;"></div>
 
 </div>
+
+
+<script type="text/javascript">
+
+  $(".question").click(function() {
+    if ($(this).hasClass('hello')) {
+      $(".question").removeClass("hello");
+      $answer = $(this).next();
+      $answer.slideUp(600);
+    } else {
+      $(".question").removeClass("hello");
+      $(this).addClass("hello");
+    }
+    //getting the next element
+    $answer = $(this).next();
+    //checking if its already visible
+
+    if (!($answer.is(":visible"))) {
+      //no - its hidden - slide all the other open tabs to hide
+      $(".answer").slideUp(600);
+      //open up the content needed
+      $answer.slideDown(600);
+    } else {
+      $(".question").removeClass("hello");
+    }
+  });
+
+</script>
 
 		<!-- END PAGE CONTENT -->
 
