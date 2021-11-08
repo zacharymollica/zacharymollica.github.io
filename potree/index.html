@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>zac-working.html / Zac.</title>
+    <link rel="stylesheet" href="/assets/css/style-1.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,700" rel="stylesheet">
+
+        <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    
+    <meta name="description" content="Zachary Mollica is a Canadian architect and maker working as a studio tutor for the Architectural Association's Design + Make masters programme." /> 
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45825100-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <!-- additional styling and scripts for POTREE functionality -->
+
+    
+    <link rel="stylesheet" type="text/css" href="/potree/potree/potree.css">
+  	<link rel="stylesheet" type="text/css" href="/potree/libs/jquery-ui/jquery-ui.min.css">
+  	<link rel="stylesheet" type="text/css" href="/potree/libs/openlayers3/ol.css">
+  	<link rel="stylesheet" type="text/css" href="/potree/libs/spectrum/spectrum.css">
+  	<link rel="stylesheet" type="text/css" href="/potree/libs/jstree/themes/mixed/style.css">
+    
+
+
+    <!--<script src="/assets/js/jquery.min.js"></script>-->
+<!--  jquery from bars if breaks  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+
+    <script src="/potree/libs/jquery/jquery-3.1.1.min.js"></script>
+
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+
+
+</head>
+
+
+	<body>
+
+		<!-- include header file -->
+
+<header>
+
+    <nav>
+
+      <div class="toggle-icon">
+        <div id="nav-container">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+
+        <div id="navigation">
+          <div class="content">
+            <div class="row">
+              <div class="span12" style="margin-top:1em;">
+                
+                <div class="navigation-block">
+                    <h1 class="tl" style="width:100%;text-align:left;">
+                        <a href="/">Home</a>
+                    </h1>
+                </div>
+                
+                <div class="navigation-block">
+                    <h1 class="tl" style="width:100%;text-align:left;">
+                        <a href="/about/">About</a>
+                    </h1>
+                </div>
+                
+                <div class="navigation-block">
+                    <h1 class="tl" style="width:100%;text-align:left;">
+                        <a href="/projects/">Projects</a>
+                    </h1>
+                </div>
+                
+                <div class="navigation-block">
+                    <h1 class="tl" style="width:100%;text-align:left;">
+                        <a href="https://instagram.com/zacharymollica">Follow</a>
+                    </h1>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+	<div class="container">
+
+		
+	    
+
+	    
+	  
+
+
+
+		<!-- ADD PAGE CONTENT -->
+			<script src="/potree/libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="/potree/libs/spectrum/spectrum.js"></script>
+	<script src="/potree/libs/jquery-ui/jquery-ui.min.js"></script>
+
+
+	<script src="/potree/libs/other/BinaryHeap.js"></script>
+	<script src="/potree/libs/tween/tween.min.js"></script>
+	<script src="/potree/libs/d3/d3.js"></script>
+	<script src="/potree/libs/proj4/proj4.js"></script>
+	<script src="/potree/libs/openlayers3/ol.js"></script>
+	<script src="/potree/libs/i18next/i18next.js"></script>
+	<script src="/potree/libs/jstree/jstree.js"></script>
+	<script src="/potree/potree/potree.js"></script>
+	<script src="/potree/libs/plasio/js/laslaz.js"></script>
+
+	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
+	<!-- INCLUDE SETTINGS HERE -->
+
+
+
+
+	<div class="potree_container inverted">
+
+		<div id="potree_render_area"></div>
+
+		<div id="navigationtop"></div>
+		<div id="navigationleft"></div>
+		<div id="navigationright"></div>
+
+
+		<div id="topright" style="display:none;">
+			<span>POINTS</span>: <span id="sldPointBudget"></span>
+		</div>
+
+
+		<div id="potree_sidebar_container" style=""> </div>
+
+
+
+
+	</div>
+
+
+	<script type="module">
+
+		import * as THREE from "/potree/libs/three.js/build/three.module.js";
+
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+
+		viewer.setEDLEnabled(true);
+		viewer.setFOV(60);
+		viewer.setPointBudget(1_000_000);
+		viewer.setBackground("black"); // ["skybox", "gradient", "black", "white"];
+		viewer.loadSettingsFromURL();
+
+		viewer.setDescription("Wood Chip Barn");
+
+		viewer.loadGUI(() => {
+			viewer.setLanguage('en');
+			$("#menu_appearance").next().show();
+			//viewer.toggleSidebar();
+		});
+
+
+		let url = "/potree/pointclouds/TEMP/metadata.json";
+		Potree.loadPointCloud(url).then(e => {
+			let pointcloud = e.pointcloud;
+			let material = pointcloud.material;
+
+			material.activeAttributeName = "rgba";
+			material.minSize = 1;
+			material.maxSize = 1;
+			material.pointSizeType = Potree.PointSizeType.FIXED; // FIXED , ADAPTIVE
+			material.shape = Potree.PointShape.SQUARE;
+
+
+			viewer.scene.addPointCloud(pointcloud);
+
+			viewer.scene.view.position.set(0.500, 5.000, 137);
+     viewer.scene.view.lookAt(new THREE.Vector3(0.500, 0.000, 137));
+		 viewer.setCameraMode(1); // 0 for orthographic + 1 for perspective
+
+		//	viewer.fitToScreen();
+		});
+
+
+	</script>
+
+		<!-- END PAGE CONTENT -->
+
+	</div>
+
+
+
+	<div style="clear:both;"></div>
+
+<footer>
+  <div class="">
+
+
+    <style>
+      .temp-footer p {
+        margin: 0;
+      }
+    </style>
+
+    <div class="temp-footer large" style="margin-bottom:0;">
+
+      <p class="tc">
+        
+        <a style="margin-right: 1em;" href="/"
+
+        
+
+        >Home</a>
+        
+        <a style="margin-right: 1em;" href="/about/"
+
+        
+
+        >About</a>
+        
+        <a style="margin-right: 1em;" href="/projects/"
+
+        
+
+        >Projects</a>
+        
+        <a style="margin-right: 1em;" href="https://instagram.com/zacharymollica"
+
+         target="_blank" 
+
+        >Follow</a>
+        
+
+      </p>
+
+
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+		<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
