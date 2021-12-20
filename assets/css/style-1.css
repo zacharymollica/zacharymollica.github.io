@@ -280,6 +280,12 @@ nav.expanded #navigation { display: block; margin: 0; opacity: 1; position: rela
 
 .project-details { padding: 2.5rem 0 0; }
 
+.project-content ul { list-style-type: disc; margin-left: 2em; margin-bottom: 2em; }
+
+.project-content a { text-decoration: none; color: blue; }
+
+.project-content .large a { text-decoration: none; color: black; }
+
 /** Filtering Projects Menu by Category **/
 .project-filters-wrap { position: fixed; display: inline-block; right: 0; top: 0; z-index: 1000; background: white; padding: .3em; }
 
