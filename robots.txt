@@ -1,1 +1,1 @@
-Sitemap: http://zacharymolli.ca/sitemap.xml
+Sitemap: /sitemap.xml
