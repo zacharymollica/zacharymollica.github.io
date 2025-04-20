@@ -1,0 +1,104 @@
+{
+	"version": "2.0",
+	"name": "WindhorseTree",
+	"description": "",
+	"points": 1500239,
+	"projection": "",
+	"hierarchy": {
+		"firstChunkSize": 6666, 
+		"stepSize": 4, 
+		"depth": 6
+	},
+	"offset": [-6.28900146484375, -6.0179977416992188, -10.623100280761719],
+	"scale": [1.1488886286770139e-08, 1.1262386578891892e-08, 1.2387239678446349e-08],
+	"spacing": 0.10391169786453247,
+	"boundingBox": {
+		"min": [-6.28900146484375, -6.0179977416992188, -10.623100280761719], 
+		"max": [7.0116958618164062, 7.2826995849609375, 2.6775970458984375]
+	},
+	"encoding": "DEFAULT",
+	"attributes": [
+		{
+			"name": "position",
+			"description": "",
+			"size": 12,
+			"numElements": 3,
+			"elementSize": 4,
+			"type": "int32",
+			"min": [-6.2890014599999997, -6.0179977400000002, -10.623100280000001],
+			"max": [6.0470962500000001, 6.0748977699999998, 2.6775970500000001]
+		},{
+			"name": "intensity",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [40863]
+		},{
+			"name": "return number",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "number of returns",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "classification",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "scan angle rank",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "user data",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "point source id",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "rgb",
+			"description": "",
+			"size": 6,
+			"numElements": 3,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0, 0, 0],
+			"max": [64768, 64768, 64768]
+		}
+	]
+}
