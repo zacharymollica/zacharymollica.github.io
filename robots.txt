@@ -1,1 +1,32 @@
+# Tell all crawlers where your sitemap lives
 Sitemap: https://zacharymolli.ca/sitemap.xml
+
+# Global rules
+User-agent: *
+# Don’t crawl any staging, admin or private directories
+Disallow: /drafts/
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_site/
+Disallow: /assets/vendor/
+
+# Allow important assets (CSS/JS) for rich previews
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Prevent indexing of search or filtering URLs (if any)
+/search
+/filter
+
+# Optional crawl‑rate hints (may help low‑traffic sites)
+# Crawl‑delay: 10
+
+# Specific rules for aggressive bots
+User-agent: BadBot
+Disallow: /
+
+# Crawl‑delay for slower crawlers, e.g., Bing
+User-agent: bingbot
+Crawl-delay: 5
