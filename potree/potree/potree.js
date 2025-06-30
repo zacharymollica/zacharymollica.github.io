@@ -6,25 +6,25 @@
 
 	/**
 	 * @author mrdoob / http://mrdoob.com/ https://github.com/mrdoob/eventdispatcher.js
-	 *
+	 * 
 	 * with slight modifications by mschuetz, http://potree.org
-	 *
+	 * 
 	 */
 
 	// The MIT License
-	//
+	// 
 	// Copyright (c) 2011 Mr.doob
-	//
+	// 
 	// Permission is hereby granted, free of charge, to any person obtaining a copy
 	// of this software and associated documentation files (the "Software"), to deal
 	// in the Software without restriction, including without limitation the rights
 	// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	// copies of the Software, and to permit persons to whom the Software is
 	// furnished to do so, subject to the following conditions:
-	//
+	// 
 	// The above copyright notice and this permission notice shall be included in
 	// all copies or substantial portions of the Software.
-	//
+	// 
 	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -51644,7 +51644,7 @@
 	}
 
 	class PathAnimation{
-
+		
 		constructor(path, start, end, speed, callback){
 				this.path = path;
 				this.length = this.path.spline.getLength();
@@ -51661,7 +51661,7 @@
 				this.tween.stop();
 				this.tween = null;
 			}
-
+		
 			let tStart;
 			if(resume){
 				tStart = this.t;
@@ -51670,7 +51670,7 @@
 			}
 			let tEnd = this.endPoint / this.length;
 			let animationDuration = (tEnd - tStart) * this.length * 1000 / this.speed;
-
+		
 			let progress = {t: tStart};
 			this.tween = new TWEEN.Tween(progress).to({t: tEnd}, animationDuration);
 			this.tween.easing(TWEEN.Easing.Linear.None);
@@ -51702,7 +51702,7 @@
 			if(!this.tween){
 				return;
 			}
-
+			
 			this.tween.stop();
 			TWEEN.remove(this.tween);
 			this.tween = null;
@@ -51813,7 +51813,7 @@
 	};
 
 	class TextSprite extends Object3D{
-
+		
 		constructor(text){
 			super();
 
@@ -52012,7 +52012,7 @@
 		}
 
 		update () {
-
+			
 		};
 
 		raycast (raycaster, intersects) {
@@ -52035,7 +52035,7 @@
 					object: this
 				});
 			}
-
+			
 		}
 
 		get modifieable () {
@@ -52278,7 +52278,7 @@
 				});
 			}
 		}
-
+		
 		// see https://en.wikipedia.org/wiki/Ellipsoid#Volume
 		getVolume(){
 			return (4 / 3) * Math.PI * this.scale.x * this.scale.y * this.scale.z;
@@ -52396,9 +52396,9 @@
 			{ // event listeners
 				let drag = (e) => {
 					let I = Utils.getMousePointCloudIntersection(
-						e.drag.end,
-						e.viewer.scene.getActiveCamera(),
-						e.viewer,
+						e.drag.end, 
+						e.viewer.scene.getActiveCamera(), 
+						e.viewer, 
 						e.viewer.scene.pointclouds);
 
 					if (I) {
@@ -53585,11 +53585,11 @@
 			0, 0, 0,
 		]);
 
-		let lineMaterial = new LineMaterial({
-			color: 0x00ff00,
-			dashSize: 5,
+		let lineMaterial = new LineMaterial({ 
+			color: 0x00ff00, 
+			dashSize: 5, 
 			gapSize: 2,
-			linewidth: 2,
+			linewidth: 2, 
 			resolution:  new Vector2(1000, 1000),
 		});
 
@@ -53598,7 +53598,7 @@
 		heightEdge.visible = false;
 
 		//this.add(this.heightEdge);
-
+		
 		return heightEdge;
 	}
 
@@ -53626,7 +53626,7 @@
 		areaLabel.material.depthTest = false;
 		areaLabel.material.opacity = 1;
 		areaLabel.visible = false;
-
+		
 		return areaLabel;
 	}
 
@@ -53640,7 +53640,7 @@
 		circleRadiusLabel.material.depthTest = false;
 		circleRadiusLabel.material.opacity = 1;
 		circleRadiusLabel.visible = false;
-
+		
 		return circleRadiusLabel;
 	}
 
@@ -53652,9 +53652,9 @@
 			0, 0, 0,
 		]);
 
-		const lineMaterial = new LineMaterial({
-			color: 0xff0000,
-			linewidth: 2,
+		const lineMaterial = new LineMaterial({ 
+			color: 0xff0000, 
+			linewidth: 2, 
 			resolution:  new Vector2(1000, 1000),
 			gapSize: 1,
 			dashed: true,
@@ -53677,14 +53677,14 @@
 			let u1 = 2 * Math.PI * (i + 1) / n;
 
 			let p0 = new Vector3(
-				Math.cos(u0),
-				Math.sin(u0),
+				Math.cos(u0), 
+				Math.sin(u0), 
 				0
 			);
 
 			let p1 = new Vector3(
-				Math.cos(u1),
-				Math.sin(u1),
+				Math.cos(u1), 
+				Math.sin(u1), 
 				0
 			);
 
@@ -53697,11 +53697,11 @@
 		const geometry = new LineGeometry();
 		geometry.setPositions(coordinates);
 
-		const material = new LineMaterial({
-			color: 0xff0000,
-			dashSize: 5,
+		const material = new LineMaterial({ 
+			color: 0xff0000, 
+			dashSize: 5, 
 			gapSize: 2,
-			linewidth: 2,
+			linewidth: 2, 
 			resolution:  new Vector2(1000, 1000),
 		});
 
@@ -53717,7 +53717,7 @@
 	function createCircleCenter(){
 		const sg = new SphereGeometry(1, 32, 32);
 		const sm = new MeshNormalMaterial();
-
+		
 		const circleCenter = new Mesh(sg, sm);
 		circleCenter.visible = false;
 
@@ -53732,9 +53732,9 @@
 			0, 0, 0,
 		]);
 
-		const material = new LineMaterial({
-			color: 0xff0000,
-			linewidth: 2,
+		const material = new LineMaterial({ 
+			color: 0xff0000, 
+			linewidth: 2, 
 			resolution:  new Vector2(1000, 1000),
 			gapSize: 1,
 			dashed: true,
@@ -53757,14 +53757,14 @@
 			let u1 = 2 * Math.PI * (i + 1) / n;
 
 			let p0 = new Vector3(
-				Math.cos(u0),
-				Math.sin(u0),
+				Math.cos(u0), 
+				Math.sin(u0), 
 				0
 			);
 
 			let p1 = new Vector3(
-				Math.cos(u1),
-				Math.sin(u1),
+				Math.cos(u1), 
+				Math.sin(u1), 
 				0
 			);
 
@@ -53777,11 +53777,11 @@
 		const geometry = new LineGeometry();
 		geometry.setPositions(coordinates);
 
-		const material = new LineMaterial({
-			color: 0xff0000,
-			dashSize: 5,
+		const material = new LineMaterial({ 
+			color: 0xff0000, 
+			dashSize: 5, 
 			gapSize: 2,
-			linewidth: 2,
+			linewidth: 2, 
 			resolution:  new Vector2(1000, 1000),
 		});
 
@@ -53935,8 +53935,8 @@
 				]);
 
 				let lineMaterial = new LineMaterial({
-					color: 0xff0000,
-					linewidth: 2,
+					color: 0xff0000, 
+					linewidth: 2, 
 					resolution:  new Vector2(1000, 1000),
 				});
 
@@ -53987,9 +53987,9 @@
 			{ // Event Listeners
 				let drag = (e) => {
 					let I = Utils.getMousePointCloudIntersection(
-						e.drag.end,
-						e.viewer.scene.getActiveCamera(),
-						e.viewer,
+						e.drag.end, 
+						e.viewer.scene.getActiveCamera(), 
+						e.viewer, 
 						e.viewer.scene.pointclouds,
 						{pickClipped: true});
 
@@ -53997,7 +53997,7 @@
 						let i = this.spheres.indexOf(e.drag.object);
 						if (i !== -1) {
 							let point = this.points[i];
-
+							
 							// loop through current keys and cleanup ones that will be orphaned
 							for (let key of Object.keys(point)) {
 								if (!I.point[key]) {
@@ -54171,7 +54171,7 @@
 		// 	// const [p0, p1] = this.points;
 
 		// 	// const r = p0.position.distanceTo(p1.position);
-
+			
 		// }
 
 		update () {
@@ -54184,7 +54184,7 @@
 
 				{ // coordinate labels
 					let coordinateLabel = this.coordinateLabels[0];
-
+					
 					let msg = position.toArray().map(p => Utils.addCommas(p.toFixed(2))).join(" / ");
 					coordinateLabel.setText(msg);
 
@@ -54234,7 +54234,7 @@
 					edge.geometry.computeBoundingSphere();
 					edge.computeLineDistances();
 					edge.visible = index < lastIndex || this.closed;
-
+					
 					if(!this.showEdges){
 						edge.visible = false;
 					}
@@ -54378,7 +54378,7 @@
 					circleLine.position.copy(center);
 					circleLine.scale.set(radius, radius, radius);
 					circleLine.lookAt(target);
-
+					
 					circleRadiusLabel.visible = true;
 					circleRadiusLabel.position.copy(center.clone().add(B).multiplyScalar(0.5));
 					circleRadiusLabel.setText(`${radius.toFixed(3)}`);
@@ -54507,7 +54507,7 @@
 	}
 
 	class PolygonClipVolume extends Object3D{
-
+		
 		constructor(camera){
 			super();
 
@@ -54545,16 +54545,16 @@
 
 				marker.position.copy(projectedPos);
 			};
-
-			let drop = e => {
+			
+			let drop = e => {	
 				cancel();
 			};
-
+			
 			cancel = e => {
 				marker.removeEventListener("drag", drag);
 				marker.removeEventListener("drop", drop);
 			};
-
+			
 			marker.addEventListener("drag", drag);
 			marker.addEventListener("drop", drop);
 
@@ -54638,7 +54638,7 @@
 
 		static debugLine(parent, start, end, color){
 
-			let material = new LineBasicMaterial({ color: color });
+			let material = new LineBasicMaterial({ color: color }); 
 			let geometry = new Geometry();
 
 			const p1 = new Vector3(0, 0, 0);
@@ -54674,21 +54674,21 @@
 				let u1 = 2 * Math.PI * (i + 1) / n;
 
 				let p0 = new Vector3(
-					Math.cos(u0),
-					Math.sin(u0),
+					Math.cos(u0), 
+					Math.sin(u0), 
 					0
 				);
 
 				let p1 = new Vector3(
-					Math.cos(u1),
-					Math.sin(u1),
+					Math.cos(u1), 
+					Math.sin(u1), 
 					0
 				);
 
-				geometry.vertices.push(p0, p1);
+				geometry.vertices.push(p0, p1); 
 			}
 
-			let tl = new Line( geometry, material );
+			let tl = new Line( geometry, material ); 
 			tl.position.copy(center);
 			tl.scale.set(radius, radius, radius);
 
@@ -54696,7 +54696,7 @@
 		}
 
 		static debugBox(parent, box, transform = new Matrix4(), color = 0xFFFF00){
-
+			
 			let vertices = [
 				[box.min.x, box.min.y, box.min.z],
 				[box.min.x, box.min.y, box.max.z],
@@ -54961,9 +54961,9 @@
 		}
 
 		static getMousePointCloudIntersection (mouse, camera, viewer, pointclouds, params = {}) {
-
+			
 			let renderer = viewer.renderer;
-
+			
 			let nmouse = {
 				x: (mouse.x / renderer.domElement.clientWidth) * 2 - 1,
 				y: -(mouse.y / renderer.domElement.clientHeight) * 2 + 1
@@ -54986,10 +54986,10 @@
 			let closestDistance = Infinity;
 			let closestIntersection = null;
 			let closestPoint = null;
-
+			
 			for(let pointcloud of pointclouds){
 				let point = pointcloud.pick(viewer, camera, ray, pickParams);
-
+				
 				if(!point){
 					continue;
 				}
@@ -55151,8 +55151,8 @@
 			p2.y = (p2.y + 1.0) * 0.5 * screenHeight;
 			return p1.distanceTo(p2);
 		}
-
-
+			
+			
 		static topView(camera, node){
 			camera.position.set(0, 1, 0);
 			camera.rotation.set(-Math.PI / 2, 0, 0);
@@ -55177,7 +55177,7 @@
 			camera.zoomTo(node, 1);
 		}
 
-
+		
 		static findClosestGpsTime(target, viewer){
 			const start = performance.now();
 
@@ -55199,7 +55199,7 @@
 
 			for(const node of nodes){
 
-				const isOkay = node.geometryNode != null
+				const isOkay = node.geometryNode != null 
 					&& node.geometryNode.geometry != null
 					&& node.sceneNode != null;
 
@@ -55421,7 +55421,7 @@
 			const P = [P0, P1, P2, P3];
 
 			const d = (m, n, o, p) => {
-				let result =
+				let result =  
 					  (P[m].x - P[n].x) * (P[o].x - P[p].x)
 					+ (P[m].y - P[n].y) * (P[o].y - P[p].y)
 					+ (P[m].z - P[n].z) * (P[o].z - P[p].z);
@@ -55442,7 +55442,7 @@
 
 			const P01 = P1.clone().sub(P0);
 			const P23 = P3.clone().sub(P2);
-
+			
 			const Pa = P0.clone().add(P01.multiplyScalar(mua));
 			const Pb = P2.clone().add(P23.multiplyScalar(mub));
 
@@ -55496,13 +55496,13 @@
 				llP2 = [llP1[0], llP1[1] + polarRadius];
 
 				const northVec = transform.inverse(llP2);
-
+				
 				return new Vector3(...northVec, p1.z).sub(p1);
 			}else {
 				// if there is no projection, assume [0, 1, 0] as north direction
 
 				const vec = new Vector3(0, 1, 0).multiplyScalar(distance);
-
+				
 				return vec;
 			}
 		}
@@ -55579,21 +55579,21 @@
 			//		<stop offset="100%"  stop-color="rgb(157, 0, 65)" />
 			//		</linearGradient>
 			//	</defs>
-			//
+			//	
 			//	<rect width="100%" height="100%" fill="url('#myGradient')" stroke="black" stroke-width="0.1em"/>
 			//</svg>
 
 
 			const gradientId = `${Math.random()}_${Date.now()}`;
-
+			
 			const svgn = "http://www.w3.org/2000/svg";
 			const svg = document.createElementNS(svgn, "svg");
 			svg.setAttributeNS(null, "width", "2em");
 			svg.setAttributeNS(null, "height", "3em");
-
+			
 			{ // <defs>
 				const defs = document.createElementNS(svgn, "defs");
-
+				
 				const linearGradient = document.createElementNS(svgn, "linearGradient");
 				linearGradient.setAttributeNS(null, "id", gradientId);
 				linearGradient.setAttributeNS(null, "gradientTransform", "rotate(90)");
@@ -55622,12 +55622,12 @@
 			rect.setAttributeNS(null, "stroke-width", `0.1em`);
 
 			svg.appendChild(rect);
-
+			
 			return svg;
 		}
 
 		static async waitAny(promises){
-
+			
 			return new Promise( (resolve) => {
 
 				promises.map( promise => {
@@ -55787,7 +55787,7 @@
 				</svg>
 			</div>
 		`);
-
+			
 			let svg = domElement.find("svg")[0];
 			let elLine = domElement.find("line")[0];
 			let elStart = domElement.find("circle")[0];
@@ -55847,7 +55847,7 @@
 					//let renderAreaHeight = viewer.renderer.getSize().height;
 
 					let diff = {
-						x: ui.originalPosition.left - ui.position.left,
+						x: ui.originalPosition.left - ui.position.left, 
 						y: ui.originalPosition.top - ui.position.top
 					};
 
@@ -55900,7 +55900,7 @@
 
 					return screenPos;
 				};
-
+				
 				start = toScreen(start);
 				end = toScreen(end);
 
@@ -56254,7 +56254,7 @@
 				}else {
 					value = {name: key, value: value};
 				}
-
+				
 				this[key] = new EnumItem(value);
 			}
 		}
@@ -56268,7 +56268,7 @@
 
 			throw new Error(`No enum for value: ${value}`);
 		}
-
+		
 	};
 
 	const CameraMode = {
@@ -56329,8 +56329,8 @@
 	const Features = (function () {
 
 		let gl = ftCanvas.getContext('webgl') || ftCanvas.getContext('experimental-webgl');
-		if (gl === null){
-			return null;
+		if (gl === null){ 
+			return null; 
 		}
 
 		// -- code taken from THREE.WebGLRenderer --
@@ -56417,7 +56417,7 @@
 		E: 'E'.charCodeAt(0),
 		R: 'R'.charCodeAt(0),
 		F: 'F'.charCodeAt(0)
-
+		
 	};
 
 	class LRUItem{
@@ -56663,7 +56663,7 @@
 
 
 	class PointAttribute{
-
+		
 		constructor(name, type, numElements){
 			this.name = name;
 			this.type = type;
@@ -56703,13 +56703,13 @@
 
 	PointAttribute.NORMAL = new PointAttribute(
 		"NORMAL", PointAttributeTypes.DATA_TYPE_FLOAT, 3);
-
+		
 	PointAttribute.RETURN_NUMBER = new PointAttribute(
 		"RETURN_NUMBER", PointAttributeTypes.DATA_TYPE_UINT8, 1);
-
+		
 	PointAttribute.NUMBER_OF_RETURNS = new PointAttribute(
 		"NUMBER_OF_RETURNS", PointAttributeTypes.DATA_TYPE_UINT8, 1);
-
+		
 	PointAttribute.SOURCE_ID = new PointAttribute(
 		"SOURCE_ID", PointAttributeTypes.DATA_TYPE_UINT16, 1);
 
@@ -56787,187 +56787,175 @@
 		static sphereFrom(b) {
 			return b.getBoundingSphere(new Sphere());
 		}
+
+		static toPotreeName([d, x, y, z]) {
+			var name = 'r';
+
+			for (var i = 0; i < d; ++i) {
+				var shift = d - i - 1;
+				var mask = 1 << shift;
+				var step = 0;
+
+				if (x & mask) step += 4;
+				if (y & mask) step += 2;
+				if (z & mask) step += 1;
+
+				name += step;
+			}
+
+			return name;
+		}
+
+		static maybeSrs(srs) {
+			try { 
+				proj4(srs); 
+				return srs
+			} catch (e) {}
+		}
 	};
 
-	class PointCloudEptGeometry {
-		constructor(url, info) {
-			let version = info.version;
-			let schema = info.schema;
-			let bounds = info.bounds;
-			let boundsConforming = info.boundsConforming;
+	class BaseGeometry {
+		constructor({ 
+			cube,
+			boundsConforming,
+			spacing,
+			srs,
+		}) {
+			this.cube = cube;
 
-			let xyz = [
-				U.findDim(schema, 'X'),
-				U.findDim(schema, 'Y'),
-				U.findDim(schema, 'Z')
-			];
-			let scale = xyz.map((d) => d.scale || 1);
-			let offset = xyz.map((d) => d.offset || 0);
-			this.eptScale = U.toVector3(scale);
-			this.eptOffset = U.toVector3(offset);
-
-			this.url = url;
-			this.info = info;
-			this.type = 'ept';
-
-			this.schema = schema;
-			this.span = info.span || info.ticks;
-			this.boundingBox = U.toBox3(bounds);
+			this.boundingBox = U.toBox3(cube);
 			this.tightBoundingBox = U.toBox3(boundsConforming);
-			this.offset = U.toVector3([0, 0, 0]);
 			this.boundingSphere = U.sphereFrom(this.boundingBox);
 			this.tightBoundingSphere = U.sphereFrom(this.tightBoundingBox);
+			this.offset = U.toVector3([0, 0, 0]);
 			this.version = new Potree.Version('1.7');
 
-			this.projection = null;
-			this.fallbackProjection = null;
+			this.loader = new Potree.CopcLaszipLoader();
 
-			if (info.srs && info.srs.horizontal) {
-				this.projection = info.srs.authority + ':' + info.srs.horizontal;
+			this.spacing = spacing;
+			this.projection = srs || null;
+			try {
+				proj4(this.projection);
+			} catch(e) {
+				this.projection = null;
 			}
 
-			if (info.srs.wkt) {
-				if (!this.projection) this.projection = info.srs.wkt;
-				else this.fallbackProjection = info.srs.wkt;
-			}
-
-			{
-				// TODO [mschuetz]: named projections that proj4 can't handle seem to cause problems.
-				// remove them for now
-
-				try{
-					proj4(this.projection);
-				}catch(e){
-					this.projection = null;
-				}
-
-
-
-			}
-
-
-			{
-				const attributes = new PointAttributes();
-
-				attributes.add(PointAttribute.POSITION_CARTESIAN);
-				attributes.add(new PointAttribute("rgba", PointAttributeTypes.DATA_TYPE_UINT8, 4));
-				attributes.add(new PointAttribute("intensity", PointAttributeTypes.DATA_TYPE_UINT16, 1));
-				attributes.add(new PointAttribute("classification", PointAttributeTypes.DATA_TYPE_UINT8, 1));
-				attributes.add(new PointAttribute("gps-time", PointAttributeTypes.DATA_TYPE_DOUBLE, 1));
-				attributes.add(new PointAttribute("returnNumber", PointAttributeTypes.DATA_TYPE_UINT8, 1));
-				attributes.add(new PointAttribute("number of returns", PointAttributeTypes.DATA_TYPE_UINT8, 1));
-				attributes.add(new PointAttribute("return number", PointAttributeTypes.DATA_TYPE_UINT8, 1));
-				attributes.add(new PointAttribute("source id", PointAttributeTypes.DATA_TYPE_UINT16, 1));
-
-				this.pointAttributes = attributes;
-			}
-
-
-
-			this.spacing =
-				(this.boundingBox.max.x - this.boundingBox.min.x) / this.span;
-
-			let hierarchyType = info.hierarchyType || 'json';
-
-			const dataType = info.dataType;
-			if (dataType == 'laszip') {
-				this.loader = new Potree.EptLaszipLoader();
-			}
-			else if (dataType == 'binary') {
-				this.loader = new Potree.EptBinaryLoader();
-			}
-			else if (dataType == 'zstandard') {
-				this.loader = new Potree.EptZstandardLoader();
-			}
-			else {
-				throw new Error('Could not read data type: ' + dataType);
-			}
-		}
-	};
-
-	class EptKey {
-		constructor(ept, b, d, x, y, z) {
-			this.ept = ept;
-			this.b = b;
-			this.d = d;
-			this.x = x || 0;
-			this.y = y || 0;
-			this.z = z || 0;
-		}
-
-		name() {
-			return this.d + '-' + this.x + '-' + this.y + '-' + this.z;
-		}
-
-		step(a, b, c) {
-			let min = this.b.min.clone();
-			let max = this.b.max.clone();
-			let dst = new Vector3().subVectors(max, min);
-
-			if (a)	min.x += dst.x / 2;
-			else	max.x -= dst.x / 2;
-
-			if (b)	min.y += dst.y / 2;
-			else	max.y -= dst.y / 2;
-
-			if (c)	min.z += dst.z / 2;
-			else	max.z -= dst.z / 2;
-
-			return new Potree.EptKey(
-					this.ept,
-					new Box3(min, max),
-					this.d + 1,
-					this.x * 2 + a,
-					this.y * 2 + b,
-					this.z * 2 + c);
-		}
-
-		children() {
-			var result = [];
-			for (var a = 0; a < 2; ++a) {
-				for (var b = 0; b < 2; ++b) {
-					for (var c = 0; c < 2; ++c) {
-						var add = this.step(a, b, c).name();
-						if (!result.includes(add)) result = result.concat(add);
-					}
-				}
-			}
-			return result;
+			const attributes = new PointAttributes();
+			attributes.add(PointAttribute.POSITION_CARTESIAN);
+			attributes.add(new PointAttribute("rgba", PointAttributeTypes.DATA_TYPE_UINT8, 4));
+			attributes.add(new PointAttribute("intensity", PointAttributeTypes.DATA_TYPE_UINT16, 1));
+			attributes.add(new PointAttribute("classification", PointAttributeTypes.DATA_TYPE_UINT8, 1));
+			attributes.add(new PointAttribute("gps-time", PointAttributeTypes.DATA_TYPE_FLOAT, 1));
+			attributes.add(new PointAttribute("returnNumber", PointAttributeTypes.DATA_TYPE_UINT8, 1));
+			attributes.add(new PointAttribute("number of returns", PointAttributeTypes.DATA_TYPE_UINT8, 1));
+			attributes.add(new PointAttribute("return number", PointAttributeTypes.DATA_TYPE_UINT8, 1));
+			attributes.add(new PointAttribute("source id", PointAttributeTypes.DATA_TYPE_UINT16, 1));
+			this.pointAttributes = attributes;
 		}
 	}
 
-	class PointCloudEptGeometryNode extends PointCloudTreeNode {
-		constructor(ept, b, d, x, y, z) {
+	class PointCloudCopcGeometry extends BaseGeometry {
+		static parse({ header, info, wkt }) {
+			return {
+				cube: info.cube,
+				boundsConforming: [...header.min, ...header.max],
+				spacing: info.spacing,
+				srs: wkt,
+			}
+		}
+
+		constructor(getter, copc) {
+			super(PointCloudCopcGeometry.parse(copc));
+
+			this.type = 'copc';
+			this.getter = getter;
+			this.copc = copc;
+			this.pages = { '0-0-0-0': copc.info.rootHierarchyPage };
+
+			this.loader = new Potree.CopcLaszipLoader();
+		}
+
+		async loadHierarchyPage(key) {
+			const { Copc, Key } = window.Copc;
+			const page = this.pages[Key.toString(key)];
+			return Copc.loadHierarchyPage(this.getter, page)
+		}
+	};
+
+	class PointCloudEptGeometry extends BaseGeometry {
+		static parse(ept) {
+			const { bounds: cube, boundsConforming, span, srs: filesrs } = ept;
+
+			const spacing = (cube[3] - cube[0]) / span;
+
+			let srs;
+			if (filesrs) {
+				const { authority, horizontal, wkt } = filesrs;
+				if (authority && horizontal) {
+					srs = U.maybeSrs(`${authority}:${horizontal}`);
+				}
+				if (!srs && wkt) srs = U.maybeSrs(wkt);
+			}
+
+			return { cube, boundsConforming, spacing, srs }
+		}
+
+		constructor(base, ept) {
+			super(PointCloudEptGeometry.parse(ept));
+
+			this.type = 'ept';
+			this.base = base;
+			this.ept = ept;
+
+			this.loader = (() => {
+				switch (ept.dataType) {
+					case 'laszip': return new Potree.EptLaszipLoader()
+					case 'binary': return new Potree.EptBinaryLoader()
+					case 'zstandard': return new Potree.EptZstandardLoader()
+					default: throw new Error('Invalid data type: ' + ept.dataType)
+				}
+			})();
+		}
+
+		async loadHierarchyPage(key) {
+			const { Ept, Key } = window.Copc;
+
+			const filename = `${this.base}/ept-hierarchy/${Key.toString(key)}.json`;
+			const response = await fetch(filename);
+			const json = await response.json();
+			return Ept.Hierarchy.parse(json)
+		}
+	}
+
+	class PointCloudCopcGeometryNode extends PointCloudTreeNode {
+		constructor(owner, key, bounds) {
 			super();
 
-			this.ept = ept;
-			this.key = new Potree.EptKey(
-					this.ept,
-					b || this.ept.boundingBox,
-					d || 0,
-					x,
-					y,
-					z);
+			const { Key } = Copc;
 
-			this.id = PointCloudEptGeometryNode.IDCount++;
+			this.owner = owner;
+			this.key = key || Key.create(0, 0, 0, 0);
+			this.bounds = bounds || owner.cube;
+
+			this.id = PointCloudCopcGeometryNode.IDCount++;
 			this.geometry = null;
-			this.boundingBox = this.key.b;
+			this.boundingBox = U.toBox3(this.bounds);
 			this.tightBoundingBox = this.boundingBox;
-			this.spacing = this.ept.spacing / Math.pow(2, this.key.d);
+			this.spacing = this.owner.spacing / Math.pow(2, Key.depth(this.key));
 			this.boundingSphere = U.sphereFrom(this.boundingBox);
 
 			// These are set during hierarchy loading.
 			this.hasChildren = false;
 			this.children = { };
+			this.nodeinfo = undefined;
 			this.numPoints = -1;
 
-			this.level = this.key.d;
+			this.level = Key.depth(this.key);
 			this.loaded = false;
 			this.loading = false;
 			this.oneTimeDisposeHandlers = [];
 
-			let k = this.key;
-			this.name = this.toPotreeName(k.d, k.x, k.y, k.z);
+			this.name = U.toPotreeName(this.key);
 			this.index = parseInt(this.name.charAt(this.name.length - 1));
 		}
 
@@ -56977,10 +56965,9 @@
 		isLoaded() { return this.loaded; }
 		getBoundingSphere() { return this.boundingSphere; }
 		getBoundingBox() { return this.boundingBox; }
-		url() { return this.ept.url + 'ept-data/' + this.filename(); }
-		getNumPoints() { return this.numPoints; }
-
-		filename() { return this.key.name(); }
+		getNumPoints() { 
+			return this.nodeinfo ? this.nodeinfo.pointCount : -1; 
+		}
 
 		getChildren() {
 			let children = [];
@@ -56999,69 +56986,73 @@
 			child.parent = this;
 		}
 
-		load() {
+		async load() {
 			if (this.loaded || this.loading) return;
 			if (Potree.numNodesLoading >= Potree.maxNodesLoading) return;
 
 			this.loading = true;
 			++Potree.numNodesLoading;
 
-			if (this.numPoints == -1) this.loadHierarchy();
+			if (!this.nodeinfo) await this.loadHierarchy();
 			this.loadPoints();
 		}
 
 		loadPoints(){
-			this.ept.loader.load(this);
+			this.owner.loader.load(this);
 		}
 
 		async loadHierarchy() {
-			let nodes = { };
-			nodes[this.filename()] = this;
+			const { Bounds, Key } = window.Copc;
+			const ourkeyname = Key.toString(this.key);
+
+			let nodemap = { };
+			nodemap[ourkeyname] = this;
 			this.hasChildren = false;
 
-			let eptHierarchyFile =
-				`${this.ept.url}ept-hierarchy/${this.filename()}.json`;
+			const { nodes, pages } = await this.owner.loadHierarchyPage(this.key);
 
-			let response = await fetch(eptHierarchyFile);
-			let hier = await response.json();
+			// Since we want to traverse top-down, and 10 comes lexicographically 
+			// before 9 (for example), do a deep sort.
+			const keys = Object.keys({ ...nodes, ...pages })
+				.map(Key.create)
+				.sort(Key.compare);
 
-			// Since we want to traverse top-down, and 10 comes
-			// lexicographically before 9 (for example), do a deep sort.
-			var keys = Object.keys(hier).sort((a, b) => {
-				let [da, xa, ya, za] = a.split('-').map((n) => parseInt(n, 10));
-				let [db, xb, yb, zb] = b.split('-').map((n) => parseInt(n, 10));
-				if (da < db) return -1; if (da > db) return 1;
-				if (xa < xb) return -1; if (xa > xb) return 1;
-				if (ya < yb) return -1; if (ya > yb) return 1;
-				if (za < zb) return -1; if (za > zb) return 1;
-				return 0;
-			});
+			keys.forEach((key) => {
+				const keyname = Key.toString(key);
+				if (keyname === ourkeyname) {
+					this.nodeinfo = nodes[keyname];
+					return;
+				}
 
-			keys.forEach((v) => {
-				let [d, x, y, z] = v.split('-').map((n) => parseInt(n, 10));
-				let a = x & 1, b = y & 1, c = z & 1;
-				let parentName =
-					(d - 1) + '-' + (x >> 1) + '-' + (y >> 1) + '-' + (z >> 1);
+				const [_d, x, y, z] = key;
+				const step = [x & 1, y & 1, z & 1];
 
-				let parentNode = nodes[parentName];
+				let parentName = Key.toString(Key.up(key));
+				let parentNode = nodemap[parentName];
 				if (!parentNode) return;
 				parentNode.hasChildren = true;
 
-				let key = parentNode.key.step(a, b, c);
-
-				let node = new Potree.PointCloudEptGeometryNode(
-						this.ept,
-						key.b,
-						key.d,
-						key.x,
-						key.y,
-						key.z);
-
-				node.level = d;
-				node.numPoints = hier[v];
-
+				const bounds = Bounds.step(parentNode.bounds, step);
+				const node = new Potree.PointCloudCopcGeometryNode(
+					this.owner,
+					key, 
+					bounds);
 				parentNode.addChild(node);
-				nodes[key.name()] = node;
+				nodemap[keyname] = node;
+
+				// For data nodes, add their point data offset/point counts.
+				const nodeinfo = nodes[keyname];
+				if (nodeinfo) node.nodeinfo = nodeinfo;
+
+				// And for leaf nodes whose data is in a different hierarchy page, 
+				// store the info for the hierarchy page in our page map.  This is
+				// only applicable for COPC data since we need hierarchy page 
+				// ranges to fetch them - EPT data on the other hand we just need
+				// the node key to fetch the file.
+				const pageinfo = pages[keyname];
+				if (this.owner.pages && pageinfo) {
+					this.owner.pages[keyname] = pageinfo;
+				}
 			});
 		}
 
@@ -57076,26 +57067,8 @@
 			--Potree.numNodesLoading;
 		}
 
-		toPotreeName(d, x, y, z) {
-			var name = 'r';
-
-			for (var i = 0; i < d; ++i) {
-				var shift = d - i - 1;
-				var mask = 1 << shift;
-				var step = 0;
-
-				if (x & mask) step += 4;
-				if (y & mask) step += 2;
-				if (z & mask) step += 1;
-
-				name += step;
-			}
-
-			return name;
-		}
-
 		dispose() {
-			if (this.geometry && this.parent != null) {
+			if (this.geometry && this.parent) {
 				this.geometry.dispose();
 				this.geometry = null;
 				this.loaded = false;
@@ -57110,7 +57083,7 @@
 		}
 	}
 
-	PointCloudEptGeometryNode.IDCount = 0;
+	PointCloudCopcGeometryNode.IDCount = 0;
 
 	class PointCloudOctreeGeometry{
 
@@ -57125,7 +57098,7 @@
 			this.hierarchyStepSize = -1;
 			this.loader = null;
 		}
-
+		
 	}
 
 	class PointCloudOctreeGeometryNode extends PointCloudTreeNode{
@@ -57362,7 +57335,7 @@
 				this.loaded = false;
 
 				this.dispatchEvent( { type: 'dispose' } );
-
+				
 				for (let i = 0; i < this.oneTimeDisposeHandlers.length; i++) {
 					let handler = this.oneTimeDisposeHandlers[i];
 					handler();
@@ -57370,7 +57343,7 @@
 				this.oneTimeDisposeHandlers = [];
 			}
 		}
-
+		
 	}
 
 	PointCloudOctreeGeometryNode.IDCount = 0;
@@ -57658,15 +57631,15 @@ float round(float number){
 	return floor(number + 0.5);
 }
 
-//
-//    ###    ########     ###    ########  ######## #### ##     ## ########     ######  #### ######## ########  ######
-//   ## ##   ##     ##   ## ##   ##     ##    ##     ##  ##     ## ##          ##    ##  ##       ##  ##       ##    ##
-//  ##   ##  ##     ##  ##   ##  ##     ##    ##     ##  ##     ## ##          ##        ##      ##   ##       ##
-// ##     ## ##     ## ##     ## ########     ##     ##  ##     ## ######       ######   ##     ##    ######    ######
-// ######### ##     ## ######### ##           ##     ##   ##   ##  ##                ##  ##    ##     ##             ##
-// ##     ## ##     ## ##     ## ##           ##     ##    ## ##   ##          ##    ##  ##   ##      ##       ##    ##
-// ##     ## ########  ##     ## ##           ##    ####    ###    ########     ######  #### ######## ########  ######
-//
+// 
+//    ###    ########     ###    ########  ######## #### ##     ## ########     ######  #### ######## ########  ######  
+//   ## ##   ##     ##   ## ##   ##     ##    ##     ##  ##     ## ##          ##    ##  ##       ##  ##       ##    ## 
+//  ##   ##  ##     ##  ##   ##  ##     ##    ##     ##  ##     ## ##          ##        ##      ##   ##       ##       
+// ##     ## ##     ## ##     ## ########     ##     ##  ##     ## ######       ######   ##     ##    ######    ######  
+// ######### ##     ## ######### ##           ##     ##   ##   ##  ##                ##  ##    ##     ##             ## 
+// ##     ## ##     ## ##     ## ##           ##     ##    ## ##   ##          ##    ##  ##   ##      ##       ##    ## 
+// ##     ## ########  ##     ## ##           ##    ####    ###    ########     ######  #### ######## ########  ######  
+// 																			
 
 
 // ---------------------
@@ -57683,7 +57656,7 @@ int numberOfOnes(int number, int index){
 	int numOnes = 0;
 	int tmp = 128;
 	for(int i = 7; i >= 0; i--){
-
+		
 		if(number >= tmp){
 			number = number - tmp;
 
@@ -57691,7 +57664,7 @@ int numberOfOnes(int number, int index){
 				numOnes++;
 			}
 		}
-
+		
 		tmp = tmp / 2;
 	}
 
@@ -57738,17 +57711,17 @@ bool isBitSet(int number, int index){
  * find the LOD at the point position
  */
 float getLOD(){
-
+	
 	vec3 offset = vec3(0.0, 0.0, 0.0);
 	int iOffset = int(uVNStart);
 	float depth = uLevel;
 	for(float i = 0.0; i <= 30.0; i++){
 		float nodeSizeAtLevel = uOctreeSize / pow(2.0, i + uLevel + 0.0);
-
+		
 		vec3 index3d = (position-offset) / nodeSizeAtLevel;
 		index3d = floor(index3d + 0.5);
 		int index = int(round(4.0 * index3d.x + 2.0 * index3d.y + index3d.z));
-
+		
 		vec4 value = texture2D(visibleNodes, vec2(float(iOffset) / 2048.0, 0.0));
 		int mask = int(round(value.r * 255.0));
 
@@ -57760,7 +57733,7 @@ float getLOD(){
 			int advance = advanceG + advanceB + advanceChild;
 
 			iOffset = iOffset + advance;
-
+			
 			depth++;
 		}else{
 			// no more visible child nodes at this position
@@ -57770,10 +57743,10 @@ float getLOD(){
 
 			return depth  + lodOffset;
 		}
-
+		
 		offset = offset + (vec3(1.0, 1.0, 1.0) * nodeSizeAtLevel * 0.5) * index3d;
 	}
-
+		
 	return depth;
 }
 
@@ -57784,11 +57757,11 @@ float getSpacing(){
 	float spacing = uNodeSpacing;
 	for(float i = 0.0; i <= 30.0; i++){
 		float nodeSizeAtLevel = uOctreeSize / pow(2.0, i + uLevel + 0.0);
-
+		
 		vec3 index3d = (position-offset) / nodeSizeAtLevel;
 		index3d = floor(index3d + 0.5);
 		int index = int(round(4.0 * index3d.x + 2.0 * index3d.y + index3d.z));
-
+		
 		vec4 value = texture2D(visibleNodes, vec2(float(iOffset) / 2048.0, 0.0));
 		int mask = int(round(value.r * 255.0));
 		float spacingFactor = value.a;
@@ -57796,7 +57769,7 @@ float getSpacing(){
 		if(i > 0.0){
 			spacing = spacing / (255.0 * spacingFactor);
 		}
-
+		
 
 		if(isBitSet(mask, index)){
 			// there are more visible child nodes at this position
@@ -57809,16 +57782,16 @@ float getSpacing(){
 
 			//spacing = spacing / (255.0 * spacingFactor);
 			//spacing = spacing / 3.0;
-
+			
 			depth++;
 		}else{
 			// no more visible child nodes at this position
 			return spacing;
 		}
-
+		
 		offset = offset + (vec3(1.0, 1.0, 1.0) * nodeSizeAtLevel * 0.5) * index3d;
 	}
-
+		
 	return spacing;
 }
 
@@ -57840,23 +57813,23 @@ float getLOD(){
 	vec3 offset = vec3(0.0, 0.0, 0.0);
 	float iOffset = 0.0;
 	float depth = 0.0;
-
-
-	vec3 size = uBBSize;
+		
+		
+	vec3 size = uBBSize;	
 	vec3 pos = position;
-
+		
 	for(float i = 0.0; i <= 1000.0; i++){
-
+		
 		vec4 value = texture2D(visibleNodes, vec2(iOffset / 2048.0, 0.0));
-
+		
 		int children = int(value.r * 255.0);
 		float next = value.g * 255.0;
 		int split = int(value.b * 255.0);
-
+		
 		if(next == 0.0){
 		 	return depth;
 		}
-
+		
 		vec3 splitv = vec3(0.0, 0.0, 0.0);
 		if(split == 1){
 			splitv.x = 1.0;
@@ -57865,9 +57838,9 @@ float getLOD(){
 		}else if(split == 4){
 		 	splitv.z = 1.0;
 		}
-
+		
 		iOffset = iOffset + next;
-
+		
 		float factor = length(pos * splitv / size);
 		if(factor < 0.5){
 			// left
@@ -57885,12 +57858,12 @@ float getLOD(){
 			}
 		}
 		size = size * ((1.0 - (splitv + 1.0) / 2.0) + 0.5);
-
+		
 		depth++;
 	}
-
-
-	return depth;
+		
+		
+	return depth;	
 }
 
 float getPointSizeAttenuation(){
@@ -57901,15 +57874,15 @@ float getPointSizeAttenuation(){
 
 
 
-//
-//    ###    ######## ######## ########  #### ########  ##     ## ######## ########  ######
-//   ## ##      ##       ##    ##     ##  ##  ##     ## ##     ##    ##    ##       ##    ##
-//  ##   ##     ##       ##    ##     ##  ##  ##     ## ##     ##    ##    ##       ##
-// ##     ##    ##       ##    ########   ##  ########  ##     ##    ##    ######    ######
-// #########    ##       ##    ##   ##    ##  ##     ## ##     ##    ##    ##             ##
-// ##     ##    ##       ##    ##    ##   ##  ##     ## ##     ##    ##    ##       ##    ##
-// ##     ##    ##       ##    ##     ## #### ########   #######     ##    ########  ######
-//
+// 
+//    ###    ######## ######## ########  #### ########  ##     ## ######## ########  ######  
+//   ## ##      ##       ##    ##     ##  ##  ##     ## ##     ##    ##    ##       ##    ## 
+//  ##   ##     ##       ##    ##     ##  ##  ##     ## ##     ##    ##    ##       ##       
+// ##     ##    ##       ##    ########   ##  ########  ##     ##    ##    ######    ######  
+// #########    ##       ##    ##   ##    ##  ##     ## ##     ##    ##    ##             ## 
+// ##     ##    ##       ##    ##    ##   ##  ##     ## ##     ##    ##    ##       ##    ## 
+// ##     ##    ##       ##    ##     ## #### ########   #######     ##    ########  ######                                                                               
+// 
 
 
 
@@ -57920,7 +57893,7 @@ float getContrastFactor(float contrast){
 
 vec3 getRGB(){
 	vec3 rgb = color;
-
+	
 	rgb = pow(rgb, vec3(uRGB_gbc.x));
 	rgb = rgb + uRGB_gbc.y;
 	rgb = (rgb - 0.5) * getContrastFactor(uRGB_gbc.z) + 0.5;
@@ -57951,7 +57924,7 @@ vec3 getGpsTime(){
 	// float w = gpsTime * (r.y - r.x) + r.x;
 	// w = clamp(w, 0.0, 1.0);
 	// vec3 c = texture2D(gradient, vec2(w,1.0-w)).rgb;
-
+	
 	return c;
 }
 
@@ -57959,14 +57932,14 @@ vec3 getElevation(){
 	vec4 world = modelMatrix * vec4( position, 1.0 );
 	float w = (world.z - elevationRange.x) / (elevationRange.y - elevationRange.x);
 	vec3 cElevation = texture2D(gradient, vec2(w,1.0-w)).rgb;
-
+	
 	return cElevation;
 }
 
 vec4 getClassification(){
 	vec2 uv = vec2(classification / 255.0, 0.5);
 	vec4 classColor = texture2D(classificationLUT, uv);
-
+	
 	return classColor;
 }
 
@@ -58045,30 +58018,30 @@ vec3 getCompositeColor(){
 
 	c += wRGB * getRGB();
 	w += wRGB;
-
+	
 	c += wIntensity * getIntensity() * vec3(1.0, 1.0, 1.0);
 	w += wIntensity;
-
+	
 	c += wElevation * getElevation();
 	w += wElevation;
-
+	
 	c += wReturnNumber * getReturnNumber();
 	w += wReturnNumber;
-
+	
 	c += wSourceID * getSourceID();
 	w += wSourceID;
-
+	
 	vec4 cl = wClassification * getClassification();
 	c += cl.a * cl.rgb;
 	w += wClassification * cl.a;
 
 	c = c / w;
-
+	
 	if(w == 0.0){
 		//c = color;
 		gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
 	}
-
+	
 	return c;
 }
 
@@ -58083,7 +58056,7 @@ bool applyBackfaceCulling() {
 	vec3 e = normalize(vec3(modelViewMatrix * vec4( position, 1. )));
 	vec3 n = getNormal(); // normalize( vec3(modelViewMatrix * vec4( normal, 0.0 )) );
 
-	if((uUseOrthographicCamera && n.z <= 0.) || (!uUseOrthographicCamera && dot( n, e ) >= 0.)) {
+	if((uUseOrthographicCamera && n.z <= 0.) || (!uUseOrthographicCamera && dot( n, e ) >= 0.)) { 
 		return true;
 	} else {
 		return false;
@@ -58092,15 +58065,15 @@ bool applyBackfaceCulling() {
 
 #if defined(color_type_matcap)
 // Matcap Material
-vec3 getMatcap(){
-	vec3 eye = normalize( vec3( modelViewMatrix * vec4( position, 1. ) ) );
-	if(uUseOrthographicCamera) {
+vec3 getMatcap(){ 
+	vec3 eye = normalize( vec3( modelViewMatrix * vec4( position, 1. ) ) ); 
+	if(uUseOrthographicCamera) { 
 		eye = vec3(0., 0., -1.);
 	}
 	vec3 r_en = reflect( eye, getNormal() ); // or r_en = e - 2. * dot( n, e ) * n;
 	float m = 2. * sqrt(pow( r_en.x, 2. ) + pow( r_en.y, 2. ) + pow( r_en.z + 1., 2. ));
 	vec2 vN = r_en.xy / m + .5;
-	return texture2D(matcapTextureUniform, vN).rgb;
+	return texture2D(matcapTextureUniform, vN).rgb; 
 }
 #endif
 
@@ -58126,7 +58099,7 @@ vec3 getExtra(){
 
 vec3 getColor(){
 	vec3 color;
-
+	
 	#ifdef color_type_rgba
 		color = getRGB();
 	#elif defined color_type_height || defined color_type_elevation
@@ -58156,7 +58129,7 @@ vec3 getColor(){
 	#elif defined color_type_indices
 		color = indices.rgb;
 	#elif defined color_type_classification
-		vec4 cl = getClassification();
+		vec4 cl = getClassification(); 
 		color = cl.rgb;
 	#elif defined color_type_return_number
 		color = getReturnNumber();
@@ -58176,10 +58149,10 @@ vec3 getColor(){
 		color = getCompositeColor();
 	#elif defined color_type_matcap
 		color = getMatcap();
-	#else
+	#else 
 		color = getExtra();
 	#endif
-
+	
 	if (backfaceCulling && applyBackfaceCulling()) {
 		color = vec3(0.);
 	}
@@ -58189,16 +58162,16 @@ vec3 getColor(){
 
 float getPointSize(){
 	float pointSize = 1.0;
-
+	
 	float slope = tan(fov / 2.0);
 	float projFactor = -0.5 * uScreenHeight / (slope * vViewPosition.z);
 
 	float scale = length(
-		modelViewMatrix * vec4(0, 0, 0, 1) -
+		modelViewMatrix * vec4(0, 0, 0, 1) - 
 		modelViewMatrix * vec4(uOctreeSpacing, 0, 0, 1)
 	) / uOctreeSpacing;
 	projFactor = projFactor * scale;
-
+	
 	float r = uOctreeSpacing * 1.7;
 	vRadius = r;
 	#if defined fixed_point_size
@@ -58222,7 +58195,7 @@ float getPointSize(){
 
 	pointSize = max(minSize, pointSize);
 	pointSize = min(maxSize, pointSize);
-
+	
 	vRadius = pointSize / projFactor;
 
 	return pointSize;
@@ -58257,7 +58230,7 @@ bool pointInClipPolygon(vec3 point, int polyIdx) {
 		vec3 verti = uClipPolygonVertices[polyIdx * 8 + i];
 		vec3 vertj = uClipPolygonVertices[polyIdx * 8 + j];
 
-		if( ((verti.y > pointNDC.y) != (vertj.y > pointNDC.y)) &&
+		if( ((verti.y > pointNDC.y) != (vertj.y > pointNDC.y)) && 
 			(pointNDC.x < (vertj.x-verti.x) * (pointNDC.y-verti.y) / (vertj.y-verti.y) + verti.x) ) {
 			c = !c;
 		}
@@ -58271,10 +58244,10 @@ bool pointInClipPolygon(vec3 point, int polyIdx) {
 void doClipping(){
 
 	{
-		vec4 cl = getClassification();
+		vec4 cl = getClassification(); 
 		if(cl.a == 0.0){
 			gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
-
+			
 			return;
 		}
 	}
@@ -58284,7 +58257,7 @@ void doClipping(){
 		vec2 range = uFilterReturnNumberRange;
 		if(returnNumber < range.x || returnNumber > range.y){
 			gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
-
+			
 			return;
 		}
 	}
@@ -58295,7 +58268,7 @@ void doClipping(){
 		vec2 range = uFilterNumberOfReturnsRange;
 		if(numberOfReturns < range.x || numberOfReturns > range.y){
 			gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
-
+			
 			return;
 		}
 	}
@@ -58308,7 +58281,7 @@ void doClipping(){
 
 		if(time < range.x || time > range.y){
 			gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
-
+			
 			return;
 		}
 	}
@@ -58319,7 +58292,7 @@ void doClipping(){
 		vec2 range = uFilterPointSourceIDClipRange;
 		if(pointSourceID < range.x || pointSourceID > range.y){
 			gl_Position = vec4(100.0, 100.0, 100.0, 0.0);
-
+			
 			return;
 		}
 	}
@@ -58337,7 +58310,7 @@ void doClipping(){
 
 			insideCount = insideCount + (inside ? 1 : 0);
 			clipVolumesCount++;
-		}
+		}	
 	#endif
 
 	#if defined(num_clippolygons) && num_clippolygons > 0
@@ -58373,14 +58346,14 @@ void doClipping(){
 
 
 
-//
-// ##     ##    ###    #### ##    ##
-// ###   ###   ## ##    ##  ###   ##
-// #### ####  ##   ##   ##  ####  ##
-// ## ### ## ##     ##  ##  ## ## ##
-// ##     ## #########  ##  ##  ####
-// ##     ## ##     ##  ##  ##   ###
-// ##     ## ##     ## #### ##    ##
+// 
+// ##     ##    ###    #### ##    ## 
+// ###   ###   ## ##    ##  ###   ## 
+// #### ####  ##   ##   ##  ####  ## 
+// ## ### ## ##     ##  ##  ## ## ## 
+// ##     ## #########  ##  ##  #### 
+// ##     ## ##     ##  ##  ##   ### 
+// ##     ## ##     ## #### ##    ## 
 //
 
 void main() {
@@ -58436,7 +58409,7 @@ void main() {
 			if(distance < 1.0){
 				float w = distance;
 				vec3 cGradient = texture2D(gradient, vec2(w, 1.0 - w)).rgb;
-
+				
 				vColor = cGradient;
 				//vColor = cGradient * 0.7 + vColor * 0.3;
 			}
@@ -58451,10 +58424,10 @@ void main() {
 		for(int i = 0; i < num_shadowmaps; i++){
 			vec3 viewPos = (uShadowWorldView[i] * vec4(position, 1.0)).xyz;
 			float distanceToLight = abs(viewPos.z);
-
+			
 			vec4 projPos = uShadowProj[i] * uShadowWorldView[i] * vec4(position, 1);
 			vec3 nc = projPos.xyz / projPos.w;
-
+			
 			float u = nc.x * 0.5 + 0.5;
 			float v = nc.y * 0.5 + 0.5;
 
@@ -58549,18 +58522,18 @@ void main() {
 	vec3 color = vColor;
 	float depth = gl_FragCoord.z;
 
-	#if defined(circle_point_shape) || defined(paraboloid_point_shape)
+	#if defined(circle_point_shape) || defined(paraboloid_point_shape) 
 		float u = 2.0 * gl_PointCoord.x - 1.0;
 		float v = 2.0 * gl_PointCoord.y - 1.0;
 	#endif
-
-	#if defined(circle_point_shape)
+	
+	#if defined(circle_point_shape) 
 		float cc = u*u + v*v;
 		if(cc > 1.0){
 			discard;
 		}
 	#endif
-
+		
 	#if defined color_type_indices
 		gl_FragColor = vec4(color, uPCIndex / 255.0);
 	#else
@@ -58577,16 +58550,16 @@ void main() {
 		float expDepth = pos.z;
 		depth = (pos.z + 1.0) / 2.0;
 		gl_FragDepthEXT = depth;
-
+		
 		#if defined(color_type_depth)
 			color.r = linearDepth;
 			color.g = expDepth;
 		#endif
-
+		
 		#if defined(use_edl)
 			gl_FragColor.a = log2(linearDepth);
 		#endif
-
+		
 	#else
 		#if defined(use_edl)
 			gl_FragColor.a = vLogDepth;
@@ -58603,7 +58576,7 @@ void main() {
 	#endif
 
 	//gl_FragColor = vec4(0.0, 0.7, 0.0, 1.0);
-
+	
 }
 
 
@@ -58677,17 +58650,17 @@ bool isBitSet(float number, float index){
  * find the LOD at the point position
  */
 float getLOD(){
-
+	
 	vec3 offset = vec3(0.0, 0.0, 0.0);
 	float iOffset = uVNStart;
 	float depth = uLevel;
 	for(float i = 0.0; i <= 30.0; i++){
 		float nodeSizeAtLevel = uOctreeSize  / pow(2.0, i + uLevel + 0.0);
-
+		
 		vec3 index3d = (position-offset) / nodeSizeAtLevel;
 		index3d = floor(index3d + 0.5);
 		float index = 4.0 * index3d.x + 2.0 * index3d.y + index3d.z;
-
+		
 		vec4 value = texture2D(visibleNodes, vec2(iOffset / 2048.0, 0.0));
 		float mask = value.r * 255.0;
 		if(isBitSet(mask, index)){
@@ -58698,10 +58671,10 @@ float getLOD(){
 			// no more visible child nodes at this position
 			return depth;
 		}
-
+		
 		offset = offset + (vec3(1.0, 1.0, 1.0) * nodeSizeAtLevel * 0.5) * index3d;
 	}
-
+		
 	return depth;
 }
 
@@ -58709,17 +58682,17 @@ float getLOD(){
 
 float getPointSize(){
 	float pointSize = 1.0;
-
+	
 	float slope = tan(fov / 2.0);
 	float projFactor =  -0.5 * uScreenHeight / (slope * vViewPosition.z);
-
+	
 	float r = uOctreeSpacing * 1.5;
 	vRadius = r;
 	#if defined fixed_point_size
 		pointSize = size;
 	#elif defined attenuated_point_size
 		if(uUseOrthographicCamera){
-			pointSize = size;
+			pointSize = size;			
 		}else{
 			pointSize = pointSize * projFactor;
 		}
@@ -58735,7 +58708,7 @@ float getPointSize(){
 
 	pointSize = max(minSize, pointSize);
 	pointSize = min(maxSize, pointSize);
-
+	
 	vRadius = pointSize / projFactor;
 
 	return pointSize;
@@ -58766,7 +58739,7 @@ void main() {
 	//gl_FragColor = vec4(vColor, 1.0);
 	//gl_FragColor = vec4(vLinearDepth, pow(vLinearDepth, 2.0), 0.0, 1.0);
 	gl_FragColor = vec4(vLinearDepth, vLinearDepth / 30.0, vLinearDepth / 30.0, 1.0);
-
+	
 }
 
 
@@ -58802,18 +58775,18 @@ varying vec2 vUv;
 
 void main() {
 	float depth = texture2D(uDepthMap, vUv).r;
-
+	
 	if(depth >= 1.0){
 		discard;
 	}
 
 	gl_FragColor = vec4(depth, 1.0, 0.0, 1.0);
 
-	vec4 color = texture2D(uWeightMap, vUv);
+	vec4 color = texture2D(uWeightMap, vUv); 
 	color = color / color.w;
-
-	gl_FragColor = vec4(color.xyz, 1.0);
-
+	
+	gl_FragColor = vec4(color.xyz, 1.0); 
+	
 	gl_FragDepthEXT = depth;
 
 
@@ -58822,7 +58795,7 @@ void main() {
 	Shaders["normalize_and_edl.fs"] = `
 #extension GL_EXT_frag_depth : enable
 
-//
+// 
 // adapted from the EDL shader code from Christian Boucheny in cloud compare:
 // https://github.com/cloudcompare/trunk/tree/master/plugins/qEDL/shaders/EDL
 //
@@ -58844,12 +58817,12 @@ varying vec2 vUv;
 
 float response(float depth){
 	vec2 uvRadius = radius / vec2(screenWidth, screenHeight);
-
+	
 	float sum = 0.0;
-
+	
 	for(int i = 0; i < NEIGHBOUR_COUNT; i++){
 		vec2 uvNeighbor = vUv + uvRadius * neighbours[i];
-
+		
 		float neighbourDepth = texture2D(uEDLMap, uvNeighbor).a;
 
 		if(neighbourDepth != 0.0){
@@ -58860,7 +58833,7 @@ float response(float depth){
 			}
 		}
 	}
-
+	
 	return sum / float(NEIGHBOUR_COUNT);
 }
 
@@ -58874,12 +58847,12 @@ void main() {
 	if(depth >= 1.0 && res == 0.0){
 		discard;
 	}
-
-	vec4 color = texture2D(uWeightMap, vUv);
+	
+	vec4 color = texture2D(uWeightMap, vUv); 
 	color = color / color.w;
 	color = color * shade;
 
-	gl_FragColor = vec4(color.xyz, 1.0);
+	gl_FragColor = vec4(color.xyz, 1.0); 
 
 	gl_FragDepthEXT = depth;
 }`;
@@ -58898,7 +58871,7 @@ varying vec2 vUv;
 
 void main() {
 	vUv = uv;
-
+	
 	vec4 mvPosition = modelViewMatrix * vec4(position,1.0);
 
 	gl_Position = projectionMatrix * mvPosition;
@@ -58907,7 +58880,7 @@ void main() {
 	Shaders["edl.fs"] = `
 #extension GL_EXT_frag_depth : enable
 
-//
+// 
 // adapted from the EDL shader code from Christian Boucheny in cloud compare:
 // https://github.com/cloudcompare/trunk/tree/master/plugins/qEDL/shaders/EDL
 //
@@ -58934,12 +58907,12 @@ varying vec2 vUv;
 
 float response(float depth){
 	vec2 uvRadius = radius / vec2(screenWidth, screenHeight);
-
+	
 	float sum = 0.0;
-
+	
 	for(int i = 0; i < NEIGHBOUR_COUNT; i++){
 		vec2 uvNeighbor = vUv + uvRadius * neighbours[i];
-
+		
 		float neighbourDepth = texture2D(uEDLColor, uvNeighbor).a;
 		neighbourDepth = (neighbourDepth == 1.0) ? 0.0 : neighbourDepth;
 
@@ -58951,13 +58924,13 @@ float response(float depth){
 			}
 		}
 	}
-
+	
 	return sum / float(NEIGHBOUR_COUNT);
 }
 
 void main(){
 	vec4 cEDL = texture2D(uEDLColor, vUv);
-
+	
 	float depth = cEDL.a;
 	depth = (depth == 1.0) ? 0.0 : depth;
 	float res = response(depth);
@@ -59020,7 +58993,7 @@ void main() {
 	color += texture2D(map, vUv + vec2(+dx,  dy)).rgb;
 
 	color = color / 9.0;
-
+	
 	gl_FragColor = vec4(color, 1.0);
 }`;
 
@@ -59043,7 +59016,7 @@ void main() {
 	};
 
 	Object.defineProperty(ClassificationScheme, 'RANDOM', {
-		get: function() {
+		get: function() { 
 
 			let scheme = {};
 
@@ -59211,7 +59184,7 @@ void main() {
 
 			this.vertexShader = Shaders['pointcloud.vs'];
 			this.fragmentShader = Shaders['pointcloud.fs'];
-
+			
 			this.vertexColors = VertexColors;
 
 			this.updateShaderSource();
@@ -59308,7 +59281,7 @@ void main() {
 
 				defines.push(`#define color_type_${attributeName}`);
 			}
-
+			
 			if(this._treeType === TreeType.OCTREE){
 				defines.push('#define tree_type_octree');
 			}else if(this._treeType === TreeType.KDTREE){
@@ -59368,7 +59341,7 @@ void main() {
 				this.updateShaderSource();
 			}
 		}
-
+		
 		get gradient(){
 			return this._gradient;
 		}
@@ -59584,7 +59557,7 @@ void main() {
 				this.uniforms.far.value = value;
 			}
 		}
-
+		
 		get opacity(){
 			return this.uniforms.uOpacity.value;
 		}
@@ -59664,7 +59637,7 @@ void main() {
 		set color (value) {
 			if (!this.uniforms.uColor.value.equals(value)) {
 				this.uniforms.uColor.value.copy(value);
-
+				
 				this.dispatchEvent({
 					type: 'color_changed',
 					target: this
@@ -59901,7 +59874,7 @@ void main() {
 			}
 		}
 
-
+		
 		get extraGamma () {
 			return this.uniforms.uExtraGammaBrightContr.value[0];
 		}
@@ -60101,11 +60074,11 @@ void main() {
 
 			context.fillStyle = ctxGradient;
 			context.fill();
-
+			
 			//let texture = new THREE.Texture(canvas);
 			let texture = new CanvasTexture(canvas);
 			texture.needsUpdate = true;
-
+			
 			texture.minFilter = LinearFilter;
 			texture.wrap = RepeatWrapping;
 			texture.repeat = 2;
@@ -60113,16 +60086,16 @@ void main() {
 
 			return texture;
 		}
-
+		
 		static generateMatcapTexture (matcap) {
 		var url = new URL(Potree.resourcePath + "/textures/matcap/" + matcap).href;
 		let texture = new TextureLoader().load( url );
-			texture.magFilter = texture.minFilter = LinearFilter;
+			texture.magFilter = texture.minFilter = LinearFilter; 
 			texture.needsUpdate = true;
 			// PotreeConverter_1.6_2018_07_29_windows_x64\PotreeConverter.exe autzen_xyzrgbXYZ_ascii.xyz -f xyzrgbXYZ -a RGB NORMAL -o autzen_xyzrgbXYZ_ascii_a -p index --overwrite
-			// Switch matcap texture on the fly : viewer.scene.pointclouds[0].material.matcap = 'matcap1.jpg';
+			// Switch matcap texture on the fly : viewer.scene.pointclouds[0].material.matcap = 'matcap1.jpg'; 
 			// For non power of 2, use LinearFilter and dont generate mipmaps, For power of 2, use NearestFilter and generate mipmaps : matcap2.jpg 1 2 8 11 12 13
-			return texture;
+			return texture; 
 		}
 
 		disableEvents(){
@@ -60512,8 +60485,8 @@ void main() {
 				}
 
 				let density = node.geometryNode.density;
-
-				if(typeof density === "number"){
+				
+				if(typeof density === "number" && !Number.isNaN(density)){
 					let lodOffset = Math.log2(density) / 2 - 1.5;
 
 					let offsetUint8 = (lodOffset + 10) * 10;
@@ -60559,7 +60532,7 @@ void main() {
 		}
 
 		deepestNodeAt(position){
-
+			
 			const toObjectSpace = this.matrixWorld.clone().invert();
 
 			const objPos = position.clone().applyMatrix4(toObjectSpace);
@@ -61047,11 +61020,11 @@ void main() {
 				}
 			}
 
-
+			
 			// { // DEBUG: show panel with pick image
 			// 	let img = Utils.pixelsArrayToImage(buffer, w, h);
 			// 	let screenshot = img.src;
-
+			
 			// 	if(!this.debugDIV){
 			// 		this.debugDIV = $(`
 			// 			<div id="pickDebug"
@@ -61062,7 +61035,7 @@ void main() {
 			// 			"></div>`);
 			// 		$(document.body).append(this.debugDIV);
 			// 	}
-
+			
 			// 	this.debugDIV.empty();
 			// 	this.debugDIV.append($(`<img src="${screenshot}"
 			// 		style="transform: scaleY(-1); width: 300px"/>`));
@@ -61289,7 +61262,7 @@ void main() {
 	}
 
 	class Points$1 {
-
+		
 		constructor () {
 			this.boundingBox = new Box3();
 			this.numPoints = 0;
@@ -61426,7 +61399,7 @@ void main() {
 			let frustum = new Frustum();
 			let viewI = camera.matrixWorldInverse;
 			let world = pointcloud.matrixWorld;
-
+			
 			// use close near plane for frustum intersection
 			let frustumCam = camera.clone();
 			frustumCam.near = Math.min(camera.near, 0.1);
@@ -61489,7 +61462,7 @@ void main() {
 		let priorityQueue = s.priorityQueue;
 
 		let loadedToGPUThisFrame = 0;
-
+		
 		let domWidth = renderer.domElement.clientWidth;
 		let domHeight = renderer.domElement.clientHeight;
 
@@ -61635,7 +61608,7 @@ void main() {
 					//	visible = false;
 					//}
 				}
-
+				
 
 			}
 
@@ -61689,7 +61662,7 @@ void main() {
 				let transformVersion = pointcloudTransformVersion.get(pointcloud);
 				if(node._transformVersion !== transformVersion.number){
 					node.sceneNode.updateMatrix();
-					node.sceneNode.matrixWorld.multiplyMatrices(pointcloud.matrixWorld, node.sceneNode.matrix);
+					node.sceneNode.matrixWorld.multiplyMatrices(pointcloud.matrixWorld, node.sceneNode.matrix);	
 					node._transformVersion = transformVersion.number;
 				}
 
@@ -61718,31 +61691,31 @@ void main() {
 			for (let i = 0; i < children.length; i++) {
 				let child = children[i];
 
-				let weight = 0;
+				let weight = 0; 
 				if(camera.isPerspectiveCamera){
 					let sphere = child.getBoundingSphere();
 					let center = sphere.center;
 					//let distance = sphere.center.distanceTo(camObjPos);
-
+					
 					let dx = camObjPos.x - center.x;
 					let dy = camObjPos.y - center.y;
 					let dz = camObjPos.z - center.z;
-
+					
 					let dd = dx * dx + dy * dy + dz * dz;
 					let distance = Math.sqrt(dd);
-
-
+					
+					
 					let radius = sphere.radius;
-
+					
 					let fov = (camera.fov * Math.PI) / 180;
 					let slope = Math.tan(fov / 2);
 					let projFactor = (0.5 * domHeight) / (slope * distance);
 					let screenPixelRadius = radius * projFactor;
-
+					
 					if(screenPixelRadius < pointcloud.minimumNodePixelSize){
 						continue;
 					}
-
+				
 					weight = screenPixelRadius;
 
 					if(distance - radius < 0){
@@ -61750,7 +61723,7 @@ void main() {
 					}
 				} else {
 					// TODO ortho visibility
-					let bb = child.getBoundingBox();
+					let bb = child.getBoundingBox();				
 					let distance = child.getBoundingSphere().center.distanceTo(camObjPos);
 					let diagonal = bb.max.clone().sub(bb.min).length();
 					//weight = diagonal / distance;
@@ -62136,14 +62109,14 @@ void main() {
 				}else {
 					pickMaterial.clipBoxes = [];
 				}
-
+				
 				this.updateMaterial(pickMaterial, nodes, camera, renderer);
 			}
 
 			pickState.renderTarget.setSize(width, height);
 
 			let pixelPos = new Vector2(params.x, params.y);
-
+			
 			let gl = renderer.getContext();
 			gl.enable(gl.SCISSOR_TEST);
 			gl.scissor(
@@ -62162,12 +62135,12 @@ void main() {
 				renderer.setRenderTarget(pickState.renderTarget);
 				gl.clearColor(0, 0, 0, 0);
 				renderer.clearTarget( pickState.renderTarget, true, true, true );
-
+				
 				let tmp = this.material;
 				this.material = pickMaterial;
-
+				
 				pRenderer.renderOctree(this, nodes, camera, pickState.renderTarget);
-
+				
 				this.material = tmp;
 			}
 
@@ -62180,14 +62153,14 @@ void main() {
 
 			let pixelCount = w * h;
 			let buffer = new Uint8Array(4 * pixelCount);
-
-			gl.readPixels(x, y, pickWindowSize, pickWindowSize, gl.RGBA, gl.UNSIGNED_BYTE, buffer);
-
+			
+			gl.readPixels(x, y, pickWindowSize, pickWindowSize, gl.RGBA, gl.UNSIGNED_BYTE, buffer); 
+			
 			renderer.setRenderTarget(null);
 			renderer.state.reset();
 			renderer.setScissorTest(false);
 			gl.disable(gl.SCISSOR_TEST);
-
+			
 			let pixels = buffer;
 			let ibuffer = new Uint32Array(buffer.buffer);
 
@@ -62222,7 +62195,7 @@ void main() {
 							}
 						}
 
-
+						
 					}
 				}
 			}
@@ -62231,29 +62204,29 @@ void main() {
 
 			for(let hit of hits){
 				let point = {};
-
+			
 				if (!nodes[hit.pcIndex]) {
 					return null;
 				}
-
+			
 				let node = nodes[hit.pcIndex];
 				let pc = node.sceneNode;
 				let geometry = node.geometryNode.geometry;
-
+				
 				for(let attributeName in geometry.attributes){
 					let attribute = geometry.attributes[attributeName];
-
+			
 					if (attributeName === 'position') {
 						let x = attribute.array[3 * hit.pIndex + 0];
 						let y = attribute.array[3 * hit.pIndex + 1];
 						let z = attribute.array[3 * hit.pIndex + 2];
-
+						
 						let position = new Vector3(x, y, z);
 						position.applyMatrix4(pc.matrixWorld);
-
+			
 						point[attributeName] = position;
 					} else if (attributeName === 'indices') {
-
+			
 					} else {
 						//if (values.itemSize === 1) {
 						//	point[attribute.name] = values.array[hit.pIndex];
@@ -62265,7 +62238,7 @@ void main() {
 						//	point[attribute.name] = value;
 						//}
 					}
-
+					
 				}
 
 				hit.point = point;
@@ -62640,7 +62613,7 @@ void main() {
 				}
 
 				// uniform blocks
-				if(gl instanceof WebGL2RenderingContext){
+				if(gl instanceof WebGL2RenderingContext){ 
 					let numBlocks = gl.getProgramParameter(program, gl.ACTIVE_UNIFORM_BLOCKS);
 
 					for (let i = 0; i < numBlocks; i++) {
@@ -62653,7 +62626,7 @@ void main() {
 						gl.uniformBlockBinding(program, blockIndex, blockIndex);
 						let dataSize = gl.getActiveUniformBlockParameter(program, blockIndex, gl.UNIFORM_BLOCK_DATA_SIZE);
 
-						let uBuffer = gl.createBuffer();
+						let uBuffer = gl.createBuffer();	
 						gl.bindBuffer(gl.UNIFORM_BUFFER, uBuffer);
 						gl.bufferData(gl.UNIFORM_BUFFER, dataSize, gl.DYNAMIC_READ);
 
@@ -63016,7 +62989,7 @@ void main() {
 					//attributeLocation = attributeLocations["aExtra"];
 				}else {
 					let attributeLocation = attributeLocations[attributeName].location;
-
+					
 					gl.vertexAttribPointer(attributeLocation, bufferAttribute.itemSize, type, normalized, 0, 0);
 					gl.enableVertexAttribArray(attributeLocation);
 				}
@@ -63216,6 +63189,7 @@ void main() {
 
 				const geometry = node.geometryNode.geometry;
 
+				if (!geometry) console.log('Missing geometry', node);
 				if(geometry.attributes["gps-time"]){
 					const bufferAttribute = geometry.attributes["gps-time"];
 					const attGPS = octree.getAttribute("gps-time");
@@ -63278,9 +63252,9 @@ void main() {
 					let uFilterReturnNumberRange = material.uniforms.uFilterReturnNumberRange.value;
 					let uFilterNumberOfReturnsRange = material.uniforms.uFilterNumberOfReturnsRange.value;
 					let uFilterPointSourceIDClipRange = material.uniforms.uFilterPointSourceIDClipRange.value;
-
-
-
+					
+					
+					
 					shader.setUniform2f("uFilterReturnNumberRange", uFilterReturnNumberRange);
 					shader.setUniform2f("uFilterNumberOfReturnsRange", uFilterNumberOfReturnsRange);
 					shader.setUniform2f("uFilterPointSourceIDClipRange", uFilterPointSourceIDClipRange);
@@ -63314,7 +63288,7 @@ void main() {
 					for(const attributeName in geometry.attributes){
 						const bufferAttribute = geometry.attributes[attributeName];
 						const vbo = webglBuffer.vbos.get(attributeName);
-
+						
 						gl.bindBuffer(gl.ARRAY_BUFFER, vbo.handle);
 						gl.disableVertexAttribArray(attributeLocation);
 					}
@@ -63361,7 +63335,7 @@ void main() {
 						offset = Number.isNaN(offset) ? 0 : offset;
 
 						shader.setUniform1f("uExtraScale", scale);
-						shader.setUniform1f("uExtraOffset", offset);
+						shader.setUniform1f("uExtraOffset", offset);					
 					}
 
 				}else {
@@ -63376,11 +63350,11 @@ void main() {
 
 							let type = this.glTypeMapping.get(bufferAttribute.array.constructor);
 							let normalized = bufferAttribute.normalized;
-
+							
 							gl.bindBuffer(gl.ARRAY_BUFFER, vbo.handle);
 							gl.vertexAttribPointer(attributeLocation, bufferAttribute.itemSize, type, normalized, 0, 0);
 							gl.enableVertexAttribArray(attributeLocation);
-
+							
 						}
 					}
 				}
@@ -63573,7 +63547,7 @@ void main() {
 				 }else {
 					 gl.depthMask(false);
 				 }
-
+				 
 			}
 
 
@@ -63591,10 +63565,10 @@ void main() {
 				shader.setUniform1f("fov", Math.PI * camera.fov / 180);
 				shader.setUniform1f("near", camera.near);
 				shader.setUniform1f("far", camera.far);
-
+				
 				if(camera instanceof OrthographicCamera){
 					shader.setUniform("uUseOrthographicCamera", true);
-					shader.setUniform("uOrthoWidth", camera.right - camera.left);
+					shader.setUniform("uOrthoWidth", camera.right - camera.left); 
 					shader.setUniform("uOrthoHeight", camera.top - camera.bottom);
 				}else {
 					shader.setUniform("uUseOrthographicCamera", false);
@@ -63642,7 +63616,7 @@ void main() {
 
 					const lClipSpheres = shader.uniformLocations["uClipSpheres[0]"];
 					gl.uniformMatrix4fv(lClipSpheres, false, flattenedMatrices);
-
+					
 					//const lClipSpheres = shader.uniformLocations["uClipSpheres[0]"];
 					//gl.uniformMatrix4fv(lClipSpheres, false, material.uniforms.clipSpheres.value);
 				}
@@ -63668,14 +63642,14 @@ void main() {
 
 
 				shader.setUniform3f("uIntensity_gbc", [
-					material.intensityGamma,
-					material.intensityBrightness,
+					material.intensityGamma, 
+					material.intensityBrightness, 
 					material.intensityContrast
 				]);
 
 				shader.setUniform3f("uRGB_gbc", [
-					material.rgbGamma,
-					material.rgbBrightness,
+					material.rgbGamma, 
+					material.rgbBrightness, 
 					material.rgbContrast
 				]);
 
@@ -63801,7 +63775,7 @@ void main() {
 
 			const gl = this.gl;
 
-			// PREPARE
+			// PREPARE 
 			if (target != null) {
 				this.threeRenderer.setRenderTarget(target);
 			}
@@ -64295,7 +64269,7 @@ void main() {
 		let material = pointcloud.material;
 
 		let ranges = [];
-
+		
 		for(let [name, value] of material.ranges){
 			ranges.push({
 				name: name,
@@ -64455,7 +64429,7 @@ void main() {
 	}
 
 	function createAnnotationsData(viewer){
-
+		
 		const map = new Map();
 
 		viewer.scene.annotations.traverseDescendants(a => {
@@ -64502,7 +64476,7 @@ void main() {
 		});
 
 		for(const object of potreeObjects){
-
+			
 			if(object.potree.file){
 				const saveObject = {
 					file: object.potree.file,
@@ -64578,7 +64552,7 @@ void main() {
 
 		constructor(viewer){
 			super();
-
+			
 			this.viewer = viewer;
 
 			this.selectedElement = null;
@@ -64598,7 +64572,7 @@ void main() {
 			this.duration = 5;
 			this.t = 0;
 			// "centripetal", "chordal", "catmullrom"
-			this.curveType = "centripetal";
+			this.curveType = "centripetal"; 
 			this.visible = true;
 
 			this.createUpdateHook();
@@ -64666,7 +64640,7 @@ void main() {
 				this.node.visible = this.visible;
 
 				for(const cp of this.controlPoints){
-
+					
 					{ // position
 						const projected = cp.position.clone().project(camera);
 
@@ -64791,11 +64765,11 @@ void main() {
 			{ // position
 				const geometry = new LineGeometry();
 
-				let material = new LineMaterial({
-					color: 0x00ff00,
-					dashSize: 5,
+				let material = new LineMaterial({ 
+					color: 0x00ff00, 
+					dashSize: 5, 
 					gapSize: 2,
-					linewidth: 2,
+					linewidth: 2, 
 					resolution:  new Vector2(1000, 1000),
 				});
 
@@ -64808,11 +64782,11 @@ void main() {
 			{ // target
 				const geometry = new LineGeometry();
 
-				let material = new LineMaterial({
-					color: 0x0000ff,
-					dashSize: 5,
+				let material = new LineMaterial({ 
+					color: 0x0000ff, 
+					dashSize: 5, 
 					gapSize: 2,
-					linewidth: 2,
+					linewidth: 2, 
 					resolution:  new Vector2(1000, 1000),
 				});
 
@@ -64859,15 +64833,15 @@ void main() {
 			geometry.verticesNeedUpdate = true;
 			geometry.computeBoundingSphere();
 
-			let material = new LineMaterial({
-				color: 0xff0000,
-				linewidth: 2,
+			let material = new LineMaterial({ 
+				color: 0xff0000, 
+				linewidth: 2, 
 				resolution:  new Vector2(1000, 1000),
 			});
 
 			const line = new Line2(geometry, material);
 			line.computeLineDistances();
-
+			
 			return line;
 		}
 
@@ -64929,7 +64903,7 @@ void main() {
 		}
 
 		at(t){
-
+			
 			if(t > 1){
 				t = 1;
 			}else if(t < 0){
@@ -64952,7 +64926,7 @@ void main() {
 		}
 
 		createHandle(vector){
-
+			
 			const svgns = "http://www.w3.org/2000/svg";
 			const svg = document.createElementNS(svgns, "svg");
 
@@ -65270,7 +65244,7 @@ void main() {
 		Potree.GeoPackageLoader.loadUrl(path, params).then(data => {
 			viewer.scene.addGeopackage(data);
 		});
-
+		
 
 	}
 
@@ -65357,7 +65331,7 @@ void main() {
 	}
 
 	function loadProfile(viewer, data){
-
+		
 		const {name, points} = data;
 
 		const duplicate = viewer.scene.profiles.find(profile => profile.uuid === data.uuid);
@@ -65374,7 +65348,7 @@ void main() {
 		for(const point of points){
 			profile.addMarker(new Vector3(...point));
 		}
-
+		
 		viewer.scene.addProfile(profile);
 	}
 
@@ -65524,7 +65498,7 @@ void main() {
 			}
 		}
 
-
+		
 	}
 
 	class NormalizationEDLMaterial extends RawShaderMaterial{
@@ -65591,7 +65565,7 @@ void main() {
 				this.updateShaderSource();
 			}
 		}
-
+		
 	}
 
 	class NormalizationMaterial extends RawShaderMaterial{
@@ -65736,7 +65710,7 @@ void main() {
 				lf.isOpen = false;
 			}catch(e){
 				console.error("failed to close las/laz file!!!");
-
+				
 				throw e;
 			}
 		}
@@ -65860,7 +65834,7 @@ void main() {
 					}
 				}
 			};
-
+			
 			try {
 				xhr.send(null);
 			} catch (e) {
@@ -65940,7 +65914,7 @@ void main() {
 				tightBoundingBox.min.set(0, 0, 0);
 
 				let numPoints = e.data.buffer.byteLength / pointAttributes.byteSize;
-
+				
 				node.numPoints = numPoints;
 				node.geometry = geometry;
 				node.mean = new Vector3(...data.mean);
@@ -65965,7 +65939,7 @@ void main() {
 			worker.postMessage(message, [message.buffer]);
 		};
 
-
+		
 	}
 
 	function parseAttributes(cloudjs){
@@ -65990,7 +65964,7 @@ void main() {
 
 		const pointAttributes = [];
 		if(version.upTo('1.7')){
-
+			
 			for(let attributeName of cloudjs.pointAttributes){
 				const oldAttribute = PointAttribute[attributeName];
 
@@ -66040,7 +66014,7 @@ void main() {
 
 			{
 				// check if it has normals
-				let hasNormals =
+				let hasNormals = 
 					pointAttributes.find(a => a.name === "NormalX") !== undefined &&
 					pointAttributes.find(a => a.name === "NormalY") !== undefined &&
 					pointAttributes.find(a => a.name === "NormalZ") !== undefined;
@@ -66402,7 +66376,7 @@ void main() {
 					Potree.workerPool.returnWorker(workerPath, worker);
 
 					let geometry = new BufferGeometry();
-
+					
 					for(let property in buffers){
 
 						let buffer = buffers[property].buffer;
@@ -66516,12 +66490,19 @@ void main() {
 					current.hierarchyByteSize = byteSize;
 					current.numPoints = numPoints;
 				}else {
-					// load real node
+					// load real node 
 					current.byteOffset = byteOffset;
 					current.byteSize = byteSize;
 					current.numPoints = numPoints;
 				}
 
+				if(current.byteSize === 0n){
+					// workaround for issue #1125
+					// some inner nodes erroneously report >0 points even though have 0 points
+					// however, they still report a byteSize of 0, so based on that we now set node.numPoints to 0
+					current.numPoints = 0;
+				}
+				
 				current.nodeType = type;
 
 				if(current.nodeType === 2){
@@ -66568,7 +66549,7 @@ void main() {
 
 			let {hierarchyByteOffset, hierarchyByteSize} = node;
 			let hierarchyPath = `${this.url}/../hierarchy.bin`;
-
+			
 			let first = hierarchyByteOffset;
 			let last = first + hierarchyByteSize - 1n;
 
@@ -66597,13 +66578,13 @@ void main() {
 			// 			requestAnimationFrame(repeatUntilDone);
 			// 		}
 			// 	};
-
+				
 			// 	repeatUntilDone();
 			// });
 
 			// await promise;
 
-
+			
 
 
 
@@ -66628,7 +66609,7 @@ void main() {
 		} else {
 			max.y -= size.y / 2;
 		}
-
+		
 		if ((index & 0b0100) > 0) {
 			min.x += size.x / 2;
 		} else {
@@ -66689,7 +66670,7 @@ void main() {
 
 			{
 				// check if it has normals
-				let hasNormals =
+				let hasNormals = 
 					attributes.attributes.find(a => a.name === "NormalX") !== undefined &&
 					attributes.attributes.find(a => a.name === "NormalY") !== undefined &&
 					attributes.attributes.find(a => a.name === "NormalZ") !== undefined;
@@ -66777,9 +66758,9 @@ void main() {
 			let response = await fetch(file);
 			let json = await response.json();
 
-			let url = file.substr(0, file.lastIndexOf('ept.json'));
+			let url = file.substr(0, file.lastIndexOf('/ept.json'));
 			let geometry = new Potree.PointCloudEptGeometry(url, json);
-			let root = new Potree.PointCloudEptGeometryNode(geometry);
+			let root = new Potree.PointCloudCopcGeometryNode(geometry);
 
 			geometry.root = root;
 			geometry.root.load();
@@ -66787,6 +66768,24 @@ void main() {
 			callback(geometry);
 		}
 	};
+
+	class CopcLoader {
+		static async load(file, callback) {
+			const { Copc, Getter } = window.Copc;
+
+			const url = file;
+			const getter = Getter.http(url);
+			const copc = await Copc.create(getter);
+
+			let geometry = new Potree.PointCloudCopcGeometry(getter, copc);
+			let root = new Potree.PointCloudCopcGeometryNode(geometry);
+
+			geometry.root = root;
+			geometry.root.load();
+
+			callback(geometry);
+		}
+	}
 
 	class EptBinaryLoader {
 		extension() {
@@ -66898,100 +66897,78 @@ void main() {
 		}
 	};
 
-	/**
-	 * laslaz code taken and adapted from plas.io js-laslaz
-	 *	  http://plas.io/
-	 *	https://github.com/verma/plasio
-	 *
-	 * Thanks to Uday Verma and Howard Butler
-	 *
-	 */
-
 	class EptLaszipLoader {
-		load(node) {
+		async load(node) {
 			if (node.loaded) return;
 
-			let url = node.url() + '.laz';
+			const { Key } = window.Copc;
 
-			let xhr = XHRFactory.createXMLHttpRequest();
-			xhr.open('GET', url, true);
-			xhr.responseType = 'arraybuffer';
-			xhr.overrideMimeType('text/plain; charset=x-user-defined');
-			xhr.onreadystatechange = () => {
-				if (xhr.readyState === 4) {
-					if (xhr.status === 200) {
-						let buffer = xhr.response;
-						this.parse(node, buffer);
-					} else {
-						console.log('Failed ' + url + ': ' + xhr.status);
-					}
-				}
-			};
-
-			xhr.send(null);
+			const url = `${node.owner.base}/ept-data/${Key.toString(node.key)}.laz`;
+			const response = await fetch(url);
+			const buffer = await response.arrayBuffer();
+			this.parse(node, buffer);
 		}
 
-		async parse(node, buffer){
-			let lf = new LASFile(buffer);
+		async parse(node, compressed){
 			let handler = new EptLazBatcher(node);
 
-			try{
-				await lf.open();
+			try {
+				const { Bounds, Las } = Copc;
 
-				lf.isOpen = true;
+				const get = (begin, end) => new Uint8Array(compressed, begin, end - begin);
 
-				const header = await lf.getHeader();
+				const header = Las.Header.parse(new Uint8Array(compressed));
+				const vlrs = await Las.Vlr.walk(get, header);
+				let eb = [];
+				const ebVlr = Las.Vlr.find(vlrs, 'LASF_Spec', 4);
+				if (ebVlr) eb = Las.ExtraBytes.parse(await Las.Vlr.fetch(get, ebVlr));
 
-				{
-					let i = 0;
+				const message = {
+					isFullFile: true,
+					compressed,
+					header,
+					eb,
+					pointCount: header.pointCount,
+					nodemin: Bounds.min(node.bounds),
+				};
+				handler.push(message);
+			} catch (e) {
+				console.log('Failed:', e);
+			}
+		}
+	};
 
-					let toArray = (v) => [v.x, v.y, v.z];
-					let mins = toArray(node.key.b.min);
-					let maxs = toArray(node.key.b.max);
+	class CopcLaszipLoader {
+		async load(node) {
+			if (node.loaded) return;
 
-					let hasMoreData = true;
+			// There are utilities to do all of this in one async call via copc.js,
+			// however we must split things out a bit to accommodate the expensive
+			// calls to go in the worker.  So in this non-worker context, we just
+			// isolate the compressed data buffer, which is passed to the worker.
+			// The time-consuming decompression and extracting the data into 
+			// GPU-compatible buffers happens in the worker.
+			const { pointDataOffset, pointDataLength } = node.nodeinfo;
+			const compressed = await node.owner.getter(
+				pointDataOffset, 
+				pointDataOffset + pointDataLength);
+			this.parse(node, compressed.buffer);
+		}
 
-					while(hasMoreData){
-						const data = await lf.readData(1000000, 0, 1);
+		async parse(node, compressed) {
+			let handler = new EptLazBatcher(node);
 
-						let d = new LASDecoder(
-							data.buffer,
-							header.pointsFormatId,
-							header.pointsStructSize,
-							data.count,
-							header.scale,
-							header.offset,
-							mins,
-							maxs);
-
-						d.extraBytes = header.extraBytes;
-						d.pointsFormatId = header.pointsFormatId;
-						handler.push(d);
-
-						i += data.count;
-
-						hasMoreData = data.hasMoreData;
-					}
-
-					header.totalRead = i;
-					header.versionAsString = lf.versionAsString;
-					header.isCompressed = lf.isCompressed;
-
-					await lf.close();
-
-					lf.isOpen = false;
-				}
-
-			}catch(err){
-				console.error('Error reading LAZ:', err);
-
-				if (lf.isOpen) {
-					await lf.close();
-
-					lf.isOpen = false;
-				}
-
-				throw err;
+			try {
+				handler.push({
+					isFullFile: false,
+					compressed,
+					header: node.owner.copc.header,
+					eb: node.owner.copc.eb,
+					pointCount: node.nodeinfo.pointCount,
+					nodemin: node.bounds.slice(0, 3),
+				});
+			} catch (e) {
+				console.log('Failed:', e);
 			}
 		}
 	};
@@ -67000,22 +66977,24 @@ void main() {
 		constructor(node) { this.node = node; }
 
 		push(las) {
+			const { isFullFile, compressed, header, eb, pointCount, nodemin } = las;
+
 			let workerPath = Potree.scriptPath +
 				'/workers/EptLaszipDecoderWorker.js';
 			let worker = Potree.workerPool.getWorker(workerPath);
+			const pointAttributes = this.node.owner.pointAttributes;
 
 			worker.onmessage = (e) => {
 				let g = new BufferGeometry();
-				let numPoints = las.pointsCount;
 
 				let positions = new Float32Array(e.data.position);
 				let colors = new Uint8Array(e.data.color);
-
+				
 				let intensities = new Float32Array(e.data.intensity);
 				let classifications = new Uint8Array(e.data.classification);
 				let returnNumbers = new Uint8Array(e.data.returnNumber);
 				let numberOfReturns = new Uint8Array(e.data.numberOfReturns);
-				let pointSourceIDs = new Uint16Array(e.data.pointSourceID);
+				let pointSourceIds = new Uint16Array(e.data.pointSourceId);
 				let indices = new Uint8Array(e.data.indices);
 				let gpsTime = new Float32Array(e.data.gpsTime);
 
@@ -67032,14 +67011,28 @@ void main() {
 				g.setAttribute('number of returns',
 						new BufferAttribute(numberOfReturns, 1));
 				g.setAttribute('source id',
-						new BufferAttribute(pointSourceIDs, 1));
+						new BufferAttribute(pointSourceIds, 1));
 				g.setAttribute('indices',
 						new BufferAttribute(indices, 4));
-				g.setAttribute('gpsTime',
+				g.setAttribute('gps-time',
 						new BufferAttribute(gpsTime, 1));
 				this.node.gpsTime = e.data.gpsMeta;
 
 				g.attributes.indices.normalized = true;
+
+				for (const key in e.data.ranges) {
+					const range = e.data.ranges[key];
+					const attribute = pointAttributes.attributes.find(a => a.name === key);
+					if (attribute) {
+						attribute.range[0] = Math.min(attribute.range[0], range[0]);
+						attribute.range[1] = Math.max(attribute.range[1], range[1]);
+
+						// May not be right, but we need something here or we crash.
+						if (!attribute.initialRange) {
+							attribute.initialRange = attribute.range;
+						}
+					}
+				}
 
 				let tightBoundingBox = new Box3(
 					new Vector3().fromArray(e.data.tightBoundingBox.min),
@@ -67049,24 +67042,15 @@ void main() {
 				this.node.doneLoading(
 					g,
 					tightBoundingBox,
-					numPoints,
+					pointCount,
 					new Vector3(...e.data.mean));
 
 				Potree.workerPool.returnWorker(workerPath, worker);
 			};
 
-			let message = {
-				buffer: las.arrayb,
-				numPoints: las.pointsCount,
-				pointSize: las.pointSize,
-				pointFormatID: las.pointsFormatId,
-				scale: las.scale,
-				offset: las.offset,
-				mins: las.mins,
-				maxs: las.maxs
-			};
+			let message = { isFullFile, compressed, header, eb, pointCount, nodemin };
 
-			worker.postMessage(message, [message.buffer]);
+			worker.postMessage(message, [message.compressed]);
 		};
 	};
 
@@ -67097,7 +67081,7 @@ void main() {
 
 			const features = await this.loadShapefileFeatures(path);
 			const node = new Object3D();
-
+			
 			for(const feature of features){
 				const fnode = this.featureToSceneNode(feature, matLine);
 				node.add(fnode);
@@ -67118,51 +67102,51 @@ void main() {
 
 		featureToSceneNode(feature, matLine){
 			let geometry = feature.geometry;
-
+			
 			let color = new Color(1, 1, 1);
 
 			let transform = this.transform;
 			if(transform === null){
 				transform = {forward: (v) => v};
 			}
-
+			
 			if(feature.geometry.type === "Point"){
 				let sg = new SphereGeometry(1, 18, 18);
 				let sm = new MeshNormalMaterial();
 				let s = new Mesh(sg, sm);
-
+				
 				let [long, lat] = geometry.coordinates;
 				let pos = transform.forward([long, lat]);
-
+				
 				s.position.set(...pos, 20);
-
+				
 				s.scale.set(10, 10, 10);
-
+				
 				return s;
 			}else if(geometry.type === "LineString"){
 				let coordinates = [];
-
+				
 				let min = new Vector3(Infinity, Infinity, Infinity);
 				for(let i = 0; i < geometry.coordinates.length; i++){
 					let [long, lat] = geometry.coordinates[i];
 					let pos = transform.forward([long, lat]);
-
+					
 					min.x = Math.min(min.x, pos[0]);
 					min.y = Math.min(min.y, pos[1]);
 					min.z = Math.min(min.z, 20);
-
+					
 					coordinates.push(...pos, 20);
 					if(i > 0 && i < geometry.coordinates.length - 1){
 						coordinates.push(...pos, 20);
 					}
 				}
-
+				
 				for(let i = 0; i < coordinates.length; i += 3){
 					coordinates[i+0] -= min.x;
 					coordinates[i+1] -= min.y;
 					coordinates[i+2] -= min.z;
 				}
-
+				
 				const lineGeometry = new LineGeometry();
 				lineGeometry.setPositions( coordinates );
 
@@ -67170,27 +67154,27 @@ void main() {
 				line.computeLineDistances();
 				line.scale.set( 1, 1, 1 );
 				line.position.copy(min);
-
+				
 				return line;
 			}else if(geometry.type === "Polygon"){
 				for(let pc of geometry.coordinates){
 					let coordinates = [];
-
+					
 					let min = new Vector3(Infinity, Infinity, Infinity);
 					for(let i = 0; i < pc.length; i++){
 						let [long, lat] = pc[i];
 						let pos = transform.forward([long, lat]);
-
+						
 						min.x = Math.min(min.x, pos[0]);
 						min.y = Math.min(min.y, pos[1]);
 						min.z = Math.min(min.z, 20);
-
+						
 						coordinates.push(...pos, 20);
 						if(i > 0 && i < pc.length - 1){
 							coordinates.push(...pos, 20);
 						}
 					}
-
+					
 					for(let i = 0; i < coordinates.length; i += 3){
 						coordinates[i+0] -= min.x;
 						coordinates[i+1] -= min.y;
@@ -67204,7 +67188,7 @@ void main() {
 					line.computeLineDistances();
 					line.scale.set( 1, 1, 1 );
 					line.position.copy(min);
-
+					
 					return line;
 				}
 			}else {
@@ -67273,7 +67257,7 @@ void main() {
 				Utils.loadScript(`${Potree.scriptPath}/lazylibs/geopackage/geopackage.js`),
 				Utils.loadScript(`${Potree.scriptPath}/lazylibs/sql.js/sql-wasm.js`),
 			]);
-
+			
 			const result = await fetch(url);
 			const buffer = await result.arrayBuffer();
 
@@ -67294,7 +67278,7 @@ void main() {
 			params = params || {};
 
 			const resolver = async (resolve) => {
-
+				
 				let transform = params.transform;
 				if(!transform){
 					transform = {forward: (arg) => arg};
@@ -67329,7 +67313,7 @@ void main() {
 
 					const matLine = new LineMaterial( {
 						color: new Color().setRGB(...getColor(table)),
-						linewidth: 2,
+						linewidth: 2, 
 						resolution:  new Vector2(1000, 1000),
 						dashed: false
 					} );
@@ -67353,46 +67337,46 @@ void main() {
 
 		static featureToSceneNode(feature, matLine, geopackageProjection, transform){
 			let geometry = feature.geometry;
-
+			
 			let color = new Color(1, 1, 1);
-
+			
 			if(feature.geometry.type === "Point"){
 				let sg = new SphereGeometry(1, 18, 18);
 				let sm = new MeshNormalMaterial();
 				let s = new Mesh(sg, sm);
-
+				
 				let [long, lat] = geometry.coordinates;
 				let pos = transform.forward(geopackageProjection.forward([long, lat]));
-
+				
 				s.position.set(...pos, 20);
-
+				
 				s.scale.set(10, 10, 10);
-
+				
 				return s;
 			}else if(geometry.type === "LineString"){
 				let coordinates = [];
-
+				
 				let min = new Vector3(Infinity, Infinity, Infinity);
 				for(let i = 0; i < geometry.coordinates.length; i++){
 					let [long, lat] = geometry.coordinates[i];
 					let pos = transform.forward(geopackageProjection.forward([long, lat]));
-
+					
 					min.x = Math.min(min.x, pos[0]);
 					min.y = Math.min(min.y, pos[1]);
 					min.z = Math.min(min.z, 20);
-
+					
 					coordinates.push(...pos, 20);
 					if(i > 0 && i < geometry.coordinates.length - 1){
 						coordinates.push(...pos, 20);
 					}
 				}
-
+				
 				for(let i = 0; i < coordinates.length; i += 3){
 					coordinates[i+0] -= min.x;
 					coordinates[i+1] -= min.y;
 					coordinates[i+2] -= min.z;
 				}
-
+				
 				const lineGeometry = new LineGeometry();
 				lineGeometry.setPositions( coordinates );
 
@@ -67400,28 +67384,28 @@ void main() {
 				line.computeLineDistances();
 				line.scale.set( 1, 1, 1 );
 				line.position.copy(min);
-
+				
 				return line;
 			}else if(geometry.type === "Polygon"){
 				for(let pc of geometry.coordinates){
 					let coordinates = [];
-
+					
 					let min = new Vector3(Infinity, Infinity, Infinity);
 					for(let i = 0; i < pc.length; i++){
 						let [long, lat] = pc[i];
-
+						
 						let pos = transform.forward(geopackageProjection.forward([long, lat]));
-
+						
 						min.x = Math.min(min.x, pos[0]);
 						min.y = Math.min(min.y, pos[1]);
 						min.z = Math.min(min.z, 20);
-
+						
 						coordinates.push(...pos, 20);
 						if(i > 0 && i < pc.length - 1){
 							coordinates.push(...pos, 20);
 						}
 					}
-
+					
 					for(let i = 0; i < coordinates.length; i += 3){
 						coordinates[i+0] -= min.x;
 						coordinates[i+1] -= min.y;
@@ -67435,7 +67419,7 @@ void main() {
 					line.computeLineDistances();
 					line.scale.set( 1, 1, 1 );
 					line.position.copy(min);
-
+					
 					return line;
 				}
 			}else {
@@ -67446,10 +67430,10 @@ void main() {
 	};
 
 	class ClipVolume extends Object3D{
-
+		
 		constructor(args){
 			super();
-
+			
 			this.constructor.counter = (this.constructor.counter === undefined) ? 0 : this.constructor.counter + 1;
 			this.name = "clip_volume_" + this.constructor.counter;
 
@@ -67463,12 +67447,12 @@ void main() {
 
 			this.clipOffset = 0.001;
 			this.clipRotOffset = 1;
-
+					
 			let boxGeometry = new BoxGeometry(1, 1, 1);
 			boxGeometry.computeBoundingBox();
-
+			
 			let boxFrameGeometry = new Geometry();
-			{
+			{			
 				// bottom
 				boxFrameGeometry.vertices.push(new Vector3(-0.5, -0.5, 0.5));
 				boxFrameGeometry.vertices.push(new Vector3(0.5, -0.5, 0.5));
@@ -67501,7 +67485,7 @@ void main() {
 			}
 
 			let planeFrameGeometry = new Geometry();
-			{
+			{						
 				// middle line
 				planeFrameGeometry.vertices.push(new Vector3(-0.5, -0.5, 0.0));
 				planeFrameGeometry.vertices.push(new Vector3(-0.5, 0.5, 0.0));
@@ -67515,16 +67499,16 @@ void main() {
 
 			this.dimension = new Vector3(1, 1, 1);
 			this.material = new MeshBasicMaterial( {
-				color: 0x00ff00,
-				transparent: true,
+				color: 0x00ff00, 
+				transparent: true, 
 				opacity: 0.3,
-				depthTest: true,
+				depthTest: true, 
 				depthWrite: false} );
 			this.box = new Mesh(boxGeometry, this.material);
 			this.box.geometry.computeBoundingBox();
 			this.boundingBox = this.box.geometry.boundingBox;
 			this.add(this.box);
-
+			
 			this.frame = new LineSegments( boxFrameGeometry, new LineBasicMaterial({color: 0x000000}));
 			this.add(this.frame);
 			this.planeFrame = new LineSegments( planeFrameGeometry, new LineBasicMaterial({color: 0xff0000}));
@@ -67536,29 +67520,29 @@ void main() {
 			// create local coordinate system
 			let createArrow = (name, direction, color) => {
 				let material = new MeshBasicMaterial({
-					color: color,
-					depthTest: false,
+					color: color, 
+					depthTest: false, 
 					depthWrite: false});
-
+					
 				let shaftGeometry = new Geometry();
 				shaftGeometry.vertices.push(new Vector3(0, 0, 0));
 				shaftGeometry.vertices.push(new Vector3(0, 1, 0));
-
+				
 				let shaftMaterial = new LineBasicMaterial({
-					color: color,
-					depthTest: false,
+					color: color, 
+					depthTest: false, 
 					depthWrite: false,
 					transparent: true
 					});
 				let shaft = new Line(shaftGeometry, shaftMaterial);
 				shaft.name = name + "_shaft";
-
+				
 				let headGeometry = new CylinderGeometry(0, 0.04, 0.1, 10, 1, false);
 				let headMaterial = material;
 				let head = new Mesh(headGeometry, headMaterial);
 				head.name = name + "_head";
 				head.position.y = 1;
-
+				
 				let arrow = new Object3D();
 				arrow.name = name;
 				arrow.add(shaft);
@@ -67566,11 +67550,11 @@ void main() {
 
 				return arrow;
 			};
-
+			
 			this.arrowX = createArrow("arrow_x", new Vector3(1, 0, 0), 0xFF0000);
 			this.arrowY = createArrow("arrow_y", new Vector3(0, 1, 0), 0x00FF00);
 			this.arrowZ = createArrow("arrow_z", new Vector3(0, 0, 1), 0x0000FF);
-
+			
 			this.arrowX.rotation.z = -Math.PI / 2;
 			this.arrowZ.rotation.x = Math.PI / 2;
 
@@ -67581,59 +67565,59 @@ void main() {
 			this.add(this.arrowX);
 			this.add(this.arrowY);
 			this.add(this.arrowZ);
-
+			
 			{ // event listeners
-				this.addEventListener("ui_select", e => {
+				this.addEventListener("ui_select", e => { 
 					this.arrowX.visible = true;
 					this.arrowY.visible = true;
-					this.arrowZ.visible = true;
+					this.arrowZ.visible = true; 
 				});
 				this.addEventListener("ui_deselect", e => {
 					this.arrowX.visible = false;
 					this.arrowY.visible = false;
-					this.arrowZ.visible = false;
+					this.arrowZ.visible = false; 				
 				});
-				this.addEventListener("select", e => {
+				this.addEventListener("select", e => { 
 					let scene_header = $("#" + this.name + " .scene_header");
 					if(!scene_header.next().is(":visible")) {
 						scene_header.click();
 					}
 				});
-				this.addEventListener("deselect", e => {
+				this.addEventListener("deselect", e => { 
 					let scene_header = $("#" + this.name + " .scene_header");
 					if(scene_header.next().is(":visible")) {
 						scene_header.click();
 					}
 				});
 			}
-
+			
 			this.update();
 		};
 
-		setClipOffset(offset) {
-			this.clipOffset = offset;
+		setClipOffset(offset) {		
+			this.clipOffset = offset;	
 		}
 
-		setClipRotOffset(offset) {
-			this.clipRotOffset = offset;
+		setClipRotOffset(offset) {		
+			this.clipRotOffset = offset;		
 		}
 
 		setScaleX(x) {
 			this.box.scale.x = x;
 			this.frame.scale.x = x;
-			this.planeFrame.scale.x = x;
+			this.planeFrame.scale.x = x;			
 		}
 
 		setScaleY(y) {
 			this.box.scale.y = y;
 			this.frame.scale.y = y;
-			this.planeFrame.scale.y = y;
+			this.planeFrame.scale.y = y;		
 		}
 
 		setScaleZ(z) {
 			this.box.scale.z = z;
 			this.frame.scale.z = z;
-			this.planeFrame.scale.z = z;
+			this.planeFrame.scale.z = z;		
 		}
 
 		offset(args) {
@@ -67664,7 +67648,7 @@ void main() {
 			}
 
 			this.dispatchEvent({"type": "clip_volume_changed", "viewer": viewer, "volume": this});
-		}
+		}	
 
 		rotate(args) {
 			let cs = args.cs || null;
@@ -67682,7 +67666,7 @@ void main() {
 					this.rotateOnAxis(new Vector3(0, 0, 1), dir * this.clipRotOffset * Math.PI / 180);
 				}
 			} else if(cs === "global") {
-				let rotaxis = new Vector4(1, 0, 0, 0);
+				let rotaxis = new Vector4(1, 0, 0, 0);	
 				if(axis === "y") {
 					rotaxis = new Vector4(0, 1, 0, 0);
 				} else if(axis === "z") {
@@ -67698,30 +67682,30 @@ void main() {
 			this.updateLocalSystem();
 
 			this.dispatchEvent({"type": "clip_volume_changed", "viewer": viewer, "volume": this});
-		}
+		}	
 
 		update(){
 			this.boundingBox = this.box.geometry.boundingBox;
 			this.boundingSphere = this.boundingBox.getBoundingSphere(new Sphere());
-
+			
 			this.box.visible = false;
 
 			this.updateLocalSystem();
 		};
 
-		updateLocalSystem() {
+		updateLocalSystem() {		
 			// extract local coordinate axes
 			let rotQuat = this.getWorldQuaternion();
 			this.localX = new Vector3(1, 0, 0).applyQuaternion(rotQuat).normalize();
 			this.localY = new Vector3(0, 1, 0).applyQuaternion(rotQuat).normalize();
 			this.localZ = new Vector3(0, 0, 1).applyQuaternion(rotQuat).normalize();
 		}
-
+		
 		raycast(raycaster, intersects){
-
+			
 			let is = [];
 			this.box.raycast(raycaster, is);
-
+		
 			if(is.length > 0){
 				let I = is[0];
 				intersects.push({
@@ -67736,12 +67720,12 @@ void main() {
 	class ClippingTool extends EventDispatcher{
 
 		constructor(viewer){
-			super();
+			super(); 
 
 			this.viewer = viewer;
 
-			this.maxPolygonVertices = 8;
-
+			this.maxPolygonVertices = 8; 
+			
 			this.addEventListener("start_inserting_clipping_volume", e => {
 				this.viewer.dispatchEvent({
 					type: "cancel_insertions"
@@ -67756,11 +67740,11 @@ void main() {
 			this.onRemove = e => {
 				this.sceneVolume.remove(e.volume);
 			};
-
+			
 			this.onAdd = e => {
 				this.sceneVolume.add(e.volume);
 			};
-
+			
 			this.viewer.inputHandler.addEventListener("delete", e => {
 				let volumes = e.selection.filter(e => (e instanceof ClipVolume));
 				volumes.forEach(e => this.viewer.scene.removeClipVolume(e));
@@ -67773,23 +67757,23 @@ void main() {
 			if(this.scene === scene){
 				return;
 			}
-
+			
 			if(this.scene){
 				this.scene.removeEventListeners("clip_volume_added", this.onAdd);
 				this.scene.removeEventListeners("clip_volume_removed", this.onRemove);
 				this.scene.removeEventListeners("polygon_clip_volume_added", this.onAdd);
 				this.scene.removeEventListeners("polygon_clip_volume_removed", this.onRemove);
 			}
-
+			
 			this.scene = scene;
-
+			
 			this.scene.addEventListener("clip_volume_added", this.onAdd);
 			this.scene.addEventListener("clip_volume_removed", this.onRemove);
 			this.scene.addEventListener("polygon_clip_volume_added", this.onAdd);
 			this.scene.addEventListener("polygon_clip_volume_removed", this.onRemove);
 		}
 
-		startInsertion(args = {}) {
+		startInsertion(args = {}) {	
 			let type = args.type || null;
 
 			if(!type) return null;
@@ -67807,20 +67791,20 @@ void main() {
 				</marker>
 			</defs>
 
-			<polyline fill="none" stroke="black"
+			<polyline fill="none" stroke="black" 
 				style="stroke:rgb(0, 0, 0);
 				stroke-width:6;"
 				stroke-dasharray="9, 6"
 				stroke-dashoffset="2"
 				/>
 
-			<polyline fill="none" stroke="black"
+			<polyline fill="none" stroke="black" 
 				style="stroke:rgb(255, 255, 255);
 				stroke-width:2;"
 				stroke-dasharray="5, 10"
-				marker-start="url(#diamond)"
-				marker-mid="url(#diamond)"
-				marker-end="url(#diamond)"
+				marker-start="url(#diamond)" 
+				marker-mid="url(#diamond)" 
+				marker-end="url(#diamond)" 
 				/>
 		</svg>`);
 			$(domElement.parentElement).append(svg);
@@ -67838,7 +67822,7 @@ void main() {
 
 			let insertionCallback = (e) => {
 				if(e.button === MOUSE.LEFT){
-
+					
 					polyClipVol.addMarker();
 
 					// SVC Screen Line
@@ -67848,19 +67832,19 @@ void main() {
 						newPoint.y = e.offsetY;
 						let polyline = target.points.appendItem(newPoint);
 					});
-
-
+					
+					
 					if(polyClipVol.markers.length > this.maxPolygonVertices){
 						cancel.callback();
 					}
-
+					
 					this.viewer.inputHandler.startDragging(
 						polyClipVol.markers[polyClipVol.markers.length - 1]);
 				}else if(e.button === MOUSE.RIGHT){
 					cancel.callback(e);
 				}
 			};
-
+			
 			cancel.callback = e => {
 
 				//let first = svg.find("polyline")[0].points[0];
@@ -67874,7 +67858,7 @@ void main() {
 
 				if(polyClipVol.markers.length > 3) {
 					polyClipVol.removeLastMarker();
-					polyClipVol.initialized = true;
+					polyClipVol.initialized = true;	
 				} else {
 					this.viewer.scene.removePolygonClipVolume(polyClipVol);
 				}
@@ -67883,11 +67867,11 @@ void main() {
 				this.viewer.removeEventListener("cancel_insertions", cancel.callback);
 				this.viewer.inputHandler.enabled = true;
 			};
-
+			
 			this.viewer.addEventListener("cancel_insertions", cancel.callback);
 			this.viewer.renderer.domElement.addEventListener("mouseup", insertionCallback , true);
 			this.viewer.inputHandler.enabled = false;
-
+			
 			polyClipVol.addMarker();
 			this.viewer.inputHandler.startDragging(
 				polyClipVol.markers[polyClipVol.markers.length - 1]);
@@ -68034,7 +68018,7 @@ void main() {
 					}else {
 						let valueBuffer = new Uint8Array(valueBytes);
 						valueBuffer.set(data.slice(offsetOrValue, offsetOrValue + valueBytes));
-
+						
 						let ArrayType = typeMapping.get(type);
 
 						value = new ArrayType(valueBuffer.buffer);
@@ -68072,7 +68056,7 @@ void main() {
 			let width = ifdForTag(Tag.IMAGE_WIDTH, ifds).value;
 			let height = ifdForTag(Tag.IMAGE_HEIGHT, ifds).value;
 			let compression = ifdForTag(Tag.COMPRESSION, ifds).value;
-			let rowsPerStrip = ifdForTag(Tag.ROWS_PER_STRIP, ifds).value;
+			let rowsPerStrip = ifdForTag(Tag.ROWS_PER_STRIP, ifds).value; 
 			let ifdStripOffsets = ifdForTag(Tag.STRIP_OFFSETS, ifds);
 			let ifdStripByteCounts = ifdForTag(Tag.STRIP_BYTE_COUNTS, ifds);
 
@@ -68109,7 +68093,7 @@ void main() {
 			}
 
 			let imageBuffer = new Uint8Array(width * height * 3);
-
+			
 			let linesProcessed = 0;
 			for(let i = 0; i < numStrips; i++){
 				let stripOffset = stripOffsets[i];
@@ -68119,7 +68103,7 @@ void main() {
 				for(let y = 0; y < rowsPerStrip; y++){
 					let line = stripData.slice(y * lineBytes, y * lineBytes + lineBytes);
 					imageBuffer.set(line, linesProcessed * lineBytes);
-
+			
 					if(line.length === lineBytes){
 						linesProcessed++;
 					}else {
@@ -68155,7 +68139,7 @@ void main() {
 		static toTiffBuffer(image, params = {}){
 
 			let offsetToFirstIFD = 8;
-
+			
 			let headerBuffer = new Uint8Array([0x49, 0x49, 42, 0, offsetToFirstIFD, 0, 0, 0]);
 
 			let [width, height] = [image.width, image.height];
@@ -68233,10 +68217,10 @@ void main() {
 
 				return merged;
 			};
-
+			
 			let ifdBuffer = concatBuffers([
-				new Uint16Array([ifds.length]),
-				...ifdEntryBuffers.values(),
+				new Uint16Array([ifds.length]), 
+				...ifdEntryBuffers.values(), 
 				new Uint32Array([0])]);
 			let ifdValueBuffer = concatBuffers([...ifdValueBuffers.values()]);
 
@@ -68279,7 +68263,7 @@ void main() {
 		const renderAreaSize = viewer.renderer.getSize(new Vector2());
 		const width = renderAreaSize.width;
 		const height = renderAreaSize.height;
-
+		
 		const [p0, p1] = measure.points;
 		const r = p0.position.distanceTo(p1.position);
 		const northVec = Utils.getNorthVec(p0.position, r, viewer.getProjection());
@@ -68287,7 +68271,7 @@ void main() {
 
 		azimuth.center.position.copy(p0.position);
 		azimuth.center.scale.set(2, 2, 2);
-
+		
 		azimuth.center.visible = false;
 		// azimuth.target.visible = false;
 
@@ -68499,7 +68483,7 @@ void main() {
 
 			return measure;
 		}
-
+		
 		update(){
 			let camera = this.viewer.scene.getActiveCamera();
 			let domElement = this.renderer.domElement;
@@ -68554,9 +68538,9 @@ void main() {
 					screenPos.z = 0;
 					screenPos.y -= 30;
 
-					let labelPos = new Vector3(
-						(screenPos.x / clientWidth) * 2 - 1,
-						-(screenPos.y / clientHeight) * 2 + 1,
+					let labelPos = new Vector3( 
+						(screenPos.x / clientWidth) * 2 - 1, 
+						-(screenPos.y / clientHeight) * 2 + 1, 
 						0.5 );
 					labelPos.unproject(camera);
 					if(this.viewer.scene.cameraMode == CameraMode.PERSPECTIVE) {
@@ -68656,9 +68640,9 @@ void main() {
 				if(!this.showLabels){
 
 					const labels = [
-						...measure.sphereLabels,
-						...measure.edgeLabels,
-						...measure.angleLabels,
+						...measure.sphereLabels, 
+						...measure.edgeLabels, 
+						...measure.angleLabels, 
 						...measure.coordinateLabels,
 						measure.heightLabel,
 						measure.areaLabel,
@@ -68733,7 +68717,7 @@ void main() {
 			this.threeRenderer.setClearColor(0xff0000, 1);
 
 			//HACK? removed while moving to three.js 109
-			//this.threeRenderer.clearTarget(this.target, true, true, true);
+			//this.threeRenderer.clearTarget(this.target, true, true, true); 
 			{
 				const oldTarget = this.threeRenderer.getRenderTarget();
 
@@ -68774,7 +68758,7 @@ void main() {
 		render(scene, camera){
 
 			this.threeRenderer.setClearColor(0x000000, 1);
-
+			
 			const oldTarget = this.threeRenderer.getRenderTarget();
 
 			this.threeRenderer.setRenderTarget(this.target);
@@ -68888,7 +68872,7 @@ void main() {
 
 			return profile;
 		}
-
+		
 		update(){
 			let camera = this.viewer.scene.getActiveCamera();
 			let profiles = this.viewer.scene.profiles;
@@ -68900,7 +68884,7 @@ void main() {
 
 			// make size independant of distance
 			for(let profile of profiles){
-				for(let sphere of profile.spheres){
+				for(let sphere of profile.spheres){				
 					let distance = camera.position.distanceTo(sphere.getWorldPosition(new Vector3()));
 					let pr = Utils.projectedRadius(1, camera, distance, clientWidth, clientHeight);
 					let scale = (15 / pr);
@@ -68968,7 +68952,7 @@ void main() {
 				let camera = e.viewer.scene.getActiveCamera();
 				let size = e.viewer.renderer.getSize(new Vector2());
 				let frustumSize = new Vector2(
-					camera.right - camera.left,
+					camera.right - camera.left, 
 					camera.top - camera.bottom);
 
 				let screenCentroid = new Vector2().addVectors(e.drag.end, e.drag.start).multiplyScalar(0.5);
@@ -68976,7 +68960,7 @@ void main() {
 
 				let diff = new Vector2().subVectors(e.drag.end, e.drag.start);
 				diff.divide(size).multiply(frustumSize);
-
+				
 				volume.position.copy(ray.origin);
 				volume.up.copy(camera.up);
 				volume.rotation.copy(camera.rotation);
@@ -69014,7 +68998,7 @@ void main() {
 					}
 
 					let volCam = camera.clone();
-					volCam.left = -volume.scale.x / 2;
+					volCam.left = -volume.scale.x / 2; 
 					volCam.right = +volume.scale.x / 2;
 					volCam.top = +volume.scale.y / 2;
 					volCam.bottom = -volume.scale.y / 2;
@@ -69034,9 +69018,9 @@ void main() {
 						ray.direction.clone().multiplyScalar(-1));
 
 					let pickerSettings = {
-						width: 8,
-						height: 8,
-						pickWindowSize: 8,
+						width: 8, 
+						height: 8, 
+						pickWindowSize: 8, 
 						all: true,
 						pickClipped: true,
 						pointSizeType: PointSizeType.FIXED,
@@ -69111,7 +69095,7 @@ void main() {
 			}
 
 			{ // LINES
-
+				
 
 				let positions = new Float32Array([
 					+0, +0, +0,     +0, +0, -1,
@@ -69148,7 +69132,7 @@ void main() {
 			let position = this.light.position;
 			let target = new Vector3().addVectors(
 				this.light.position, this.light.getWorldDirection(new Vector3()).multiplyScalar(-1));
-
+			
 			let quat = new Quaternion().setFromRotationMatrix(
 				new Matrix4().lookAt( position, target, new Vector3( 0, 0, 1 ) )
 			);
@@ -69194,7 +69178,7 @@ void main() {
 			let red = 0xE73100;
 			let green = 0x44A24A;
 			let blue = 0x2669E7;
-
+			
 			this.activeHandle = null;
 			this.scaleHandles = {
 				"scale.x+": {name: "scale.x+", node: new Object3D(), color: red, alignment: [+1, +0, +0]},
@@ -69264,7 +69248,7 @@ void main() {
 			this.frame = new LineSegments(boxFrameGeometry, new LineBasicMaterial({color: 0xffff00}));
 			this.scene.add(this.frame);
 
-
+			
 		}
 
 		initializeScaleHandles(){
@@ -69284,7 +69268,7 @@ void main() {
 					});
 
 				let outlineMaterial = new MeshBasicMaterial({
-					color: 0x000000,
+					color: 0x000000, 
 					side: BackSide,
 					opacity: 0.4,
 					transparent: true});
@@ -69298,7 +69282,7 @@ void main() {
 				sphere.scale.set(1.3, 1.3, 1.3);
 				sphere.name = `${handleName}.handle`;
 				node.add(sphere);
-
+				
 				let outline = new Mesh(sgSphere, outlineMaterial);
 				outline.scale.set(1.4, 1.4, 1.4);
 				outline.name = `${handleName}.outline`;
@@ -69384,7 +69368,7 @@ void main() {
 				});
 
 				//let outlineMaterial = new THREE.MeshBasicMaterial({
-				//	color: 0x000000,
+				//	color: 0x000000, 
 				//	side: THREE.BackSide,
 				//	opacity: 0,
 				//	transparent: true});
@@ -69401,7 +69385,7 @@ void main() {
 				box.visible = false;
 				node.add(box);
 				//handle.focusNode = box;
-
+				
 				//let outline = new THREE.Mesh(sgPlane, outlineMaterial);
 				//outline.scale.set(1.4, 1.4, 1.4);
 				//outline.name = `${handleName}.outline`;
@@ -69476,7 +69460,7 @@ void main() {
 					transparent: true});
 
 				let outlineMaterial = new MeshBasicMaterial({
-					color: 0x000000,
+					color: 0x000000, 
 					side: BackSide,
 					opacity: 0.4,
 					transparent: true});
@@ -69543,7 +69527,7 @@ void main() {
 					transparent: true});
 
 				let outlineMaterial = new MeshBasicMaterial({
-					color: 0x000000,
+					color: 0x000000, 
 					side: BackSide,
 					opacity: 0.4,
 					transparent: true});
@@ -69592,7 +69576,7 @@ void main() {
 				//	//let a = this.viewer.scene.getActiveCamera().getWorldDirection(new THREE.Vector3()).dot(pickVolume.getWorldDirection(new THREE.Vector3()));
 				//	console.log(pickVolume.getWorldDirection(new THREE.Vector3()));
 				//});
-
+				
 				pickVolume.addEventListener("drag", (e) => {this.dragRotationHandle(e);});
 				pickVolume.addEventListener("drop", (e) => {this.dropRotationHandle(e);});
 			}
@@ -69638,7 +69622,7 @@ void main() {
 			let mouse = drag.end;
 			let domElement = this.viewer.renderer.domElement;
 			let ray = Utils.mouseToRay(mouse, camera, domElement.clientWidth, domElement.clientHeight);
-
+			
 			let I = ray.intersectPlane(drag.dragPlane, new Vector3());
 
 			if (I) {
@@ -69678,7 +69662,7 @@ void main() {
 			let drag = e.drag;
 			let handle = this.activeHandle;
 			let camera = this.viewer.scene.getActiveCamera();
-
+				
 			if(!drag.intersectionStart && handle){
 				drag.intersectionStart = drag.location;
 				drag.objectStart = drag.object.getWorldPosition(new Vector3());
@@ -69885,7 +69869,7 @@ void main() {
 				}
 			}
 
-
+			
 
 
 
@@ -69893,7 +69877,7 @@ void main() {
 				handle.node.setOpacity(1.0);
 			}
 
-
+			
 		}
 
 		update () {
@@ -70015,13 +69999,13 @@ void main() {
 						}
 					}
 
-					//
+					// 
 					for(let handleName of Object.keys(this.scaleHandles)){
 						let handle = this.handles[handleName];
 						let node = handle.node;
 						let alignment = handle.alignment;
 
-
+						
 
 					}
 				}
@@ -70029,7 +70013,7 @@ void main() {
 			}else {
 				this.scene.visible = false;
 			}
-
+			
 		}
 
 	};
@@ -70094,7 +70078,7 @@ void main() {
 			}else {
 				volume = new BoxVolume();
 			}
-
+			
 			volume.clip = args.clip || false;
 			volume.name = args.name || 'Volume';
 
@@ -70112,12 +70096,12 @@ void main() {
 
 			let drag = e => {
 				let camera = this.viewer.scene.getActiveCamera();
-
+				
 				let I = Utils.getMousePointCloudIntersection(
-					e.drag.end,
-					this.viewer.scene.getActiveCamera(),
-					this.viewer,
-					this.viewer.scene.pointclouds,
+					e.drag.end, 
+					this.viewer.scene.getActiveCamera(), 
+					this.viewer, 
+					this.viewer.scene.pointclouds, 
 					{pickClipped: false});
 
 				if (I) {
@@ -70156,7 +70140,7 @@ void main() {
 			if (!this.viewer.scene) {
 				return;
 			}
-
+			
 			let camera = this.viewer.scene.getActiveCamera();
 			let renderAreaSize = this.viewer.renderer.getSize(new Vector2());
 			let clientWidth = renderAreaSize.width;
@@ -70165,7 +70149,7 @@ void main() {
 			let volumes = this.viewer.scene.volumes;
 			for (let volume of volumes) {
 				let label = volume.label;
-
+				
 				{
 
 					let distance = label.position.distanceTo(camera.position);
@@ -70186,7 +70170,7 @@ void main() {
 			const renderer = this.viewer.renderer;
 
 			const oldTarget = renderer.getRenderTarget();
-
+			
 			if(params.renderTarget){
 				renderer.setRenderTarget(params.renderTarget);
 			}
@@ -70216,7 +70200,7 @@ void main() {
 
 				const projection = viewer.getProjection();
 				const azimuth = Utils.computeAzimuth(p1, p2, projection);
-
+				
 				this.dom.css("transform", `rotateZ(${-azimuth}rad)`);
 			});
 
@@ -70291,7 +70275,7 @@ void main() {
 
 			renderer.clear();
 		}
-
+	 
 		render(params){
 			let {viewer, renderer} = this;
 
@@ -70308,7 +70292,7 @@ void main() {
 				viewer.skybox.camera.rotation.copy(viewer.scene.cameraP.rotation);
 				viewer.skybox.camera.fov = viewer.scene.cameraP.fov;
 				viewer.skybox.camera.aspect = viewer.scene.cameraP.aspect;
-
+				
 				viewer.skybox.parent.rotation.x = 0;
 				viewer.skybox.parent.updateMatrixWorld();
 
@@ -70317,43 +70301,43 @@ void main() {
 			}else if(viewer.background === "gradient"){
 				renderer.render(viewer.scene.sceneBG, viewer.scene.cameraBG);
 			}
-
+			
 			for(let pointcloud of this.viewer.scene.pointclouds){
 				const {material} = pointcloud;
 				material.useEDL = false;
 			}
-
+			
 			viewer.pRenderer.render(viewer.scene.scenePointCloud, camera, null, {
 				clipSpheres: viewer.scene.volumes.filter(v => (v instanceof Potree.SphereVolume)),
 			});
-
+			
 			// render scene
 			renderer.render(viewer.scene.scene, camera);
 
 			viewer.dispatchEvent({type: "render.pass.scene",viewer: viewer});
-
+			
 			viewer.clippingTool.update();
 			renderer.render(viewer.clippingTool.sceneMarker, viewer.scene.cameraScreenSpace); //viewer.scene.cameraScreenSpace);
 			renderer.render(viewer.clippingTool.sceneVolume, camera);
 
 			renderer.render(viewer.controls.sceneControls, camera);
-
+			
 			renderer.clearDepth();
-
+			
 			viewer.transformationTool.update();
-
+			
 			viewer.dispatchEvent({type: "render.pass.perspective_overlay",viewer: viewer});
 
 			// renderer.render(viewer.controls.sceneControls, camera);
 			// renderer.render(viewer.clippingTool.sceneVolume, camera);
 			// renderer.render(viewer.transformationTool.scene, camera);
-
-			// renderer.setViewport(width - viewer.navigationCube.width,
-			// 							height - viewer.navigationCube.width,
+			
+			// renderer.setViewport(width - viewer.navigationCube.width, 
+			// 							height - viewer.navigationCube.width, 
 			// 							viewer.navigationCube.width, viewer.navigationCube.width);
-			// renderer.render(viewer.navigationCube, viewer.navigationCube.camera);
+			// renderer.render(viewer.navigationCube, viewer.navigationCube.camera);		
 			// renderer.setViewport(0, 0, width, height);
-
+			
 			viewer.dispatchEvent({type: "render.pass.end",viewer: viewer});
 		}
 
@@ -70422,7 +70406,7 @@ void main() {
 			let {width, height} = size;
 
 			//let maxTextureSize = viewer.renderer.capabilities.maxTextureSize;
-			//if(width * 4 <
+			//if(width * 4 < 
 			width = 2 * width;
 			height = 2 * height;
 
@@ -70497,7 +70481,7 @@ void main() {
 			} else {
 				renderer.setClearColor(0x000000, 0);
 			}
-
+			
 			renderer.clear();
 
 			this.clearTargets();
@@ -70547,7 +70531,7 @@ void main() {
 
 
 			viewer.dispatchEvent({type: "render.pass.begin",viewer: viewer});
-
+			
 			this.resize(width, height);
 
 			const visiblePointClouds = viewer.scene.pointclouds.filter(pc => pc.visible);
@@ -70556,8 +70540,8 @@ void main() {
 				let oldBudget = Potree.pointBudget;
 				Potree.pointBudget = Math.max(10 * 1000 * 1000, 2 * oldBudget);
 				let result = Potree.updatePointClouds(
-					viewer.scene.pointclouds,
-					camera,
+					viewer.scene.pointclouds, 
+					camera, 
 					viewer.renderer);
 				Potree.pointBudget = oldBudget;
 			}
@@ -70581,7 +70565,7 @@ void main() {
 				viewer.renderer.render(viewer.skybox.scene, viewer.skybox.camera);
 			} else if (viewer.background === 'gradient') {
 				viewer.renderer.render(viewer.scene.sceneBG, viewer.scene.cameraBG);
-			}
+			} 
 
 			//TODO adapt to multiple lights
 			this.renderShadowMap(visiblePointClouds, camera, lights);
@@ -70601,10 +70585,10 @@ void main() {
 					material.uniforms.octreeSize.value = octreeSize;
 					material.spacing = pointcloud.pcoGeometry.spacing; // * Math.max(pointcloud.scale.x, pointcloud.scale.y, pointcloud.scale.z);
 				}
-
+				
 				// TODO adapt to multiple lights
 				viewer.renderer.setRenderTarget(this.rtEDL);
-
+				
 				if(lights.length > 0){
 					viewer.pRenderer.render(viewer.scene.scenePointCloud, camera, this.rtEDL, {
 						clipSpheres: viewer.scene.volumes.filter(v => (v instanceof SphereVolume)),
@@ -70613,7 +70597,7 @@ void main() {
 					});
 				}else {
 
-
+					
 					// let test = camera.clone();
 					// test.matrixAutoUpdate = false;
 
@@ -70634,7 +70618,7 @@ void main() {
 					//test.matrixWorld.multiply(mat);
 					//test.matrixWorldInverse.invert(test.matrixWorld);
 					//test.matrixWorldInverse.multiplyMatrices(test.matrixWorldInverse, mat);
-
+					
 
 					viewer.pRenderer.render(viewer.scene.scenePointCloud, camera, this.rtEDL, {
 						clipSpheres: viewer.scene.volumes.filter(v => (v instanceof SphereVolume)),
@@ -70642,7 +70626,7 @@ void main() {
 					});
 				}
 
-
+				
 			}
 
 			viewer.dispatchEvent({type: "render.pass.scene", viewer: viewer, renderTarget: this.rtRegular});
@@ -70669,7 +70653,7 @@ void main() {
 				uniforms.edlStrength.value = viewer.edlStrength;
 				uniforms.radius.value = viewer.edlRadius;
 				uniforms.opacity.value = viewer.edlOpacity; // HACK
-
+				
 				Utils.screenPass.render(viewer.renderer, this.edlMaterial);
 
 				if(this.screenshot){
@@ -70689,14 +70673,14 @@ void main() {
 			viewer.renderer.render(viewer.controls.sceneControls, camera);
 			viewer.renderer.render(viewer.clippingTool.sceneVolume, camera);
 			viewer.renderer.render(viewer.transformationTool.scene, camera);
-
+			
 			viewer.dispatchEvent({type: "render.pass.end",viewer: viewer});
 
 		}
 	}
 
 	class HQSplatRenderer{
-
+		
 		constructor(viewer){
 			this.viewer = viewer;
 
@@ -70858,7 +70842,7 @@ void main() {
 
 					pointcloud.material = depthMaterial;
 				}
-
+				
 				viewer.pRenderer.render(viewer.scene.scenePointCloud, camera, this.rtDepth, {
 					clipSpheres: viewer.scene.volumes.filter(v => (v instanceof SphereVolume)),
 				});
@@ -70925,7 +70909,7 @@ void main() {
 
 					pointcloud.material = attributeMaterial;
 				}
-
+				
 				let gl = this.gl;
 
 				viewer.renderer.setRenderTarget(null);
@@ -70949,7 +70933,7 @@ void main() {
 				viewer.skybox.camera.rotation.copy(viewer.scene.cameraP.rotation);
 				viewer.skybox.camera.fov = viewer.scene.cameraP.fov;
 				viewer.skybox.camera.aspect = viewer.scene.cameraP.aspect;
-
+				
 				viewer.skybox.parent.rotation.x = 0;
 				viewer.skybox.parent.updateMatrixWorld();
 
@@ -70983,7 +70967,7 @@ void main() {
 
 				normalizationMaterial.uniforms.uWeightMap.value = this.rtAttribute.texture;
 				normalizationMaterial.uniforms.uDepthMap.value = this.rtAttribute.depthTexture;
-
+				
 				Utils.screenPass.render(viewer.renderer, normalizationMaterial);
 			}
 
@@ -71001,12 +70985,12 @@ void main() {
 			viewer.renderer.render(viewer.clippingTool.sceneVolume, camera);
 			viewer.renderer.render(viewer.transformationTool.scene, camera);
 
-			viewer.renderer.setViewport(width - viewer.navigationCube.width,
-										height - viewer.navigationCube.width,
+			viewer.renderer.setViewport(width - viewer.navigationCube.width, 
+										height - viewer.navigationCube.width, 
 										viewer.navigationCube.width, viewer.navigationCube.width);
-			viewer.renderer.render(viewer.navigationCube, viewer.navigationCube.camera);
+			viewer.renderer.render(viewer.navigationCube, viewer.navigationCube.camera);		
 			viewer.renderer.setViewport(0, 0, width, height);
-
+			
 			viewer.dispatchEvent({type: "render.pass.end",viewer: viewer});
 
 		}
@@ -71065,7 +71049,7 @@ void main() {
 				this.yaw = yaw;
 				this.pitch = pitch;
 			}
-
+			
 		}
 
 		lookAt(t){
@@ -71150,7 +71134,7 @@ void main() {
 			}else if(target.x != null){
 				endTarget = target.clone();
 			}
-
+			
 			const startPosition = this.position.clone();
 			const startTarget = this.getPivot();
 
@@ -71209,7 +71193,7 @@ void main() {
 			super();
 
 			this.annotations = new Annotation();
-
+			
 			this.scene = new Scene();
 			this.sceneBG = new Scene();
 			this.scenePointCloud = new Scene();
@@ -71231,7 +71215,7 @@ void main() {
 			this.orientedImages = [];
 			this.images360 = [];
 			this.geopackages = [];
-
+			
 			this.fpControls = null;
 			this.orbitControls = null;
 			this.earthControls = null;
@@ -71298,7 +71282,7 @@ void main() {
 
 			return height;
 		}
-
+		
 		getBoundingBox(pointclouds = this.pointclouds){
 			let box = new Box3();
 
@@ -71450,7 +71434,7 @@ void main() {
 				"volume": volume
 			});
 		};
-
+		
 		removePolygonClipVolume(volume){
 			let index = this.polygonClipVolumes.indexOf(volume);
 			if (index > -1) {
@@ -71462,7 +71446,7 @@ void main() {
 				});
 			}
 		};
-
+		
 		addMeasurement(measurement){
 			measurement.lengthUnit = this.lengthUnit;
 			measurement.lengthUnitDisplay = this.lengthUnitDisplay;
@@ -71548,9 +71532,9 @@ void main() {
 
 			return null;
 		}
-
+		
 		initialize(){
-
+			
 			this.referenceFrame = new Object3D();
 			this.referenceFrame.matrixAutoUpdate = false;
 			this.scenePointCloud.add(this.referenceFrame);
@@ -71562,12 +71546,12 @@ void main() {
 			//this.camera.rotation.y = -Math.PI / 4;
 			//this.camera.rotation.x = -Math.PI / 6;
 			this.cameraScreenSpace.lookAt(new Vector3(0, 0, 0), new Vector3(0, 0, -1), new Vector3(0, 1, 0));
-
+			
 			this.directionalLight = new DirectionalLight( 0xffffff, 0.5 );
 			this.directionalLight.position.set( 10, 10, 10 );
 			this.directionalLight.lookAt( new Vector3(0, 0, 0));
 			this.scenePointCloud.add( this.directionalLight );
-
+			
 			let light = new AmbientLight( 0x555555 ); // soft white light
 			this.scenePointCloud.add( light );
 
@@ -71610,8 +71594,8 @@ void main() {
 			// 	}
 			// }
 		}
-
-		addAnnotation(position, args = {}){
+		
+		addAnnotation(position, args = {}){		
 			if(position instanceof Array){
 				args.position = new Vector3().fromArray(position);
 			} else if (position.x != null) {
@@ -72123,7 +72107,7 @@ void main() {
 					})
 				})
 			});
-
+			
 			let layer = new ol.layer.Vector({
 				source: new ol.source.Vector({}),
 				style: style,
@@ -72322,7 +72306,7 @@ void main() {
 				constrainResolution: false
 			});
 
-			if (pointcloud.pcoGeometry.type == 'ept'){
+			if (pointcloud.pcoGeometry.type == 'ept'){ 
 				return;
 			}
 
@@ -72331,7 +72315,7 @@ void main() {
 
 			fetch(url).then(async (response) => {
 				let data = await response.json();
-
+			
 				let sources = data.sources;
 
 				for (let i = 0; i < sources.length; i++) {
@@ -72371,7 +72355,7 @@ void main() {
 					this.sourcesLabelLayer.getSource().addFeature(feature);
 				}
 			}).catch(() => {
-
+				
 			});
 
 		}
@@ -72434,6 +72418,184 @@ void main() {
 
 		set sourcesVisible (value) {
 			this.getSourcesLayer().setVisible(value);
+		}
+
+	}
+
+	/**
+	 *
+	 * @author roy.mdr / http://...
+	 *
+	 */
+
+	class DXFProfileExporter {
+
+		static toXYZ(points, flatten = false) {
+
+			/*
+			points: {
+				...
+				data: {
+					mileage: [0, 1, 2...], -> one per point
+					position: [0, 0, 0, 1, 1, 1, 2, 2, 2...], -> X, Y, Z
+					rgba: [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2...] -> R, G, B, A
+				},
+				numPoints: Int
+			}
+			*/
+
+			const pointsXYZ = {
+				x: [],
+				y: [],
+				z: [],
+				minX:  Number.MAX_VALUE,
+				minY:  Number.MAX_VALUE,
+				minZ:  Number.MAX_VALUE,
+				maxX: -Number.MAX_VALUE,
+				maxY: -Number.MAX_VALUE,
+				maxZ: -Number.MAX_VALUE,
+				numPoints: 0
+			};
+
+			const pData    = points.data;
+			const pMileage = pData.mileage;
+			const pCoords  = pData.position;
+			const pColor   = pData.rgba;
+
+			for (let pIx = 0; pIx < points.numPoints; pIx++) {
+
+				const poMileage = pMileage[pIx];
+				const poCoordX  = pCoords[ ((pIx * 3) + 0) ];
+				const poCoordY  = pCoords[ ((pIx * 3) + 1) ];
+				const poCoordZ  = pCoords[ ((pIx * 3) + 2) ];
+				// const poColorR  = pColor[ ((pIx * 4) + 0) ];
+				// const poColorG  = pColor[ ((pIx * 4) + 1) ];
+				// const poColorB  = pColor[ ((pIx * 4) + 2) ];
+				// const poColorA  = pColor[ ((pIx * 4) + 3) ];
+
+				if (flatten === true) {
+
+					pointsXYZ.x.push(poMileage);
+					pointsXYZ.y.push(0);
+					pointsXYZ.z.push(poCoordZ);
+
+					// Get boundaries X
+					if (pointsXYZ.maxX < poMileage) pointsXYZ.maxX = poMileage;
+					if (pointsXYZ.minX > poMileage) pointsXYZ.minX = poMileage;
+
+					// Get boundaries Z
+					if (pointsXYZ.maxZ < poCoordZ) pointsXYZ.maxZ = poCoordZ;
+					if (pointsXYZ.minZ > poCoordZ) pointsXYZ.minZ = poCoordZ;
+
+				} else {
+
+					pointsXYZ.x.push(poCoordX);
+					pointsXYZ.y.push(poCoordY);
+					pointsXYZ.z.push(poCoordZ);
+
+					// Get boundaries X
+					if (pointsXYZ.maxX < poCoordX) pointsXYZ.maxX = poCoordX;
+					if (pointsXYZ.minX > poCoordX) pointsXYZ.minX = poCoordX;
+
+					// Get boundaries Y
+					if (pointsXYZ.maxY < poCoordY) pointsXYZ.maxY = poCoordY;
+					if (pointsXYZ.minY > poCoordY) pointsXYZ.minY = poCoordY;
+
+					// Get boundaries Z
+					if (pointsXYZ.maxZ < poCoordZ) pointsXYZ.maxZ = poCoordZ;
+					if (pointsXYZ.minZ > poCoordZ) pointsXYZ.minZ = poCoordZ;
+
+				}
+
+			}
+
+			if (flatten === true) {
+				// Set boundaries Y
+				pointsXYZ.maxY = 0;
+				pointsXYZ.minY = 0;
+			}
+
+			pointsXYZ.numPoints = points.numPoints;
+
+			return pointsXYZ;
+		}
+
+		static plotPCloudPoint(x, y, z) {
+
+			const dxfSection = `0
+POINT
+8
+layer_pointCloud
+10
+${x}
+20
+${y}
+30
+${z}
+`;
+
+			return dxfSection;
+		}
+
+		static toString(points, flatten = false) {
+
+			const pCloud = DXFProfileExporter.toXYZ(points, flatten);
+
+			const dxfHeader = `999
+DXF created from potree
+0
+SECTION
+2
+HEADER
+9
+$ACADVER
+1
+AC1006
+9
+$INSBASE
+10
+0.0
+20
+0.0
+30
+0.0
+9
+$EXTMIN
+10
+${pCloud.minX}
+20
+${pCloud.minY}
+30
+${pCloud.minZ}
+9
+$EXTMAX
+10
+${pCloud.maxX}
+20
+${pCloud.maxY}
+30
+${pCloud.maxZ}
+0
+ENDSEC
+`;
+
+			let dxfBody = `0
+SECTION
+2
+ENTITIES
+`;
+
+			for (let i = 0; i < pCloud.numPoints; i++) {
+				dxfBody += DXFProfileExporter.plotPCloudPoint(pCloud.x[i], pCloud.y[i], pCloud.z[i]);
+			}
+
+			dxfBody += `0
+ENDSEC
+`;
+
+			const dxf = dxfHeader + dxfBody + '0\nEOF';
+
+			return dxf;
 		}
 
 	}
@@ -72620,8 +72782,8 @@ void main() {
 					view.setUint16(boffset + 18, points.data.pointSourceID[i]);
 				}
 
-				if (points.data.rgba) {
-					let rgba = points.data.rgba;
+				if (points.data.rgba || points.data.color) {
+					let rgba = points.data.rgba ?? points.data.color;
 					view.setUint16(boffset + 20, (rgba[4 * i + 0] * 255), true);
 					view.setUint16(boffset + 22, (rgba[4 * i + 1] * 255), true);
 					view.setUint16(boffset + 24, (rgba[4 * i + 2] * 255), true);
@@ -72632,7 +72794,7 @@ void main() {
 
 			return buffer;
 		}
-
+		
 	}
 
 	function copyMaterial(source, target){
@@ -72682,7 +72844,7 @@ void main() {
 			this.pcoGeometry = octree.pcoGeometry;
 			this.points = [];
 			this.visibleNodes = [];
-
+			
 			//this.material = this.trueOctree.material;
 			this.material = new PointCloudMaterial$1();
 			//this.material.copy(this.trueOctree.material);
@@ -72767,7 +72929,7 @@ void main() {
 					let source = data.data[attributeName];
 					let target = geometry.attributes[attributeName];
 					let numElements = target.itemSize;
-
+					
 					for(let item = 0; item < numElements; item++){
 						target.array[numElements * index + item] = source[numElements * i + item];
 					}
@@ -72806,13 +72968,13 @@ void main() {
 				let numElements = buffer.length / data.numPoints; // 3 for pos, 4 for col, 1 for scalars
 				let constructor = buffer.constructor;
 				let normalized = false;
-
+				
 				if(this.trueOctree.root.sceneNode){
 					if(this.trueOctree.root.sceneNode.geometry.attributes[attributeName]){
 						normalized = this.trueOctree.root.sceneNode.geometry.attributes[attributeName].normalized;
 					}
 				}
-
+				
 
 				let batchBuffer = new constructor(numElements * this.batchSize);
 
@@ -72833,7 +72995,7 @@ void main() {
 
 			return batch;
 		}
-
+		
 		computeVisibilityTextureData(){
 			let data = new Uint8Array(this.visibleNodes.length * 4);
 			let offsets = new Map();
@@ -72879,12 +73041,18 @@ void main() {
 
 			let ccwIcon = `${exports.resourcePath}/icons/arrow_ccw.svg`;
 			$('#potree_profile_rotate_ccw').attr('src', ccwIcon);
-
+			
 			let forwardIcon = `${exports.resourcePath}/icons/arrow_up.svg`;
 			$('#potree_profile_move_forward').attr('src', forwardIcon);
 
 			let backwardIcon = `${exports.resourcePath}/icons/arrow_down.svg`;
 			$('#potree_profile_move_backward').attr('src', backwardIcon);
+
+			let dxf2DIcon = `${exports.resourcePath}/icons/file_dxf_2d.svg`;
+			$('#potree_download_dxf2D_icon').attr('src', dxf2DIcon);
+
+			let dxf3DIcon = `${exports.resourcePath}/icons/file_dxf_3d.svg`;
+			$('#potree_download_dxf3D_icon').attr('src', dxf3DIcon);
 
 			let csvIcon = `${exports.resourcePath}/icons/file_csv_2d.svg`;
 			$('#potree_download_csv_icon').attr('src', csvIcon);
@@ -72974,14 +73142,14 @@ void main() {
 						this.pickSphere.position.set(point.mileage, 0, position[2]);
 
 						this.viewerPickSphere.position.set(...position);
-
+						
 						if(!this.viewer.scene.scene.children.includes(this.viewerPickSphere)){
 							this.viewer.scene.scene.add(this.viewerPickSphere);
 							if(!this.viewer.hasEventListener("update", viewerPickSphereSizeHandler)){
 								this.viewer.addEventListener("update", viewerPickSphereSizeHandler);
 							}
 						}
-
+						
 
 						let info = this.elRoot.find('#profileSelectionProperties');
 						let html = '<table>';
@@ -72999,9 +73167,9 @@ void main() {
 								transform = value => value / scale + offset;
 							}
 
+							
 
-
-
+							
 
 							if (attributeName === 'position') {
 								let values = [...position].map(v => Utils.addCommas(v.toFixed(3)));
@@ -73055,7 +73223,7 @@ void main() {
 							this.viewer.scene.scene.children.splice(index, 1);
 						}
 						this.viewer.removeEventListener("update", viewerPickSphereSizeHandler);
-
+						
 
 					}
 					this.render();
@@ -73102,19 +73270,25 @@ void main() {
 				this.hide();
 			});
 
-			let getProfilePoints = () => {
+			let getProfilePoints = (truePosition) => {
 				let points = new Points$1();
-
+				
 				for(let [pointcloud, entry] of this.pointclouds){
 					for(let pointSet of entry.points){
 
 						let originPos = pointSet.data.position;
-						let trueElevationPosition = new Float32Array(originPos);
+						let truePointPosition = new Float64Array(originPos);
 						for(let i = 0; i < pointSet.numPoints; i++){
-							trueElevationPosition[3 * i + 2] += pointcloud.position.z;
+
+							if (truePosition === true) {
+								truePointPosition[3 * i + 0] += pointcloud.position.x;
+								truePointPosition[3 * i + 1] += pointcloud.position.y;
+							}
+
+							truePointPosition[3 * i + 2] += pointcloud.position.z;
 						}
 
-						pointSet.data.position = trueElevationPosition;
+						pointSet.data.position = truePointPosition;
 						points.add(pointSet);
 						pointSet.data.position = originPos;
 					}
@@ -73123,9 +73297,29 @@ void main() {
 				return points;
 			};
 
-			$('#potree_download_csv_icon').click(() => {
+			$('#potree_download_dxf2D_icon').click(() => {
+				
+				const points = getProfilePoints();
 
-				let points = getProfilePoints();
+				const string = DXFProfileExporter.toString(points, true);
+
+				const blob = new Blob([string], {type: "text/string"});
+				$('#potree_download_profile_dxf2D_link').attr('href', URL.createObjectURL(blob));
+			});
+
+			$('#potree_download_dxf3D_icon').click(() => {
+				
+				const points = getProfilePoints(true);
+
+				const string = DXFProfileExporter.toString(points);
+
+				const blob = new Blob([string], {type: "text/string"});
+				$('#potree_download_profile_dxf3D_link').attr('href', URL.createObjectURL(blob));
+			});
+
+			$('#potree_download_csv_icon').click(() => {
+				
+				let points = getProfilePoints(true);
 
 				let string = CSVExporter.toString(points);
 
@@ -73135,7 +73329,7 @@ void main() {
 
 			$('#potree_download_las_icon').click(() => {
 
-				let points = getProfilePoints();
+				let points = getProfilePoints(true);
 
 				let buffer = LASExporter.toLAS(points);
 
@@ -73265,14 +73459,14 @@ void main() {
 					gl.createVertexArray = extVAO.createVertexArrayOES.bind(extVAO);
 					gl.bindVertexArray = extVAO.bindVertexArrayOES.bind(extVAO);
 				}
-
+				
 			}
 
 			this.camera = new OrthographicCamera(-1000, 1000, 1000, -1000, -1000, 1000);
 			this.camera.up.set(0, 0, 1);
 			this.camera.rotation.order = "ZXY";
 			this.camera.rotation.x = Math.PI / 2.0;
-
+		
 
 			this.scene = new Scene();
 			this.profileScene = new Scene();
@@ -73353,7 +73547,7 @@ void main() {
 			entry.addPoints(points);
 			this.projectedBox.union(entry.projectedBox);
 
-			if (this.autoFit && this.autoFitEnabled) {
+			if (this.autoFit && this.autoFitEnabled) { 
 				let width = this.renderArea[0].clientWidth;
 				let height = this.renderArea[0].clientHeight;
 
@@ -73467,7 +73661,7 @@ void main() {
 		requestScaleUpdate(){
 
 			let threshold = 100;
-			let allowUpdate = ((this.lastReset === undefined) || (this.lastScaleUpdate === undefined))
+			let allowUpdate = ((this.lastReset === undefined) || (this.lastScaleUpdate === undefined)) 
 				|| ((new Date().getTime() - this.lastReset) > threshold && (new Date().getTime() - this.lastScaleUpdate) > threshold);
 
 			if(allowUpdate){
@@ -73476,14 +73670,14 @@ void main() {
 
 				this.lastScaleUpdate = new Date().getTime();
 
-
+				
 
 				this.scaleUpdatePending = false;
 			}else if(!this.scaleUpdatePending) {
 				setTimeout(this.requestScaleUpdate.bind(this), 100);
 				this.scaleUpdatePending = true;
 			}
-
+			
 		}
 
 		render () {
@@ -73501,11 +73695,11 @@ void main() {
 			for(let pointcloud of this.pointclouds.keys()){
 				let source = pointcloud.material;
 				let target = this.pointclouds.get(pointcloud).material;
-
+				
 				copyMaterial(source, target);
 				target.size = 2;
 			}
-
+			
 			pRenderer.render(profileScene, camera, null);
 
 			let radius = Math.abs(scaleX.invert(0) - scaleX.invert(5));
@@ -73516,7 +73710,7 @@ void main() {
 				pickSphere.scale.set(radius, radius, radius);
 				pickSphere.visible = true;
 			}
-
+			
 			renderer.render(scene, camera);
 
 			this.requestScaleUpdate();
@@ -74082,10 +74276,10 @@ ENDSEC
 			let elTable = $('<table class="measurement_value_table"></table>');
 
 			let point = this.measurement.points[0];
-
+			
 			for(let attributeName of Object.keys(point)){
 				if(attributeName === "position"){
-
+				
 				}else if(attributeName === "rgba"){
 					let color = point.rgba;
 					let text = color.join(', ');
@@ -74143,7 +74337,7 @@ ENDSEC
 			this.elRemove.click( () => {
 				this.viewer.scene.removeMeasurement(measurement);
 			});
-
+			
 			this.elMakeProfile = this.elContent.find("input[name=make_profile]");
 			this.elMakeProfile.click( () => {
 				//measurement.points;
@@ -74393,7 +74587,7 @@ ENDSEC
 
 			if(this.measurement.points.length !== 3){
 				elInfos.empty();
-
+				
 				return;
 			}
 
@@ -74404,19 +74598,19 @@ ENDSEC
 			const center = Potree.Utils.computeCircleCenter(A, B, C);
 			const radius = center.distanceTo(A);
 			const circumference = 2 * Math.PI * radius;
-
+			
 			const format = (number) => {
 				return Potree.Utils.addCommas(number.toFixed(3));
 			};
 
-
+			
 			const txtCenter = `${format(center.x)} ${format(center.y)} ${format(center.z)}`;
 			const txtRadius = format(radius);
 			const txtCircumference = format(circumference);
 
 			const thStyle = `style="text-align: left"`;
 			const tdStyle = `style="width: 100%; padding: 5px;"`;
-
+			
 			elInfos.html(`
 			<tr>
 				<th ${thStyle}>Center: </th>
@@ -74736,7 +74930,7 @@ ENDSEC
 			let handle = null;
 			{ // START FILTER
 				let url = `${viewer.server}/create_regions_filter?pointclouds=[${pointcloudsArg}]&regions=[${regionsArg}]`;
-
+				
 				//console.log(url);
 
 				info("estimating results ...");
@@ -74991,30 +75185,30 @@ ENDSEC
 			{
 				let segments = profile.getSegments();
 				let width = profile.width;
-
+				
 				for(let segment of segments){
 					let start = segment.start.clone().multiply(new Vector3(1, 1, 0));
 					let end = segment.end.clone().multiply(new Vector3(1, 1, 0));
 					let center = new Vector3().addVectors(start, end).multiplyScalar(0.5);
-
+					
 					let startEndDir = new Vector3().subVectors(end, start).normalize();
 					let endStartDir = new Vector3().subVectors(start, end).normalize();
 					let upDir = new Vector3(0, 0, 1);
 					let rightDir = new Vector3().crossVectors(startEndDir, upDir);
 					let leftDir = new Vector3().crossVectors(endStartDir, upDir);
-
+					
 					console.log(leftDir);
-
+					
 					let right = rightDir.clone().multiplyScalar(width * 0.5).add(center);
 					let left = leftDir.clone().multiplyScalar(width * 0.5).add(center);
-
+					
 					let planes = [
 						new Plane().setFromNormalAndCoplanarPoint(startEndDir, start),
 						new Plane().setFromNormalAndCoplanarPoint(endStartDir, end),
 						new Plane().setFromNormalAndCoplanarPoint(leftDir, right),
 						new Plane().setFromNormalAndCoplanarPoint(rightDir, left),
 					];
-
+					
 					let planeQueryParts = [];
 					for(let plane of planes){
 						let part = [plane.normal.toArray(), plane.constant].join(",");
@@ -75065,7 +75259,7 @@ ENDSEC
 			let handle = null;
 			{ // START FILTER
 				let url = `${viewer.server}/create_regions_filter?pointclouds=[${pointcloudsArg}]&regions=[${regionsArg}]`;
-
+				
 				//console.log(url);
 
 				info("estimating results ...");
@@ -75279,9 +75473,9 @@ ENDSEC
 
 				<div class="heading">Description</div>
 				<div id="annotation_description" contenteditable="true">
-					A longer description of this annotation.
+					A longer description of this annotation. 
 						Can be multiple lines long. TODO: the user should be able
-						to modify title and description.
+						to modify title and description. 
 				</div>
 
 			</div>
@@ -75367,7 +75561,7 @@ ENDSEC
 				min: 0,
 				max: 1,
 				step: 0.001,
-				slide: (event, ui) => {
+				slide: (event, ui) => { 
 					animation.set(ui.value);
 				}
 			});
@@ -75479,7 +75673,7 @@ ENDSEC
 				addNewKeyframeItem(index);
 
 				for(const cp of animation.controlPoints){
-
+					
 					addKeyframeItem(index);
 					index++;
 					addNewKeyframeItem(index);
@@ -75501,7 +75695,7 @@ ENDSEC
 		}
 
 		update(){
-
+			
 		}
 	};
 
@@ -75525,7 +75719,7 @@ ENDSEC
 			}
 
 			this.object = object;
-
+			
 			for(let task of this.cleanupTasks){
 				task();
 			}
@@ -75543,7 +75737,7 @@ ENDSEC
 			}else if(object instanceof CameraAnimation){
 				this.setCameraAnimation(object);
 			}
-
+			
 		}
 
 		//
@@ -75596,7 +75790,7 @@ ENDSEC
 				<li id="materials_backface_container">
 				<label><input id="set_backface_culling" type="checkbox" /><span data-i18n="appearance.backface_culling"></span></label>
 				</li>
-
+				
 				<!-- OPACITY -->
 				<li><span data-i18n="appearance.point_opacity"></span>:<span id="lblOpacity"></span><div id="sldOpacity"></div></li>
 
@@ -75638,11 +75832,21 @@ ENDSEC
 
 					<li><span data-i18n="appearance.extra_range"></span>: <span id="lblExtraRange"></span> <div id="sldExtraRange"></div></li>
 
-					<li>Gamma: <span id="lblExtraGamma"></span> <div id="sldExtraGamma"></div></li>
-					<li>Brightness: <span id="lblExtraBrightness"></span> <div id="sldExtraBrightness"></div></li>
-					<li>Contrast: <span id="lblExtraContrast"></span> <div id="sldExtraContrast"></div></li>
-				</div>
+					<li>
+						<selectgroup id="extra_gradient_repeat_option">
+							<option id="extra_gradient_repeat_clamp" value="CLAMP">Clamp</option>
+							<option id="extra_gradient_repeat_repeat" value="REPEAT">Repeat</option>
+							<option id="extra_gradient_repeat_mirrored_repeat" value="MIRRORED_REPEAT">Mirrored Repeat</option>
+						</selectgroup>
+					</li>
 
+					<li>
+						<span>Gradient Scheme:</span>
+						<div id="extra_gradient_scheme_selection" class="gradient_scheme" style="display: flex; padding: 1em 0em">
+						</div>
+					</li>
+				</div>
+				
 				<div id="materials.matcap_container">
 					<div class="divider">
 						<span>MATCAP</span>
@@ -75679,7 +75883,7 @@ ENDSEC
 
 					<li>
 						<span>Gradient Scheme:</span>
-						<div id="elevation_gradient_scheme_selection" style="display: flex; padding: 1em 0em">
+						<div id="elevation_gradient_scheme_selection" class="gradient_scheme" style="display: flex; padding: 1em 0em">
 						</div>
 					</li>
 				</div>
@@ -75709,7 +75913,7 @@ ENDSEC
 					</div>
 
 				</div>
-
+				
 				<div id="materials.index_container">
 					<div class="divider">
 						<span>Indices</span>
@@ -75741,7 +75945,7 @@ ENDSEC
 					sldPointSize.slider({value: material.size});
 				};
 				this.addVolatileListener(material, "point_size_changed", update);
-
+				
 				update();
 			}
 
@@ -75762,7 +75966,7 @@ ENDSEC
 					sldMinPointSize.slider({value: material.minSize});
 				};
 				this.addVolatileListener(material, "point_size_changed", update);
-
+				
 				update();
 			}
 
@@ -75802,7 +76006,7 @@ ENDSEC
 			}
 
 			{ // BACKFACE CULLING
-
+				
 				let opt = panel.find(`#set_backface_culling`);
 				opt.click(() => {
 					material.backfaceCulling = opt.prop("checked");
@@ -75843,7 +76047,7 @@ ENDSEC
 					min: 0,
 					max: 1,
 					step: 0.001,
-					slide: function (event, ui) {
+					slide: function (event, ui) { 
 						material.opacity = ui.value;
 					}
 				});
@@ -75935,8 +76139,8 @@ ENDSEC
 						if(minMaxAreNumbers){
 							panel.find('#sldExtraRange').slider({
 								range: true,
-								min: min,
-								max: max,
+								min: min, 
+								max: max, 
 								step: 0.01,
 								values: selectedRange,
 								slide: (event, ui) => {
@@ -75998,11 +76202,11 @@ ENDSEC
 					} else if (selectedValue === "gps-time" ){
 						blockGps.css('display', 'block');
 					} else if(selectedValue === "number of returns"){
-
+						
 					} else if(selectedValue === "return number"){
-
+						
 					} else if(["source id", "point source id"].includes(selectedValue)){
-
+						
 					} else {
 						blockExtra.css('display', 'block');
 					}
@@ -76023,55 +76227,57 @@ ENDSEC
 			{
 				const schemes = Object.keys(Potree.Gradients).map(name => ({name: name, values: Gradients[name]}));
 
-				let elSchemeContainer = panel.find("#elevation_gradient_scheme_selection");
+				let elSchemeContainers = panel.find("div.gradient_scheme");
 
 				for(let scheme of schemes){
-					let elScheme = $(`
-					<span style="flex-grow: 1;">
-					</span>
-				`);
+					elSchemeContainers.each(function(index, container){
+						let elScheme = $(`
+						<span style="flex-grow: 1;">
+						</span>
+					`);
 
-					const svg = Potree.Utils.createSvgGradient(scheme.values);
-					svg.setAttributeNS(null, "class", `button-icon`);
+						const svg = Potree.Utils.createSvgGradient(scheme.values);
+						svg.setAttributeNS(null, "class", `button-icon`);
 
-					elScheme.append($(svg));
+						elScheme.append($(svg));
 
-					elScheme.click( () => {
-						material.gradient = Gradients[scheme.name];
+						elScheme.click( () => {
+							material.gradient = Gradients[scheme.name];
+						});
+
+						$(container).append(elScheme);
 					});
-
-					elSchemeContainer.append(elScheme);
 				}
 			}
 
 			{
 				let matcaps = [
-					{name: "Normals", icon: `${Potree.resourcePath}/icons/matcap/check_normal+y.jpg`},
-					{name: "Basic 1", icon: `${Potree.resourcePath}/icons/matcap/basic_1.jpg`},
-					{name: "Basic 2", icon: `${Potree.resourcePath}/icons/matcap/basic_2.jpg`},
-					{name: "Basic Dark", icon: `${Potree.resourcePath}/icons/matcap/basic_dark.jpg`},
-					{name: "Basic Side", icon: `${Potree.resourcePath}/icons/matcap/basic_side.jpg`},
-					{name: "Ceramic Dark", icon: `${Potree.resourcePath}/icons/matcap/ceramic_dark.jpg`},
-					{name: "Ceramic Lightbulb", icon: `${Potree.resourcePath}/icons/matcap/ceramic_lightbulb.jpg`},
-					{name: "Clay Brown", icon: `${Potree.resourcePath}/icons/matcap/clay_brown.jpg`},
-					{name: "Clay Muddy", icon: `${Potree.resourcePath}/icons/matcap/clay_muddy.jpg`},
-					{name: "Clay Studio", icon: `${Potree.resourcePath}/icons/matcap/clay_studio.jpg`},
-					{name: "Resin", icon: `${Potree.resourcePath}/icons/matcap/resin.jpg`},
-					{name: "Skin", icon: `${Potree.resourcePath}/icons/matcap/skin.jpg`},
-					{name: "Jade", icon: `${Potree.resourcePath}/icons/matcap/jade.jpg`},
-					{name: "Metal_ Anisotropic", icon: `${Potree.resourcePath}/icons/matcap/metal_anisotropic.jpg`},
-					{name: "Metal Carpaint", icon: `${Potree.resourcePath}/icons/matcap/metal_carpaint.jpg`},
-					{name: "Metal Lead", icon: `${Potree.resourcePath}/icons/matcap/metal_lead.jpg`},
-					{name: "Metal Shiny", icon: `${Potree.resourcePath}/icons/matcap/metal_shiny.jpg`},
-					{name: "Pearl", icon: `${Potree.resourcePath}/icons/matcap/pearl.jpg`},
+					{name: "Normals", icon: `${Potree.resourcePath}/icons/matcap/check_normal+y.jpg`}, 
+					{name: "Basic 1", icon: `${Potree.resourcePath}/icons/matcap/basic_1.jpg`}, 
+					{name: "Basic 2", icon: `${Potree.resourcePath}/icons/matcap/basic_2.jpg`}, 
+					{name: "Basic Dark", icon: `${Potree.resourcePath}/icons/matcap/basic_dark.jpg`}, 
+					{name: "Basic Side", icon: `${Potree.resourcePath}/icons/matcap/basic_side.jpg`}, 
+					{name: "Ceramic Dark", icon: `${Potree.resourcePath}/icons/matcap/ceramic_dark.jpg`}, 
+					{name: "Ceramic Lightbulb", icon: `${Potree.resourcePath}/icons/matcap/ceramic_lightbulb.jpg`}, 
+					{name: "Clay Brown", icon: `${Potree.resourcePath}/icons/matcap/clay_brown.jpg`}, 
+					{name: "Clay Muddy", icon: `${Potree.resourcePath}/icons/matcap/clay_muddy.jpg`}, 
+					{name: "Clay Studio", icon: `${Potree.resourcePath}/icons/matcap/clay_studio.jpg`}, 
+					{name: "Resin", icon: `${Potree.resourcePath}/icons/matcap/resin.jpg`}, 
+					{name: "Skin", icon: `${Potree.resourcePath}/icons/matcap/skin.jpg`}, 
+					{name: "Jade", icon: `${Potree.resourcePath}/icons/matcap/jade.jpg`}, 
+					{name: "Metal_ Anisotropic", icon: `${Potree.resourcePath}/icons/matcap/metal_anisotropic.jpg`}, 
+					{name: "Metal Carpaint", icon: `${Potree.resourcePath}/icons/matcap/metal_carpaint.jpg`}, 
+					{name: "Metal Lead", icon: `${Potree.resourcePath}/icons/matcap/metal_lead.jpg`}, 
+					{name: "Metal Shiny", icon: `${Potree.resourcePath}/icons/matcap/metal_shiny.jpg`}, 
+					{name: "Pearl", icon: `${Potree.resourcePath}/icons/matcap/pearl.jpg`}, 
 					{name: "Toon", icon: `${Potree.resourcePath}/icons/matcap/toon.jpg`},
-					{name: "Check Rim Light", icon: `${Potree.resourcePath}/icons/matcap/check_rim_light.jpg`},
-					{name: "Check Rim Dark", icon: `${Potree.resourcePath}/icons/matcap/check_rim_dark.jpg`},
-					{name: "Contours 1", icon: `${Potree.resourcePath}/icons/matcap/contours_1.jpg`},
-					{name: "Contours 2", icon: `${Potree.resourcePath}/icons/matcap/contours_2.jpg`},
-					{name: "Contours 3", icon: `${Potree.resourcePath}/icons/matcap/contours_3.jpg`},
-					{name: "Reflection Check Horizontal", icon: `${Potree.resourcePath}/icons/matcap/reflection_check_horizontal.jpg`},
-					{name: "Reflection Check Vertical", icon: `${Potree.resourcePath}/icons/matcap/reflection_check_vertical.jpg`},
+					{name: "Check Rim Light", icon: `${Potree.resourcePath}/icons/matcap/check_rim_light.jpg`}, 
+					{name: "Check Rim Dark", icon: `${Potree.resourcePath}/icons/matcap/check_rim_dark.jpg`}, 
+					{name: "Contours 1", icon: `${Potree.resourcePath}/icons/matcap/contours_1.jpg`}, 
+					{name: "Contours 2", icon: `${Potree.resourcePath}/icons/matcap/contours_2.jpg`}, 
+					{name: "Contours 3", icon: `${Potree.resourcePath}/icons/matcap/contours_3.jpg`}, 
+					{name: "Reflection Check Horizontal", icon: `${Potree.resourcePath}/icons/matcap/reflection_check_horizontal.jpg`}, 
+					{name: "Reflection Check Vertical", icon: `${Potree.resourcePath}/icons/matcap/reflection_check_vertical.jpg`}, 
 				];
 
 				let elMatcapContainer = panel.find("#matcap_scheme_selection");
@@ -76215,7 +76421,7 @@ ENDSEC
 				});
 
 				let updateHeightRange = function () {
-
+					
 
 					let aPosition = pointcloud.getAttribute("position");
 
@@ -76256,7 +76462,7 @@ ENDSEC
 					if(attribute == null){
 						return;
 					}
-
+					
 					let range = material.getRange(attributeName);
 
 					if(range == null){
@@ -76292,6 +76498,19 @@ ENDSEC
 
 				{
 					let elGradientRepeat = panel.find("#gradient_repeat_option");
+					elGradientRepeat.selectgroup({title: "Gradient"});
+
+					elGradientRepeat.find("input").click( (e) => {
+						this.viewer.setElevationGradientRepeat(ElevationGradientRepeat[e.target.value]);
+					});
+
+					let current = Object.keys(ElevationGradientRepeat)
+						.filter(key => ElevationGradientRepeat[key] === this.viewer.elevationGradientRepeat);
+					elGradientRepeat.find(`input[value=${current}]`).trigger("click");
+				}
+
+				{
+					let elGradientRepeat = panel.find("#extra_gradient_repeat_option");
 					elGradientRepeat.selectgroup({title: "Gradient"});
 
 					elGradientRepeat.find("input").click( (e) => {
@@ -76346,7 +76565,7 @@ ENDSEC
 
 		}
 
-
+		
 
 		setMeasurement(object){
 
@@ -76431,7 +76650,7 @@ ENDSEC
 	class HierarchicalSlider{
 
 		constructor(params = {}){
-
+			
 			this.element = document.createElement("div");
 
 			this.labels = [];
@@ -76472,7 +76691,7 @@ ENDSEC
 					max: childRange[1],
 				});
 			}
-
+			
 			this.updateLabels();
 		}
 
@@ -76501,15 +76720,15 @@ ENDSEC
 				let parentSlider = this.sliders[this.sliders.length - 1];
 				[min, max] = $(parentSlider).slider("option", "values");
 			}
-
+			
 			$(slider).slider({
-				range: true,
-				min: min,
+				range: true, 
+				min: min, 
 				max: max,
 				step: this.step,
 				values: [min, max],
 				slide: (event, ui) => {
-
+					
 					// set all descendants to same range
 					let levels = this.sliders.length;
 					for(let i = level + 1; i < levels; i++){
@@ -76527,7 +76746,7 @@ ENDSEC
 						let values = [...ui.values];
 
 						this.slide({
-							target: this,
+							target: this, 
 							range: this.range,
 							values: values,
 						});
@@ -76577,10 +76796,10 @@ ENDSEC
 	}
 
 	class OrientedImageControls extends EventDispatcher{
-
+		
 		constructor(viewer){
 			super();
-
+			
 			this.viewer = viewer;
 			this.renderer = viewer.renderer;
 
@@ -76748,10 +76967,10 @@ ENDSEC
 				(1 - shu) * this.shear[0] + shu * shx,
 				(1 - shu) * this.shear[1] + shu * shy,
 			];
-
+			
 			this.shear = newShear;
 			this.viewer.setFOV(newFov);
-
+			
 			const {originalCam, shearCam} = this;
 
 			originalCam.fov = newFov;
@@ -76790,7 +77009,7 @@ ENDSEC
 	uniform float uNear;
 	varying vec2 vUV;
 	varying vec4 vDebug;
-
+	
 	void main(){
 		vDebug = vec4(0.0, 1.0, 0.0, 1.0);
 		vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
@@ -77048,7 +77267,7 @@ ENDSEC
 				const {x, y, z, omega, phi, kappa} = params;
 				// const [rx, ry, rz] = [omega, phi, kappa]
 				// 	.map(THREE.Math.degToRad);
-
+				
 				// mesh.position.set(x, y, z);
 				// mesh.scale.set(width / height, 1, 1);
 				// mesh.rotation.set(rx, ry, rz);
@@ -77079,7 +77298,7 @@ ENDSEC
 
 				sceneNode.add(orientedImage.mesh);
 				sceneNode.add(orientedImage.line);
-
+				
 				orientedImages.push(orientedImage);
 			}
 
@@ -77096,15 +77315,15 @@ ENDSEC
 				//var array = getMousePosition( container, evt.clientX, evt.clientY );
 				const rect = viewer.renderer.domElement.getBoundingClientRect();
 				const [x, y] = [evt.clientX, evt.clientY];
-				const array = [
-					( x - rect.left ) / rect.width,
-					( y - rect.top ) / rect.height
+				const array = [ 
+					( x - rect.left ) / rect.width, 
+					( y - rect.top ) / rect.height 
 				];
 				const onClickPosition = new Vector2(...array);
 				//const intersects = getIntersects(onClickPosition, scene.children);
 				const camera = viewer.scene.getActiveCamera();
 				const mouse = new Vector3(
-					+ ( onClickPosition.x * 2 ) - 1,
+					+ ( onClickPosition.x * 2 ) - 1, 
 					- ( onClickPosition.y * 2 ) + 1 );
 				const objects = orientedImages.map(i => i.mesh);
 				raycaster.setFromCamera( mouse, camera );
@@ -77130,7 +77349,7 @@ ENDSEC
 					viewer.scene.removePolygonClipVolume(clipVolume);
 					clipVolume = null;
 				}
-
+				
 				if(shouldAddClipVolume || selectionChanged){
 					const img = hoveredElement;
 					const fov = cameraParams.fov;
@@ -77164,7 +77383,7 @@ ENDSEC
 					m3.position.set(-1,  1, 0);
 					volume.markers.push(m0, m1, m2, m3);
 					volume.initialized = true;
-
+					
 					viewer.scene.addPolygonClipVolume(volume);
 					clipVolume = volume;
 				}
@@ -77206,7 +77425,7 @@ ENDSEC
 							mesh.material.needsUpdate = true;
 						}
 					);
-
+					
 
 				}
 			};
@@ -77342,7 +77561,7 @@ ENDSEC
 					this.focus(currentlyHovered.image360);
 				}
 			});
-
+			
 		};
 
 		set visible(visible){
@@ -77413,7 +77632,7 @@ ENDSEC
 			let newCamPos = target.clone().sub(move);
 
 			viewer.scene.view.setView(
-				newCamPos,
+				newCamPos, 
 				target,
 				500
 			);
@@ -77451,7 +77670,7 @@ ENDSEC
 			viewer.setControls(previousView.controls);
 
 			viewer.scene.view.setView(
-				previousView.position,
+				previousView.position, 
 				previousView.target,
 				500
 			);
@@ -77527,7 +77746,7 @@ ENDSEC
 					forward: a => a,
 				};
 			}
-
+			
 			let response = await fetch(`${url}/coordinates.txt`);
 			let text = await response.text();
 
@@ -77600,7 +77819,7 @@ ENDSEC
 			}
 		}
 
-
+		
 
 	};
 
@@ -79029,7 +79248,7 @@ ENDSEC
 
 		init(){
 
-	//		this.initAccordion();
+			this.initAccordion();
 			this.initAppearance();
 			this.initToolbar();
 			this.initScene();
@@ -79037,11 +79256,11 @@ ENDSEC
 			this.initFilters();
 			this.initClippingTool();
 			this.initSettings();
-
+			
 			$('#potree_version_number').html(Potree.version.major + "." + Potree.version.minor + Potree.version.suffix);
 		}
 
-
+			
 
 		initToolbar(){
 
@@ -79200,7 +79419,7 @@ ENDSEC
 				Potree.resourcePath + '/icons/volume.svg',
 				'[title]tt.volume_measurement',
 				() => {
-					let volume = this.volumeTool.startInsertion();
+					let volume = this.volumeTool.startInsertion(); 
 
 					let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 					let jsonNode = measurementsRoot.children.find(child => child.data.uuid === volume.uuid);
@@ -79213,8 +79432,8 @@ ENDSEC
 			elToolbar.append(this.createToolIcon(
 				Potree.resourcePath + '/icons/sphere_distances.svg',
 				'[title]tt.volume_measurement',
-				() => {
-					let volume = this.volumeTool.startInsertion({type: SphereVolume});
+				() => { 
+					let volume = this.volumeTool.startInsertion({type: SphereVolume}); 
 
 					let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 					let jsonNode = measurementsRoot.children.find(child => child.data.uuid === volume.uuid);
@@ -79282,7 +79501,7 @@ ENDSEC
 			let elScene = $("#menu_scene");
 			let elObjects = elScene.next().find("#scene_objects");
 			let elProperties = elScene.next().find("#scene_object_properties");
-
+			
 
 			{
 				let elExport = elScene.next().find("#scene_export");
@@ -79343,7 +79562,7 @@ ENDSEC
 
 			let propertiesPanel = new PropertiesPanel(elProperties, this.viewer);
 			propertiesPanel.setScene(this.viewer.scene);
-
+			
 			localStorage.removeItem('jstree');
 
 			let tree = $(`<div id="jstree_scene"></div>`);
@@ -79368,13 +79587,13 @@ ENDSEC
 			});
 
 			let createNode = (parent, text, icon, object) => {
-				let nodeID = tree.jstree('create_node', parent, {
-						"text": text,
+				let nodeID = tree.jstree('create_node', parent, { 
+						"text": text, 
 						"icon": icon,
 						"data": object
-					},
+					}, 
 					"last", false, false);
-
+				
 				if(object.visible){
 					tree.jstree('check_node', nodeID);
 				}else {
@@ -79456,7 +79675,7 @@ ENDSEC
 						this.viewer.zoomTo(node, 1, 500);
 					}
 				}else if(object instanceof Volume){
-
+					
 					let box = object.boundingBox.clone().applyMatrix4(object.matrixWorld);
 
 					if(box.getSize(new Vector3()).length() > 0){
@@ -79479,14 +79698,14 @@ ENDSEC
 						target = new Vector3().addVectors(object.camera.position, dir);
 						this.viewer.setCameraMode(CameraMode.PERSPECTIVE);
 					}
-
+					
 					this.viewer.scene.view.position.copy(object.camera.position);
 					this.viewer.scene.view.lookAt(target);
 				}else if(object.type === "SpotLight"){
 					let distance = (object.distance > 0) ? object.distance / 4 : 5 * 1000;
 					let position = object.position;
 					let target = new Vector3().addVectors(
-						position,
+						position, 
 						object.getWorldDirection(new Vector3()).multiplyScalar(distance));
 
 					this.viewer.scene.view.position.copy(object.position);
@@ -79584,7 +79803,7 @@ ENDSEC
 				annotation.addEventListener("annotation_changed", (e) => {
 					let annotationsRoot = $("#jstree_scene").jstree().get_json("annotations");
 					let jsonNode = annotationsRoot.children.find(child => child.data.uuid === annotation.uuid);
-
+					
 					$.jstree.reference(jsonNode.id).rename_node(jsonNode.id, annotation.title);
 				});
 			};
@@ -79636,12 +79855,12 @@ ENDSEC
 				for(const layer of geopackage.node.children){
 					const name = layer.name;
 
-					let shpPointsID = tree.jstree('create_node', parentNode, {
-							"text": name,
+					let shpPointsID = tree.jstree('create_node', parentNode, { 
+							"text": name, 
 							"icon": geopackageIcon,
 							"object": layer,
 							"data": layer,
-						},
+						}, 
 						"last", false, false);
 					tree.jstree(layer.visible ? "check_node" : "uncheck_node", shpPointsID);
 				}
@@ -79662,28 +79881,28 @@ ENDSEC
 			let onMeasurementRemoved = (e) => {
 				let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 				let jsonNode = measurementsRoot.children.find(child => child.data.uuid === e.measurement.uuid);
-
+				
 				tree.jstree("delete_node", jsonNode.id);
 			};
 
 			let onVolumeRemoved = (e) => {
 				let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 				let jsonNode = measurementsRoot.children.find(child => child.data.uuid === e.volume.uuid);
-
+				
 				tree.jstree("delete_node", jsonNode.id);
 			};
 
 			let onPolygonClipVolumeRemoved = (e) => {
 				let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 				let jsonNode = measurementsRoot.children.find(child => child.data.uuid === e.volume.uuid);
-
+				
 				tree.jstree("delete_node", jsonNode.id);
 			};
 
 			let onProfileRemoved = (e) => {
 				let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 				let jsonNode = measurementsRoot.children.find(child => child.data.uuid === e.profile.uuid);
-
+				
 				tree.jstree("delete_node", jsonNode.id);
 			};
 
@@ -79694,7 +79913,7 @@ ENDSEC
 
 			{
 				let annotationIcon = `${Potree.resourcePath}/icons/annotation.svg`;
-				this.annotationMapping = new Map();
+				this.annotationMapping = new Map(); 
 				this.annotationMapping.set(this.viewer.scene.annotations, annotationsID);
 				this.viewer.scene.annotations.traverseDescendants(annotation => {
 					let parentID = this.annotationMapping.get(annotation.parent);
@@ -79804,7 +80023,7 @@ ENDSEC
 				Potree.resourcePath + '/icons/clip_volume.svg',
 				'[title]tt.clip_volume',
 				() => {
-					let item = this.volumeTool.startInsertion({clip: true});
+					let item = this.volumeTool.startInsertion({clip: true}); 
 
 					let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
 					let jsonNode = measurementsRoot.children.find(child => child.data.uuid === item.uuid);
@@ -79835,11 +80054,11 @@ ENDSEC
 					"[title]tt.screen_clip_box",
 					() => {
 						if(!(this.viewer.scene.getActiveCamera() instanceof OrthographicCamera)){
-							this.viewer.postMessage(`Switch to Orthographic Camera Mode before using the Screen-Box-Select tool.`,
+							this.viewer.postMessage(`Switch to Orthographic Camera Mode before using the Screen-Box-Select tool.`, 
 								{duration: 2000});
 							return;
 						}
-
+						
 						let item = boxSelectTool.startInsertion();
 
 						let measurementsRoot = $("#jstree_scene").jstree().get_json("measurements");
@@ -79940,7 +80159,7 @@ ENDSEC
 				let initialized = false;
 
 				let initialize = () => {
-
+					
 					let elRangeContainer = $("#gpstime_multilevel_range_container");
 					elRangeContainer[0].prepend(slider.element);
 
@@ -79967,7 +80186,7 @@ ENDSEC
 
 
 			{
-
+				
 				const txtGpsTime = elGPSTimeFilterPanel.find("#txtGpsTime");
 				const btnFindGpsTime = elGPSTimeFilterPanel.find("#btnFindGpsTime");
 
@@ -79990,7 +80209,7 @@ ENDSEC
 				});
 
 				btnFindGpsTime.click( () => {
-
+					
 					if(targetTime !== null){
 						viewer.moveToGpsTimeVicinity(targetTime);
 					}
@@ -80029,7 +80248,7 @@ ENDSEC
 
 						slider.setValues(extent);
 					}
-
+					
 				});
 			}
 
@@ -80138,7 +80357,7 @@ ENDSEC
 				elClassificationList.append(element);
 			};
 
-			const addInvertButton = () => {
+			const addInvertButton = () => { 
 				const element = $(`
 				<li>
 					<input type="button" value="invert" />
@@ -80149,7 +80368,7 @@ ENDSEC
 
 				elInput.click( () => {
 					const classifications = this.viewer.classifications;
-
+		
 					for(let key of Object.keys(classifications)){
 						let value = classifications[key];
 						this.viewer.setClassificationVisibility(key, !value.visible);
@@ -80224,7 +80443,9 @@ ENDSEC
 				["JP", "jp"],
 				["ES", "es"],
 				["SE", "se"],
-				["ZH", "zh"]
+				["ZH", "zh"],
+				["IT", "it"],
+				["CA", "ca"]
 			];
 
 			let elLanguages = $('#potree_languages');
@@ -80236,11 +80457,11 @@ ENDSEC
 				if(i === 0){
 					element.css("margin-left", "30px");
 				}
-
+				
 				elLanguages.append(element);
 
 				if(i < languages.length - 1){
-					elLanguages.append($(document.createTextNode(' - ')));
+					elLanguages.append($(document.createTextNode(' - ')));	
 				}
 			}
 
@@ -80329,7 +80550,7 @@ ENDSEC
 			$('#lblEDLRadius')[0].innerHTML = this.viewer.getEDLRadius().toFixed(1);
 			$('#lblEDLStrength')[0].innerHTML = this.viewer.getEDLStrength().toFixed(1);
 			$('#chkEDLEnabled')[0].checked = this.viewer.getEDLEnabled();
-
+			
 			{
 				let elBackground = $(`#background_options`);
 				elBackground.selectgroup();
@@ -80347,133 +80568,127 @@ ENDSEC
 			});
 		}
 
+		initNavigation(){
+			let elNavigation = $('#navigation');
+			let sldMoveSpeed = $('#sldMoveSpeed');
+			let lblMoveSpeed = $('#lblMoveSpeed');
 
-					initNavigation(){
-						let elNavigation = $('#navigation');
-						let elNavigationTop = $('#navigationtop');
-						let elNavigationLeft = $('#navigationleft');
-						let elNavigationRight = $('#navigationright');
-						let sldMoveSpeed = $('#sldMoveSpeed');
-						let lblMoveSpeed = $('#lblMoveSpeed');
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + '/icons/earth_controls_1.png',
+				'[title]tt.earth_control',
+				() => { this.viewer.setControls(this.viewer.earthControls); }
+			));
 
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + '/icons/fps_controls.svg',
+				'[title]tt.flight_control',
+				() => {
+					this.viewer.setControls(this.viewer.fpControls);
+					this.viewer.fpControls.lockElevation = false;
+				}
+			));
 
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + '/icons/helicopter_controls.svg',
+				'[title]tt.heli_control',
+				() => { 
+					this.viewer.setControls(this.viewer.fpControls);
+					this.viewer.fpControls.lockElevation = true;
+				}
+			));
 
-		//				elNavigationLeft.append(this.createToolIcon(
-		//					Potree.resourcePath + '/icons/earth_controls_1.png',
-		//					'[title]tt.earth_control',
-		//					() => { this.viewer.setControls(this.viewer.earthControls); }
-		//				));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + '/icons/orbit_controls.svg',
+				'[title]tt.orbit_control',
+				() => { this.viewer.setControls(this.viewer.orbitControls); }
+			));
 
-			//			elNavigationLeft.append(this.createToolIcon(
-			//				Potree.resourcePath + '/icons/fps_controls.svg',
-			//				'[title]tt.flight_control',
-			//				() => {
-			//					this.viewer.setControls(this.viewer.fpControls);
-			//					this.viewer.fpControls.lockElevation = false;
-			//				}
-			//			));
-			//
-			//			elNavigationLeft.append(this.createToolIcon(
-			//				Potree.resourcePath + '/icons/helicopter_controls.svg',
-			//				'[title]tt.heli_control',
-			//				() => {
-			//					this.viewer.setControls(this.viewer.fpControls);
-			//					this.viewer.fpControls.lockElevation = true;
-			//				}
-			//			));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + '/icons/focus.svg',
+				'[title]tt.focus_control',
+				() => { this.viewer.fitToScreen(); }
+			));
 
-		//				elNavigationLeft.append(this.createToolIcon(
-		//					Potree.resourcePath + '/icons/orbit_controls.svg',
-		//					'[title]tt.orbit_control',
-		//					() => { this.viewer.setControls(this.viewer.orbitControls); }
-		//				));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/navigation_cube.svg",
+				"[title]tt.navigation_cube_control",
+				() => {this.viewer.toggleNavigationCube();}
+			));
 
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/images/compas.svg",
+				"[title]tt.compass",
+				() => {
+					const visible = !this.viewer.compass.isVisible();
+					this.viewer.compass.setVisible(visible);
+				}
+			));
 
-			//			elNavigationLeft.append(this.createToolIcon(
-			//				Potree.resourcePath + "/icons/navigation_cube.svg",
-			//				"[title]tt.navigation_cube_control",
-			//				() => {this.viewer.toggleNavigationCube();}
-			//			));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/camera_animation.svg",
+				"[title]tt.camera_animation",
+				() => {
+					const animation = CameraAnimation.defaultFromView(this.viewer);
 
-			//			elNavigationLeft.append(this.createToolIcon(
-			//				Potree.resourcePath + "/images/compas.svg",
-			//				"[title]tt.compass",
-			//				() => {
-			//					const visible = !this.viewer.compass.isVisible();
-			//					this.viewer.compass.setVisible(visible);
-			//				}
-			//			));
-
-				//		elNavigation.append(this.createToolIcon(
-					//		Potree.resourcePath + "/icons/camera_animation.svg",
-				//			"[title]tt.camera_animation",
-				//			() => {
-				//				const animation = CameraAnimation.defaultFromView(this.viewer);
-			//
-			//					viewer.scene.addCameraAnimation(animation);
-				//			}
-					//	));
-
-		//			elNavigationLeft.append(this.createToolIcon(
-		//				Potree.resourcePath + "/icons/top.svg",
-		//				"[title]tt.top_view_control",
-		//				() => {this.viewer.setTopView();}
-		//			));
-
-		//			elNavigationLeft.append(this.createToolIcon(
-		//				Potree.resourcePath + "/icons/front.svg",
-		//				"[title]tt.front_view_control",
-		//				() => {this.viewer.setFrontView();}
-		//			));
-
-		//			elNavigationLeft.append(this.createToolIcon(
-		//				Potree.resourcePath + "/icons/left.svg",
-		//				"[title]tt.left_view_control",
-		//				() => {this.viewer.setLeftView();}
-		//			));
+					viewer.scene.addCameraAnimation(animation);
+				}
+			));
 
 
-		//			elNavigationRight.append(this.createToolIcon(
-		//				Potree.resourcePath + '/icons/focus.svg',
-		//				'[title]tt.focus_control',
-		//				() => { this.viewer.fitToScreen(); }
-		//			));
+			elNavigation.append("<br>");
 
 
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/left.svg",
+				"[title]tt.left_view_control",
+				() => {this.viewer.setLeftView();}
+			));
 
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/right.svg",
+				"[title]tt.right_view_control",
+				() => {this.viewer.setRightView();}
+			));
 
-	//					elNavigationRight.append(this.createToolIcon(
-	//						Potree.resourcePath + "/icons/right.svg",
-	//						"[title]tt.right_view_control",
-	//						() => {this.viewer.setRightView();}
-	//					));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/front.svg",
+				"[title]tt.front_view_control",
+				() => {this.viewer.setFrontView();}
+			));
 
-	//					elNavigationRight.append(this.createToolIcon(
-	//						Potree.resourcePath + "/icons/back.svg",
-	//						"[title]tt.back_view_control",
-	//						() => {this.viewer.setBackView();}
-	//					));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/back.svg",
+				"[title]tt.back_view_control",
+				() => {this.viewer.setBackView();}
+			));
 
-	//					elNavigationRight.append(this.createToolIcon(
-	//						Potree.resourcePath + "/icons/bottom.svg",
-	//						"[title]tt.bottom_view_control",
-	//						() => {this.viewer.setBottomView();}
-	//					));
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/top.svg",
+				"[title]tt.top_view_control",
+				() => {this.viewer.setTopView();}
+			));
+
+			elNavigation.append(this.createToolIcon(
+				Potree.resourcePath + "/icons/bottom.svg",
+				"[title]tt.bottom_view_control",
+				() => {this.viewer.setBottomView();}
+			));
 
 
 
-//			let elCameraProjection = $(`
-		//	<selectgroup id="camera_projection_options">
-		//		<option id="camera_projection_options_perspective" value="PERSPECTIVE">PERSP</option>
-		//		<option id="camera_projection_options_orthigraphic" value="ORTHOGRAPHIC">ORTHO</option>
-	//		</selectgroup>
-	//	`);
 
-	//		elNavigationRight.append(elCameraProjection);
-	//		elCameraProjection.selectgroup();
-	//		elCameraProjection.find("input").click( (e) => {
-	//			this.viewer.setCameraMode(CameraMode[e.target.value]);
-	//		});
+
+			let elCameraProjection = $(`
+			<selectgroup id="camera_projection_options">
+				<option id="camera_projection_options_perspective" value="PERSPECTIVE">Perspective</option>
+				<option id="camera_projection_options_orthigraphic" value="ORTHOGRAPHIC">Orthographic</option>
+			</selectgroup>
+		`);
+			elNavigation.append(elCameraProjection);
+			elCameraProjection.selectgroup({title: "Camera Projection"});
+			elCameraProjection.find("input").click( (e) => {
+				this.viewer.setCameraMode(CameraMode[e.target.value]);
+			});
 			let cameraMode = Object.keys(CameraMode)
 				.filter(key => CameraMode[key] === this.viewer.scene.cameraMode);
 			elCameraProjection.find(`input[value=${cameraMode}]`).trigger("click");
@@ -80602,9 +80817,9 @@ ENDSEC
 
 			let drag = (e) => {
 				let I = Utils.getMousePointCloudIntersection(
-					e.drag.end,
-					e.viewer.scene.getActiveCamera(),
-					e.viewer,
+					e.drag.end, 
+					e.viewer.scene.getActiveCamera(), 
+					e.viewer, 
 					e.viewer.scene.pointclouds,
 					{pickClipped: true});
 
@@ -80629,7 +80844,7 @@ ENDSEC
 
 			return annotation;
 		}
-
+		
 		update(){
 			// let camera = this.viewer.scene.getActiveCamera();
 			// let domElement = this.renderer.domElement;
@@ -80660,7 +80875,7 @@ ENDSEC
 			this.renderer = viewer.renderer;
 			this.domElement = this.renderer.domElement;
 			this.enabled = true;
-
+			
 			this.scene = null;
 			this.interactiveScenes = [];
 			this.interactiveObjects = new Set();
@@ -80731,7 +80946,7 @@ ENDSEC
 				this.startDragging(null);
 			}
 
-
+			
 			for (let inputListener of this.getSortedListeners()) {
 				inputListener.dispatchEvent({
 					type: e.type,
@@ -80947,7 +81162,7 @@ ENDSEC
 
 			let noMovement = this.getNormalizedDrag().length() === 0;
 
-
+			
 			let consumed = false;
 			let consume = () => { return consumed = true; };
 			if (this.hoveredElements.length === 0) {
@@ -81107,7 +81322,7 @@ ENDSEC
 					let object = hoveredElements
 						.map(e => e.object)
 						.find(e => (e._listeners && e._listeners['mousemove']));
-
+					
 					if(object){
 						object.dispatchEvent({
 							type: 'mousemove',
@@ -81117,23 +81332,23 @@ ENDSEC
 				}
 
 			}
-
+			
 			// for (let inputListener of this.getSortedListeners()) {
 			// 	inputListener.dispatchEvent({
 			// 		type: 'mousemove',
 			// 		object: null
 			// 	});
 			// }
-
+			
 
 			this.hoveredElements = hoveredElements;
 		}
-
+		
 		onMouseWheel(e){
 			if(!this.enabled) return;
 
 			if(this.logMessages) console.log(this.constructor.name + ": onMouseWheel");
-
+			
 			e.preventDefault();
 
 			let delta = 0;
@@ -81186,9 +81401,9 @@ ENDSEC
 
 		getMousePointCloudIntersection (mouse) {
 			return Utils.getMousePointCloudIntersection(
-				this.mouse,
-				this.scene.getActiveCamera(),
-				this.viewer,
+				this.mouse, 
+				this.scene.getActiveCamera(), 
+				this.viewer, 
 				this.scene.pointclouds);
 		}
 
@@ -81310,10 +81525,10 @@ ENDSEC
 					}
 				});
 			}
-
+			
 			let camera = this.scene.getActiveCamera();
 			let ray = Utils.mouseToRay(this.mouse, camera, this.domElement.clientWidth, this.domElement.clientHeight);
-
+			
 			let raycaster = new Raycaster();
 			raycaster.ray.set(ray.origin, ray.direction);
 			raycaster.params.Line.threshold = 0.2;
@@ -81369,7 +81584,7 @@ ENDSEC
 
 			let createPlaneMaterial = (img) => {
 				let material = new MeshBasicMaterial( {
-					depthTest: true,
+					depthTest: true, 
 					depthWrite: true,
 					side: DoubleSide
 				});
@@ -81437,7 +81652,7 @@ ENDSEC
 				if (!this.visible) {
 					return;
 				}
-
+				
 				this.pickedFace = null;
 				let mouse = new Vector2();
 				mouse.x = event.clientX - (window.innerWidth - this.width);
@@ -81461,7 +81676,7 @@ ENDSEC
 						minDistance = intersects[i].distance;
 					}
 				}
-
+				
 				if(this.pickedFace) {
 					this.viewer.setView(this.pickedFace);
 				}
@@ -81492,12 +81707,12 @@ ENDSEC
 	 *
 	 */
 
-
+	 
 	class OrbitControls extends EventDispatcher{
-
+		
 		constructor(viewer){
 			super();
-
+			
 			this.viewer = viewer;
 			this.renderer = viewer.renderer;
 
@@ -81634,10 +81849,10 @@ ENDSEC
 			this.radiusDelta = 0;
 			this.panDelta.set(0, 0);
 		}
-
+		
 		zoomToLocation(mouse){
 			let camera = this.scene.getActiveCamera();
-
+			
 			let I = Utils.getMousePointCloudIntersection(
 				mouse,
 				camera,
@@ -81878,10 +82093,10 @@ ENDSEC
 			this.pitchDelta = 0;
 			this.translationDelta.set(0, 0, 0);
 		}
-
+		
 		zoomToLocation(mouse){
 			let camera = this.scene.getActiveCamera();
-
+			
 			let I = Utils.getMousePointCloudIntersection(
 				mouse,
 				camera,
@@ -82158,10 +82373,10 @@ ENDSEC
 
 			let onMouseDown = e => {
 				let I = Utils.getMousePointCloudIntersection(
-					e.mouse,
-					this.scene.getActiveCamera(),
-					this.viewer,
-					this.scene.pointclouds,
+					e.mouse, 
+					this.scene.getActiveCamera(), 
+					this.viewer, 
+					this.scene.pointclouds, 
 					{pickClipped: false});
 
 				if (I) {
@@ -82206,10 +82421,10 @@ ENDSEC
 			this.wheelDelta = 0;
 			this.zoomDelta.set(0, 0, 0);
 		}
-
+		
 		zoomToLocation(mouse){
 			let camera = this.scene.getActiveCamera();
-
+			
 			let I = Utils.getMousePointCloudIntersection(
 				mouse,
 				camera,
@@ -82275,13 +82490,13 @@ ENDSEC
 			let fade = Math.pow(0.5, this.fadeFactor * delta);
 			let progression = 1 - fade;
 			let camera = this.scene.getActiveCamera();
-
+			
 			// compute zoom
 			if (this.wheelDelta !== 0) {
 				let I = Utils.getMousePointCloudIntersection(
-					this.viewer.inputHandler.mouse,
-					this.scene.getActiveCamera(),
-					this.viewer,
+					this.viewer.inputHandler.mouse, 
+					this.scene.getActiveCamera(), 
+					this.viewer, 
 					this.scene.pointclouds);
 
 				if (I) {
@@ -87023,7 +87238,7 @@ ENDSEC
 		let p2 = vrControls.toScene(controller.position.clone().add(move));
 
 		move = p2.clone().sub(p1);
-
+		
 		return move;
 	};
 
@@ -87043,7 +87258,7 @@ ENDSEC
 				this.dbgLabel.visible = false;
 			}
 		}
-
+		
 		end(){
 
 		}
@@ -87069,12 +87284,12 @@ ENDSEC
 
 			move.multiplyScalar(-delta * this.moveFactor);
 			vrControls.node.position.add(move);
-
+			
 
 			let scale = vrControls.node.scale.x;
 
 			let camVR = vrControls.viewer.renderer.xr.getCamera(fakeCam);
-
+			
 			let vrPos = camVR.getWorldPosition(new Vector3());
 			let vrDir = camVR.getWorldDirection(new Vector3());
 			let vrTarget = vrPos.clone().add(vrDir.multiplyScalar(scale));
@@ -87107,7 +87322,7 @@ ENDSEC
 			this.controller = vrControls.triggered.values().next().value;
 			this.startPos = vrControls.node.position.clone();
 		}
-
+		
 		end(vrControls){
 
 		}
@@ -87140,7 +87355,7 @@ ENDSEC
 		start(vrControls){
 			if(!this.line){
 				this.line = Potree.Utils.debugLine(
-					vrControls.viewer.sceneVR,
+					vrControls.viewer.sceneVR, 
 					new Vector3(0, 0, 0),
 					new Vector3(0, 0, 0),
 					0xffff00,
@@ -87178,7 +87393,7 @@ ENDSEC
 			let angleStart = new Vector2(start_c1_c2.x, start_c1_c2.z).angle();
 			let angleEnd = new Vector2(end_c1_c2.x, end_c1_c2.z).angle();
 			let angleDiff = angleEnd - angleStart;
-
+			
 			let scale = d2 / d1;
 
 			let node = this.startState.clone();
@@ -87211,7 +87426,7 @@ ENDSEC
 			{
 				let scale = vrControls.node.scale.x;
 				let camVR = vrControls.viewer.renderer.xr.getCamera(fakeCam);
-
+				
 				let vrPos = camVR.getWorldPosition(new Vector3());
 				let vrDir = camVR.getWorldDirection(new Vector3());
 				let vrTarget = vrPos.clone().add(vrDir.multiplyScalar(scale));
@@ -87257,7 +87472,7 @@ ENDSEC
 			let xr = viewer.renderer.xr;
 
 			{ // lights
-
+				
 				const light = new PointLight( 0xffffff, 5, 0, 1 );
 				light.position.set(0, 2, 0);
 				this.viewer.sceneVR.add(light);
@@ -87289,7 +87504,7 @@ ENDSEC
 				this.viewer.sceneVR.add(controller);
 
 				{ // ADD LINE
-
+					
 					let lineGeometry = new LineGeometry();
 
 					lineGeometry.setPositions([
@@ -87297,14 +87512,14 @@ ENDSEC
 						0, 0, 0.05,
 					]);
 
-					let lineMaterial = new LineMaterial({
-						color: 0xff0000,
-						linewidth: 2,
+					let lineMaterial = new LineMaterial({ 
+						color: 0xff0000, 
+						linewidth: 2, 
 						resolution:  new Vector2(1000, 1000),
 					});
 
 					const line = new Line2(lineGeometry, lineMaterial);
-
+					
 					controller.add(line);
 				}
 
@@ -87340,7 +87555,7 @@ ENDSEC
 				this.viewer.sceneVR.add(controller);
 
 				{ // ADD LINE
-
+					
 					let lineGeometry = new LineGeometry();
 
 					lineGeometry.setPositions([
@@ -87348,14 +87563,14 @@ ENDSEC
 						0, 0, 0.05,
 					]);
 
-					let lineMaterial = new LineMaterial({
-						color: 0xff0000,
-						linewidth: 2,
+					let lineMaterial = new LineMaterial({ 
+						color: 0xff0000, 
+						linewidth: 2, 
 						resolution:  new Vector2(1000, 1000),
 					});
 
 					const line = new Line2(lineGeometry, lineMaterial);
-
+					
 					controller.add(line);
 				}
 
@@ -87415,7 +87630,7 @@ ENDSEC
 			return node;
 		}
 
-		createInfo(){
+		createInfo(){ 
 
 			let texture = new TextureLoader().load(`${Potree.resourcePath}/images/vr_controller_help.jpg`);
 			let plane = new PlaneBufferGeometry(1, 1, 1, 1);
@@ -87502,7 +87717,7 @@ ENDSEC
 
 				controller.start = start;
 			}
-
+			
 			this.mode = mode;
 			this.mode.start(this);
 		}
@@ -87550,7 +87765,7 @@ ENDSEC
 		}
 
 		onEnd(){
-
+			
 		}
 
 
@@ -87587,11 +87802,11 @@ ENDSEC
 
 		update(delta){
 
-
+			
 
 			// if(this.mode === this.mode_fly){
 			// 	let ray = new THREE.Ray(origin, direction);
-
+				
 			// 	for(let object of this.selectables){
 
 			// 		if(object.intersectsRay(ray)){
@@ -87604,7 +87819,7 @@ ENDSEC
 
 			this.mode.update(this, delta);
 
-
+			
 
 		}
 	};
@@ -87790,7 +88005,7 @@ ENDSEC
 	}
 
 	class Viewer extends EventDispatcher{
-
+		
 		constructor(domElement, args = {}){
 			super();
 
@@ -87802,11 +88017,11 @@ ENDSEC
 
 			this.messages = [];
 			this.elMessages = $(`
-		<div id="message_listing"
+		<div id="message_listing" 
 			style="position: absolute; z-index: 1000; left: 10px; bottom: 10px">
 		</div>`);
 			$(domElement).append(this.elMessages);
-
+			
 			try{
 
 			{ // generate missing dom hierarchy
@@ -87828,14 +88043,14 @@ ENDSEC
 
 				if ($(domElement).find('#potree_annotations').length === 0) {
 					let potreeAnnotationContainer = $(`
-					<div id="potree_annotation_container"
+					<div id="potree_annotation_container" 
 						style="position: absolute; z-index: 100000; width: 100%; height: 100%; pointer-events: none;"></div>`);
 					$(domElement).append(potreeAnnotationContainer);
 				}
 
 				if ($(domElement).find('#potree_quick_buttons').length === 0) {
 					let potreeMap = $(`
-					<div id="potree_quick_buttons" class="quick_buttons_container" style="display:none;">
+					<div id="potree_quick_buttons" class="quick_buttons_container" style="">
 					</div>
 				`);
 
@@ -87866,7 +88081,7 @@ ENDSEC
 					// 	potreeMap.append(imgMenuToggle);
 					// }
 
-
+					
 
 					$(domElement).append(potreeMap);
 				}
@@ -87928,7 +88143,7 @@ ENDSEC
 			this.transformationTool = null;
 			this.navigationCube = null;
 			this.compass = null;
-
+			
 			this.skybox = null;
 			this.clock = new Clock();
 			this.background = null;
@@ -87936,7 +88151,7 @@ ENDSEC
 			this.initThree();
 
 			if(args.noDragAndDrop){
-
+				
 			}else {
 				this.initDragAndDrop();
 			}
@@ -87967,22 +88182,22 @@ ENDSEC
 					-1000, 1000
 				);
 			}
-
+			
 			this.pRenderer = new Renderer(this.renderer);
-
+			
 			{
 				let near = 2.5;
 				let far = 10.0;
 				let fov = 90;
-
+				
 				this.shadowTestCam = new PerspectiveCamera(90, 1, near, far);
 				this.shadowTestCam.position.set(3.50, -2.80, 8.561);
 				this.shadowTestCam.lookAt(new Vector3(0, 0, 4.87));
 			}
-
+			
 
 			let scene = new Scene$1(this.renderer);
-
+			
 			{ // create VR scene
 				this.sceneVR = new Scene();
 
@@ -88011,11 +88226,11 @@ ENDSEC
 				this.navigationCube.visible = false;
 
 				this.compass = new Compass(this);
-
+				
 				this.createControls();
 
 				this.clippingTool.setScene(this.scene);
-
+				
 				let onPointcloudAdded = (e) => {
 					if (this.scene.pointclouds.length === 1) {
 						let speed = e.pointcloud.boundingBox.getSize(new Vector3()).length();
@@ -88031,7 +88246,7 @@ ENDSEC
 				this.addEventListener('scene_changed', (e) => {
 					this.inputHandler.setScene(e.scene);
 					this.clippingTool.setScene(this.scene);
-
+					
 					if(!e.scene.hasEventListener("pointcloud_added", onPointcloudAdded)){
 						e.scene.addEventListener("pointcloud_added", onPointcloudAdded);
 					}
@@ -88039,7 +88254,7 @@ ENDSEC
 					if(!e.scene.hasEventListener("volume_removed", onPointcloudAdded)){
 						e.scene.addEventListener("volume_removed", onVolumeRemoved);
 					}
-
+					
 				});
 
 				this.scene.addEventListener("volume_removed", onVolumeRemoved);
@@ -88090,33 +88305,33 @@ ENDSEC
 
 			if ($(this.renderArea).find('#potree_failpage').length === 0) {
 				let elFailPage = $(`
-			<div id="#potree_failpage" class="potree_failpage">
-
+			<div id="#potree_failpage" class="potree_failpage"> 
+				
 				<h1>Potree Encountered An Error </h1>
 
 				<p>
 				This may happen if your browser or graphics card is not supported.
 				<br>
-				We recommend to use
+				We recommend to use 
 				<a href="https://www.google.com/chrome/browser" target="_blank" style="color:initial">Chrome</a>
-				or
+				or 
 				<a href="https://www.mozilla.org/" target="_blank">Firefox</a>.
 				</p>
 
 				<p>
-				Please also visit <a href="http://webglreport.com/" target="_blank">webglreport.com</a> and
+				Please also visit <a href="http://webglreport.com/" target="_blank">webglreport.com</a> and 
 				check whether your system supports WebGL.
 				</p>
 				<p>
-				If you are already using one of the recommended browsers and WebGL is enabled,
+				If you are already using one of the recommended browsers and WebGL is enabled, 
 				consider filing an issue report at <a href="https://github.com/potree/potree/issues" target="_blank">github</a>,<br>
-				including your operating system, graphics card, browser and browser version, as well as the
+				including your operating system, graphics card, browser and browser version, as well as the 
 				error message below.<br>
 				Please do not report errors on unsupported browsers.
 				</p>
 
 				<pre id="potree_error_console" style="width: 100%; height: 100%"></pre>
-
+				
 			</div>`);
 
 				let elErrorMessage = elFailPage.find('#potree_error_console');
@@ -88197,7 +88412,7 @@ ENDSEC
 			}else {
 				return this.controls;
 			}
-
+			
 		}
 
 		getMinNodeSize () {
@@ -88230,7 +88445,7 @@ ENDSEC
 
 		setDescription (value) {
 			this.description = value;
-
+			
 			$('#potree_description').html(value);
 			//$('#potree_description').text(value);
 		}
@@ -88294,8 +88509,8 @@ ENDSEC
 				this.clipTask = value;
 
 				this.dispatchEvent({
-					type: "cliptask_changed",
-					viewer: this});
+					type: "cliptask_changed", 
+					viewer: this});		
 			}
 		}
 
@@ -88303,7 +88518,7 @@ ENDSEC
 			if(this.clipMethod !== value){
 
 				this.clipMethod = value;
-
+				
 				this.dispatchEvent({
 					type: "clipmethod_changed",
 					viewer: this});
@@ -88316,7 +88531,7 @@ ENDSEC
 				this.elevationGradientRepeat = value;
 
 				this.dispatchEvent({
-					type: "elevation_gradient_repeat_changed",
+					type: "elevation_gradient_repeat_changed", 
 					viewer: this});
 			}
 		}
@@ -88342,7 +88557,7 @@ ENDSEC
 		getShowAnnotations () {
 			return this.showAnnotations;
 		}
-
+		
 		setDEMCollisionsEnabled(value){
 			if(this.useDEMCollisions !== value){
 				this.useDEMCollisions = value;
@@ -88560,7 +88775,7 @@ ENDSEC
 			} else {
 				bs = node.boundingBox.getBoundingSphere(new Sphere());
 			}
-			bs = bs.clone().applyMatrix4(node.matrixWorld);
+			bs = bs.clone().applyMatrix4(node.matrixWorld); 
 
 			let startPosition = view.position.clone();
 			let endPosition = camera.position.clone();
@@ -88678,18 +88893,18 @@ ENDSEC
 					break;
 			}
 		}
-
+		
 		setTopView(){
 			this.scene.view.yaw = 0;
 			this.scene.view.pitch = -Math.PI / 2;
 
 			this.fitToScreen();
 		};
-
+		
 		setBottomView(){
 			this.scene.view.yaw = -Math.PI;
 			this.scene.view.pitch = Math.PI / 2;
-
+			
 			this.fitToScreen();
 		};
 
@@ -88699,11 +88914,11 @@ ENDSEC
 
 			this.fitToScreen();
 		};
-
+		
 		setBackView(){
 			this.scene.view.yaw = Math.PI;
 			this.scene.view.pitch = 0;
-
+			
 			this.fitToScreen();
 		};
 
@@ -88727,7 +88942,7 @@ ENDSEC
 			// TODO flipyz
 			console.log('TODO');
 		}
-
+		
 		setCameraMode(mode){
 			this.scene.cameraMode = mode;
 
@@ -88749,7 +88964,7 @@ ENDSEC
 		async loadProject(url){
 
 			const response = await fetch(url);
-
+		
 			const text = await response.text();
 			const json = lib.parse(text);
 			// const json = JSON.parse(text);
@@ -88764,20 +88979,20 @@ ENDSEC
 		saveProject(){
 			return Potree.saveProject(this);
 		}
-
+		
 		loadSettingsFromURL(){
 			if(Utils.getParameterByName("pointSize")){
 				this.setPointSize(parseFloat(Utils.getParameterByName("pointSize")));
 			}
-
+			
 			if(Utils.getParameterByName("FOV")){
 				this.setFOV(parseFloat(Utils.getParameterByName("FOV")));
 			}
-
+			
 			if(Utils.getParameterByName("opacity")){
 				this.setOpacity(parseFloat(Utils.getParameterByName("opacity")));
 			}
-
+			
 			if(Utils.getParameterByName("edlEnabled")){
 				let enabled = Utils.getParameterByName("edlEnabled") === "true";
 				this.setEDLEnabled(enabled);
@@ -88947,7 +89162,7 @@ ENDSEC
 				}else {
 					this.guiLoadTasks.push(resolve);
 				}
-
+			
 			});
 		}
 
@@ -88960,8 +89175,8 @@ ENDSEC
 			let viewer = this;
 			let sidebarContainer = $('#potree_sidebar_container');
 			sidebarContainer.load(new URL(Potree.scriptPath + '/sidebar.html').href, () => {
-				sidebarContainer.css('width', '0');
-				sidebarContainer.css('height', '0');
+				sidebarContainer.css('width', '300px');
+				sidebarContainer.css('height', '100%');
 
 				let imgMenuToggle = document.createElement('img');
 				imgMenuToggle.src = new URL(Potree.resourcePath + '/icons/menu_button.svg').href;
@@ -88974,7 +89189,7 @@ ENDSEC
 				imgMapToggle.onclick = e => { this.toggleMap(); };
 				imgMapToggle.id = 'potree_map_toggle';
 
-
+				
 
 				let elButtons = $("#potree_quick_buttons").get(0);
 
@@ -89022,7 +89237,7 @@ ENDSEC
 				i18n.init({
 					lng: 'en',
 					resGetPath: Potree.resourcePath + '/lang/__lng__/__ns__.json',
-					preload: ['en', 'fr', 'de', 'jp', 'se', 'es', 'zh'],
+					preload: ['en', 'fr', 'de', 'jp', 'se', 'es', 'zh', 'it','ca'],
 					getAsync: true,
 					debug: false
 				}, function (t) {
@@ -89064,11 +89279,11 @@ ENDSEC
 						});
 					});
 
-
+					
 
 				});
 
-
+				
 			});
 
 			return this.promiseGuiLoaded();
@@ -89102,14 +89317,14 @@ ENDSEC
 
 					const file = item.getAsFile();
 
-					const isJson = file.name.toLowerCase().endsWith(".json");
+					const isJson5 = file.name.toLowerCase().endsWith(".json5");
 					const isGeoPackage = file.name.toLowerCase().endsWith(".gpkg");
 
-					if(isJson){
+					if(isJson5){
 						try{
 
 							const text = await file.text();
-							const json = JSON.parse(text);
+							const json = lib.parse(text);
 
 							if(json.type === "Potree"){
 								Potree.loadProject(viewer, json);
@@ -89137,12 +89352,12 @@ ENDSEC
 								transform: transform,
 								source: file.name,
 							};
-
+							
 							const geo = await Potree.GeoPackageLoader.loadBuffer(buffer, params);
 							viewer.scene.addGeopackage(geo);
 						}
 					}
-
+					
 				}
 			};
 
@@ -89184,7 +89399,7 @@ ENDSEC
 			let context = canvas.getContext('webgl', contextAttributes );
 
 			this.renderer = new WebGLRenderer({
-				alpha: true,
+				alpha: true, 
 				premultipliedAlpha: false,
 				canvas: canvas,
 				context: context});
@@ -89205,7 +89420,7 @@ ENDSEC
 			gl.getExtension('EXT_frag_depth');
 			gl.getExtension('WEBGL_depth_texture');
 			gl.getExtension('WEBGL_color_buffer_float'); 	// Enable explicitly for more portability, EXT_color_buffer_float is the proper name in WebGL 2
-
+			
 			if(gl.createVertexArray == null){
 				let extVAO = gl.getExtension('OES_vertex_array_object');
 
@@ -89216,7 +89431,7 @@ ENDSEC
 				gl.createVertexArray = extVAO.createVertexArrayOES.bind(extVAO);
 				gl.bindVertexArray = extVAO.bindVertexArrayOES.bind(extVAO);
 			}
-
+			
 		}
 
 		updateAnnotations () {
@@ -89228,7 +89443,7 @@ ENDSEC
 			this.scene.annotations.updateBounds();
 			this.scene.cameraP.updateMatrixWorld();
 			this.scene.cameraO.updateMatrixWorld();
-
+			
 			let distances = [];
 
 			let renderAreaSize = this.renderer.getSize(new Vector2());
@@ -89310,13 +89525,13 @@ ENDSEC
 						visibleNow.push(annotation);
 					}
 				}
-
+				
 			});
 
 			let notVisibleAnymore = new Set(this.visibleAnnotations);
 			for(let annotation of visibleNow){
 				annotation.display = true;
-
+				
 				notVisibleAnymore.delete(annotation);
 			}
 			this.visibleAnnotations = visibleNow;
@@ -89331,17 +89546,17 @@ ENDSEC
 			// PROBLEM STATEMENT:
 			// * [min, max] of intensity, source id, etc. are computed as point clouds are loaded
 			// * the point cloud material won't know the range it should use until some data is loaded
-			// * users can modify the range at runtime, but sensible default ranges should be
+			// * users can modify the range at runtime, but sensible default ranges should be 
 			//   applied even if no GUI is present
 			// * display ranges shouldn't suddenly change even if the actual range changes over time.
-			//   e.g. the root node has intensity range [1, 478]. One of the descendants increases range to
+			//   e.g. the root node has intensity range [1, 478]. One of the descendants increases range to 
 			//   [0, 2047]. We should not automatically change to the new range because that would result
 			//   in sudden and drastic changes of brightness. We should adjust the min/max of the sidebar slider.
 
 			const material = pointcloud.material;
 
 			const attIntensity = pointcloud.getAttribute("intensity");
-
+			
 			if(attIntensity != null && material.intensityRange[0] === Infinity){
 				material.intensityRange = [...attIntensity.range];
 			}
@@ -89373,11 +89588,11 @@ ENDSEC
 				delta: delta,
 				timestamp: timestamp});
 
-
+			
 			const scene = this.scene;
 			const camera = scene.getActiveCamera();
 			const visiblePointClouds = this.scene.pointclouds.filter(pc => pc.visible);
-
+			
 			Potree.pointLoadLimit = Potree.pointBudget * 2;
 
 			const lTarget = camera.position.clone().add(camera.getWorldDirection(new Vector3()).multiplyScalar(1000));
@@ -89431,7 +89646,7 @@ ENDSEC
 
 
 				// DEBUG - ONLY DISPLAY NODES THAT INTERSECT MOUSE
-				//if(false){
+				//if(false){ 
 
 				//	let renderer = viewer.renderer;
 				//	let mouse = viewer.inputHandler.mouse;
@@ -89511,7 +89726,7 @@ ENDSEC
 					if(near === Infinity){
 						near = 0.1;
 					}
-
+					
 					camera.near = near;
 					camera.far = far;
 				}else {
@@ -89521,10 +89736,10 @@ ENDSEC
 				if(this.scene.cameraMode == CameraMode.ORTHOGRAPHIC) {
 					camera.near = -camera.far;
 				}
-			}
-
+			} 
+			
 			this.scene.cameraP.fov = this.fov;
-
+			
 			let controls = this.getControls();
 			if (controls === this.deviceControls) {
 				this.controls.setScene(scene);
@@ -89548,7 +89763,7 @@ ENDSEC
 				this.scene.cameraO.rotation.x = Math.PI / 2 + this.scene.view.pitch;
 				this.scene.cameraO.rotation.z = this.scene.view.yaw;
 			}
-
+			
 			camera.updateMatrix();
 			camera.updateMatrixWorld();
 			camera.matrixWorldInverse.copy(camera.matrixWorld).invert();
@@ -89580,7 +89795,7 @@ ENDSEC
 
 			{ // update clip boxes
 				let boxes = [];
-
+				
 				// volumes with clipping enabled
 				//boxes.push(...this.scene.volumes.filter(v => (v.clip)));
 				boxes.push(...this.scene.volumes.filter(v => (v.clip && v instanceof BoxVolume)));
@@ -89589,13 +89804,13 @@ ENDSEC
 				for(let profile of this.scene.profiles){
 					boxes.push(...profile.boxes);
 				}
-
+				
 				// Needed for .getInverse(), pre-empt a determinant of 0, see #815 / #816
 				let degenerate = (box) => box.matrixWorld.determinant() !== 0;
-
+				
 				let clipBoxes = boxes.filter(degenerate).map( box => {
 					box.updateMatrixWorld();
-
+					
 					let boxInverse = box.matrixWorld.clone().invert();
 					let boxPosition = box.getWorldPosition(new Vector3());
 
@@ -89603,7 +89818,7 @@ ENDSEC
 				});
 
 				let clipPolygons = this.scene.polygonClipVolumes.filter(vol => vol.initialized);
-
+				
 				// set clip volumes in material
 				for(let pointcloud of visiblePointClouds){
 					pointcloud.material.setClipBoxes(clipBoxes);
@@ -89618,18 +89833,18 @@ ENDSEC
 					pointcloud.material.elevationGradientRepeat = this.elevationGradientRepeat;
 				}
 			}
-
+			
 			{ // update navigation cube
 				this.navigationCube.update(camera.rotation);
 			}
 
 			this.updateAnnotations();
-
+			
 			if(this.mapView){
 				this.mapView.update(delta);
 				if(this.mapView.sceneProjection){
 					$( "#potree_map_toggle" ).css("display", "block");
-
+					
 				}
 			}
 
@@ -89639,7 +89854,7 @@ ENDSEC
 				type: 'update',
 				delta: delta,
 				timestamp: timestamp});
-
+				
 			if(Potree.measureTimings) {
 				performance.mark("update-end");
 				performance.measure("update", "update-start", "update-end");
@@ -89712,7 +89927,7 @@ ENDSEC
 				skybox.camera.rotation.copy(cam.rotation);
 				skybox.camera.fov = cam.fov;
 				skybox.camera.aspect = cam.aspect;
-
+				
 				// let dbg = new THREE.Object3D();
 				let dbg = skybox.parent;
 				// dbg.up.set(0, 0, 1);
@@ -89738,7 +89953,7 @@ ENDSEC
 				depthNear: 0.1,
 				depthFar: 10000
 			});
-
+			
 			let cam = null;
 			let view = null;
 
@@ -89770,7 +89985,7 @@ ENDSEC
 				this.scene.scene.matrixWorld.identity();
 
 			}
-
+			
 			for(let pointcloud of this.scene.pointclouds){
 
 				let viewport = xrCameras.cameras[0].viewport;
@@ -89779,13 +89994,13 @@ ENDSEC
 				pointcloud.screenHeight = viewport.height;
 				pointcloud.screenWidth = viewport.width;
 
-				// automatically switch to paraboloids because they cause far less flickering in VR,
+				// automatically switch to paraboloids because they cause far less flickering in VR, 
 				// when point sizes are larger than around 2 pixels
 				// if(Features.SHADER_INTERPOLATION.isSupported()){
 				// 	pointcloud.material.shape = Potree.PointShape.PARABOLOID;
 				// }
 			}
-
+			
 			// render point clouds
 			for(let xrCamera of xrCameras.cameras){
 
@@ -89864,7 +90079,7 @@ ENDSEC
 			pRenderer.render(this.renderer);
 			this.renderer.render(this.overlay, this.overlayCamera);
 		}
-
+		
 		render(){
 			if(Potree.measureTimings) performance.mark("render-start");
 
@@ -89881,7 +90096,7 @@ ENDSEC
 			}catch(e){
 				this.onCrash(e);
 			}
-
+			
 			if(Potree.measureTimings){
 				performance.mark("render-end");
 				performance.measure("render", "render-start", "render-end");
@@ -89895,14 +90110,14 @@ ENDSEC
 				}
 				let duration = timestamp - this.toggle;
 				if(duration > 1000.0){
-
+				
 					let measures = performance.getEntriesByType("measure");
-
+					
 					let names = new Set();
 					for(let measure of measures){
 						names.add(measure.name);
 					}
-
+					
 					let groups = new Map();
 					for(let name of names){
 						groups.set(name, {
@@ -89913,7 +90128,7 @@ ENDSEC
 							max: -Infinity
 						});
 					}
-
+					
 					for(let measure of measures){
 						let group = groups.get(measure.name);
 						group.measures.push(measure);
@@ -89938,32 +90153,32 @@ ENDSEC
 						groups.set(groupname, group);
 						names.add(groupname);
 					}
-
+					
 					for(let [name, group] of groups){
 						group.mean = group.sum / group.n;
 						group.measures.sort( (a, b) => a.duration - b.duration );
-
+						
 						if(group.n === 1){
 							group.median = group.measures[0].duration;
 						}else if(group.n > 1){
 							group.median = group.measures[parseInt(group.n / 2)].duration;
 						}
-
+						
 					}
-
+					
 					let cn = Array.from(names).reduce( (a, i) => Math.max(a, i.length), 0) + 5;
 					let cmin = 10;
 					let cmed = 10;
 					let cmax = 10;
 					let csam = 6;
-
-					let message = ` ${"NAME".padEnd(cn)} |`
+					
+					let message = ` ${"NAME".padEnd(cn)} |` 
 						+ ` ${"MIN".padStart(cmin)} |`
 						+ ` ${"MEDIAN".padStart(cmed)} |`
 						+ ` ${"MAX".padStart(cmax)} |`
 						+ ` ${"SAMPLES".padStart(csam)} \n`;
 					message += ` ${"-".repeat(message.length) }\n`;
-
+					
 					names = Array.from(names).sort();
 					for(let name of names){
 						let group = groups.get(name);
@@ -89971,7 +90186,7 @@ ENDSEC
 						let median = group.median.toFixed(3);
 						let max = group.max.toFixed(3);
 						let n = group.n;
-
+						
 						message += ` ${name.padEnd(cn)} |`
 							+ ` ${min.padStart(cmin)} |`
 							+ ` ${median.padStart(cmed)} |`
@@ -89980,7 +90195,7 @@ ENDSEC
 					}
 					message += `\n`;
 					console.log(message);
-
+					
 					performance.clearMarks();
 					performance.clearMeasures();
 					this.toggle = timestamp;
@@ -90016,7 +90231,7 @@ ENDSEC
 				performance.mark("loop-end");
 				performance.measure("loop", "loop-start", "loop-end");
 			}
-
+			
 			this.resolveTimings(timestamp);
 
 			Potree.framenumber++;
@@ -90060,7 +90275,7 @@ ENDSEC
 				let slideOutDuration = 200;
 				setTimeout(() => {
 					message.element.animate({
-						opacity: 0
+						opacity: 0	
 					}, fadeDuration);
 					message.element.slideToggle(slideOutDuration);
 				}, params.duration);
@@ -90085,7 +90300,7 @@ ENDSEC
 		//let bottom	= node.boundingBox.min.y;
 		//let top = node.boundingBox.max.y;
 
-		this.updateProjectionMatrix();
+		this.updateProjectionMatrix();	
 	};
 
 	PerspectiveCamera.prototype.zoomTo = function (node, factor) {
@@ -90190,14 +90405,23 @@ ENDSEC
 			// load pointcloud
 			if (!path){
 				// TODO: callback? comment? Hello? Bueller? Anyone?
-			} else if (path.indexOf('ept.json') > 0) {
+			} else if (path.includes('ept.json')) {
 				EptLoader.load(path, function(geometry) {
 					if (!geometry) {
 						console.error(new Error(`failed to load point cloud from URL: ${path}`));
 					}
 					else {
 						let pointcloud = new PointCloudOctree(geometry);
-						//loaded(pointcloud);
+						resolve({type: 'pointcloud_loaded', pointcloud: pointcloud});
+					}
+				});
+			} else if (path.includes('.copc.laz')) {
+				CopcLoader.load(path, function(geometry) {
+					if (!geometry) {
+						console.error(new Error(`failed to load point cloud from URL: ${path}`));
+					}
+					else {
+						let pointcloud = new PointCloudOctree(geometry);
 						resolve({type: 'pointcloud_loaded', pointcloud: pointcloud});
 					}
 				});
@@ -90289,7 +90513,7 @@ ENDSEC
 
 					let elButton = $(`
 					<span style="flex-grow: 1; display: inherit">
-					<label for="${buttonID}" class="ui-button" style="width: 100%;">${label}</label>
+					<label for="${buttonID}" class="ui-button" style="width: 100%; padding: .4em .1em">${label}</label>
 					<input type="radio" name="${groupID}" id="${buttonID}" value="${optionValue}" style="display: none"/>
 					</span>
 				`);
@@ -90360,13 +90584,14 @@ ENDSEC
 	exports.ClipVolume = ClipVolume;
 	exports.ClippingTool = ClippingTool;
 	exports.Compass = Compass;
+	exports.CopcLaszipLoader = CopcLaszipLoader;
+	exports.CopcLoader = CopcLoader;
 	exports.DeviceOrientationControls = DeviceOrientationControls;
 	exports.EarthControls = EarthControls;
 	exports.ElevationGradientRepeat = ElevationGradientRepeat;
 	exports.Enum = Enum;
 	exports.EnumItem = EnumItem;
 	exports.EptBinaryLoader = EptBinaryLoader;
-	exports.EptKey = EptKey;
 	exports.EptLaszipLoader = EptLaszipLoader;
 	exports.EptLazBatcher = EptLazBatcher;
 	exports.EptLoader = EptLoader;
@@ -90402,8 +90627,9 @@ ENDSEC
 	exports.PointAttribute = PointAttribute;
 	exports.PointAttributeTypes = PointAttributeTypes;
 	exports.PointAttributes = PointAttributes;
+	exports.PointCloudCopcGeometry = PointCloudCopcGeometry;
+	exports.PointCloudCopcGeometryNode = PointCloudCopcGeometryNode;
 	exports.PointCloudEptGeometry = PointCloudEptGeometry;
-	exports.PointCloudEptGeometryNode = PointCloudEptGeometryNode;
 	exports.PointCloudMaterial = PointCloudMaterial$1;
 	exports.PointCloudOctree = PointCloudOctree;
 	exports.PointCloudOctreeGeometry = PointCloudOctreeGeometry;

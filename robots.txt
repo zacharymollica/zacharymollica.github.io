@@ -11,6 +11,8 @@ Disallow: /_includes/
 Disallow: /_layouts/
 Disallow: /_site/
 Disallow: /assets/vendor/
+Disallow: /.well-known/appspecific/
+
 
 # Allow important assets (CSS/JS) for rich previews
 Allow: /assets/css/

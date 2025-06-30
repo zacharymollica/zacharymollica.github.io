@@ -105,3 +105,6 @@ ErrorDocument 500 /500/index.html
 # Redirect 301 /old-path/ /new-path/
 
 Redirect 301 /project/wood-chip-barn/ /project/tree-fork-truss/
+Redirect 301 /resume/ /assets/download/ZacharyMollica_FullCV.pdf
+Redirect 301 /assets/download/250108_ZacharyMollica_CV.pdf/ /assets/download/ZacharyMollica_FullCV.pdf
+Redirect 301 /project/marshmallow-laser-feast/ /project/mlf-ceiba/
